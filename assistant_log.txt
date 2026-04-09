@@ -1,0 +1,3015 @@
+16:04:06 | Start: Test-Ablauf
+16:04:06 | Plugin wird geladen...
+16:04:06 | Datei erkannt: example.py
+16:04:07 | Datei wird geöffnet...
+16:04:07 | Text wird in Ersetzen-Helfer eingefügt...
+16:04:07 | Ziel wird erkannt...
+16:04:08 | Ersetzen wird durchgeführt...
+16:04:11 | Datei wird gespeichert...
+16:04:11 | Ablauf abgeschlossen
+16:04:12 | Fertig: Test-Ablauf fertig
+16:04:23 | Start: Plugin laden
+16:04:23 | Plugin-Datei gewählt: FIX_ADD_PART_CORE_v1.txt
+16:04:24 | Plugin-Datei wurde gelesen
+16:04:24 | Tool: DEV_TOOL
+16:04:24 | Target-Version: 1.0.1.0
+16:04:24 | Update-Version: 1.0.3.3
+16:04:24 | Restart: YES
+16:04:24 | Aktion: REPLACE_PART
+16:04:24 | Zieldatei: app_core.py
+16:04:24 | Ziel-PART: ASSISTANT_PLUGIN_VALIDATE
+16:04:24 | Fertig: Plugin geladen
+16:04:24 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+16:04:26 | Prüfung gestartet
+16:04:26 | Installiertes Tool: DEV_TOOL
+16:04:26 | Installierte Version: 1.0.1.0
+16:04:26 | Plugin: FIX_ADD_PART_CORE_v1.txt
+16:04:26 | Zieldatei gefunden: app_core.py
+16:04:26 | Ziel-PART gefunden: ASSISTANT_PLUGIN_VALIDATE
+16:04:26 | Plugin-Prüfung erfolgreich
+16:04:32 | Plugin-Laden abgebrochen
+16:04:39 | Start: Plugin laden
+16:04:39 | Plugin-Datei gewählt: FIX_ADD_PART_CORE_v1.txt
+16:04:39 | Plugin-Datei wurde gelesen
+16:04:40 | Tool: DEV_TOOL
+16:04:40 | Target-Version: 1.0.1.0
+16:04:40 | Update-Version: 1.0.3.3
+16:04:40 | Restart: YES
+16:04:40 | Aktion: REPLACE_PART
+16:04:40 | Zieldatei: app_core.py
+16:04:40 | Ziel-PART: ASSISTANT_PLUGIN_VALIDATE
+16:04:40 | Fertig: Plugin geladen
+16:04:40 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+16:04:42 | DEV Backup V2 wird erstellt...
+16:04:42 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260327_160442
+16:04:42 | DEV Backup V2 abgeschlossen
+16:04:42 | Start: Update starten
+16:04:42 | Sicherheitsprüfung wird vorbereitet...
+16:04:42 | Prüfung gestartet
+16:04:42 | Installiertes Tool: DEV_TOOL
+16:04:42 | Installierte Version: 1.0.1.0
+16:04:42 | Plugin: FIX_ADD_PART_CORE_v1.txt
+16:04:42 | Zieldatei gefunden: app_core.py
+16:04:42 | Ziel-PART gefunden: ASSISTANT_PLUGIN_VALIDATE
+16:04:42 | Plugin-Prüfung erfolgreich
+16:04:42 | Restart-Entscheidung aus Update: YES
+16:04:42 | Sicherheitsprüfung erfolgreich
+16:04:42 | Zieldatei wird geöffnet: app_core.py
+16:04:43 | Plugin-Inhalt wurde in den Ersetzen-Helfer eingefügt
+16:04:43 | Ziel wurde erkannt
+16:04:44 | Ersetzen wird ausgeführt...
+16:04:44 | Datei wird gespeichert...
+16:04:45 | Update erfolgreich angewendet
+16:04:45 | Plugin wird archiviert...
+16:04:46 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_ADD_PART_CORE_v1.txt
+16:04:46 | Update abgeschlossen
+16:04:46 | Fertig: Update fertig
+16:04:46 | Neustart-Hinweis wird angezeigt
+16:04:57 | Start: Plugin laden
+16:04:57 | Plugin-Datei gewählt: test_add_part_v1.txt
+16:04:58 | Plugin-Datei wurde gelesen
+16:04:58 | Tool: DEV_TOOL
+16:04:58 | Target-Version: 1.0.1.0
+16:04:58 | Update-Version: 1.0.3.1
+16:04:58 | Restart: NO
+16:04:58 | Aktion: ADD_PART
+16:04:58 | Zieldatei: fake_target.py
+16:04:58 | Ziel-PART: TEST_ADD_PART_V1
+16:04:58 | Fertig: Plugin geladen
+16:04:58 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+16:04:59 | DEV Backup V2 wird erstellt...
+16:04:59 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260327_160459
+16:04:59 | DEV Backup V2 abgeschlossen
+16:04:59 | Start: Update starten
+16:04:59 | Sicherheitsprüfung wird vorbereitet...
+16:05:00 | Restart-Entscheidung aus Update: NO
+16:05:00 | Sicherheitsprüfung erfolgreich
+16:05:00 | Zieldatei wird geöffnet: fake_target.py
+16:05:01 | Plugin-Inhalt wurde in den Ersetzen-Helfer eingefügt
+16:05:26 | Ziel wurde erkannt
+16:05:26 | Ersetzen wird ausgeführt...
+16:05:29 | Datei wird gespeichert...
+16:05:30 | Update erfolgreich angewendet
+16:05:30 | Plugin wird archiviert...
+16:05:30 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\test_add_part_v1.txt
+16:05:30 | Update abgeschlossen
+16:05:31 | Fertig: Update fertig
+16:07:20 | Start: Plugin laden
+16:07:20 | Plugin-Datei gewählt: FIX_ADD_PART_FLOW_v2.txt
+16:07:20 | Plugin-Datei wurde gelesen
+16:07:21 | Tool: DEV_TOOL
+16:07:21 | Target-Version: 1.0.1.0
+16:07:21 | Update-Version: 1.0.3.4
+16:07:21 | Restart: YES
+16:07:21 | Aktion: REPLACE_PART
+16:07:21 | Zieldatei: app_core.py
+16:07:21 | Ziel-PART: ASSISTANT_PLUGIN_EXECUTE
+16:07:21 | Fertig: Plugin geladen
+16:07:21 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+16:07:23 | DEV Backup V2 wird erstellt...
+16:07:23 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260327_160723
+16:07:23 | DEV Backup V2 abgeschlossen
+16:07:23 | Start: Update starten
+16:07:23 | Sicherheitsprüfung wird vorbereitet...
+16:07:24 | Restart-Entscheidung aus Update: YES
+16:07:24 | Sicherheitsprüfung erfolgreich
+16:07:24 | Zieldatei wird geöffnet: app_core.py
+16:07:24 | Plugin-Inhalt wurde in den Ersetzen-Helfer eingefügt
+16:07:25 | Ziel wurde erkannt
+16:07:25 | Ersetzen wird ausgeführt...
+16:07:26 | Datei wird gespeichert...
+16:07:26 | Update erfolgreich angewendet
+16:07:27 | Plugin wird archiviert...
+16:07:27 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_ADD_PART_FLOW_v2.txt
+16:07:27 | Update abgeschlossen
+16:07:27 | Fertig: Update fertig
+16:07:27 | Neustart-Hinweis wird angezeigt
+16:07:57 | Start: Plugin laden
+16:07:57 | Plugin-Datei gewählt: test_add_part_v1.txt
+16:07:58 | Plugin-Datei wurde gelesen
+16:07:58 | Tool: DEV_TOOL
+16:07:58 | Target-Version: 1.0.1.0
+16:07:58 | Update-Version: 1.0.3.1
+16:07:58 | Restart: NO
+16:07:58 | Aktion: ADD_PART
+16:07:58 | Zieldatei: fake_target.py
+16:07:58 | Ziel-PART: TEST_ADD_PART_V1
+16:07:58 | Fertig: Plugin geladen
+16:07:58 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+16:08:02 | ADD_PART sauber eingefügt
+16:08:02 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins\_used_plugins\test_add_part_v1.txt
+16:08:02 | Update fertig
+16:11:27 | Start: Plugin laden
+16:11:27 | Plugin-Datei gewählt: FIX_PLUGIN_MOVE_LOGIC_v1.txt
+16:11:27 | Plugin-Datei wurde gelesen
+16:11:27 | Tool: DEV_TOOL
+16:11:27 | Target-Version: 1.0.1.0
+16:11:27 | Update-Version: 1.0.3.5
+16:11:27 | Restart: YES
+16:11:27 | Aktion: REPLACE_PART
+16:11:27 | Zieldatei: app_core.py
+16:11:27 | Ziel-PART: ASSISTANT_PLUGIN_EXECUTE
+16:11:27 | Fertig: Plugin geladen
+16:11:27 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+16:11:32 | REPLACE ausgeführt
+16:11:32 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_PLUGIN_MOVE_LOGIC_v1.txt
+16:11:32 | Update fertig
+16:13:58 | Start: Plugin laden
+16:13:58 | Plugin-Datei gewählt: test_add_part_v1.txt
+16:13:58 | Plugin-Datei wurde gelesen
+16:13:59 | Tool: DEV_TOOL
+16:13:59 | Target-Version: 1.0.1.0
+16:13:59 | Update-Version: 1.0.3.1
+16:13:59 | Restart: NO
+16:13:59 | Aktion: ADD_PART
+16:13:59 | Zieldatei: fake_target.py
+16:13:59 | Ziel-PART: TEST_ADD_PART_V1
+16:13:59 | Fertig: Plugin geladen
+16:13:59 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+16:14:00 | STOP: Validation fehlgeschlagen
+16:18:35 | Start: Plugin laden
+16:18:35 | Plugin-Datei gewählt: FIX_RESTART_TIMER_v1.txt
+16:18:35 | Plugin-Datei wurde gelesen
+16:18:36 | Tool: DEV_TOOL
+16:18:36 | Target-Version: 1.0.1.0
+16:18:36 | Update-Version: 1.0.3.6
+16:18:36 | Restart: YES
+16:18:36 | Aktion: REPLACE_PART
+16:18:36 | Zieldatei: app_core.py
+16:18:36 | Ziel-PART: ASSISTANT_PLUGIN_EXECUTE
+16:18:36 | Fertig: Plugin geladen
+16:18:36 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+16:18:39 | REPLACE ausgeführt
+16:18:39 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_RESTART_TIMER_v1.txt
+16:18:39 | Plugin archiviert
+16:18:39 | Update erfolgreich abgeschlossen
+17:26:25 | Start: Plugin laden
+17:26:25 | Plugin-Datei gewählt: FIX_BEFORE_AFTER_v1.txt
+17:26:25 | Plugin-Datei wurde gelesen
+17:26:26 | Tool: DEV_TOOL
+17:26:26 | Target-Version: 1.0.1.0
+17:26:26 | Update-Version: 1.0.3.7
+17:26:26 | Restart: YES
+17:26:26 | Aktion: REPLACE_PART
+17:26:26 | Zieldatei: app_core.py
+17:26:26 | Ziel-PART: ASSISTANT_PLUGIN_EXECUTE
+17:26:26 | Fertig: Plugin geladen
+17:26:26 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+17:26:28 | STOP: Validation fehlgeschlagen
+17:33:55 | Start: Plugin laden
+17:33:55 | Plugin-Datei gewählt: FIX_BEFORE_AFTER_VALIDATOR_v1.txt
+17:33:55 | Plugin-Datei wurde gelesen
+17:33:56 | Tool: DEV_TOOL
+17:33:56 | Target-Version: 1.0.1.0
+17:33:56 | Update-Version: 1.0.3.8
+17:33:56 | Restart: YES
+17:33:56 | Aktion: REPLACE_PART
+17:33:56 | Zieldatei: app_core.py
+17:33:56 | Ziel-PART: ASSISTANT_PLUGIN_VALIDATE
+17:33:56 | Fertig: Plugin geladen
+17:33:56 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+17:33:58 | STOP: Validation fehlgeschlagen
+17:50:31 | Start: Plugin laden
+17:50:31 | Plugin-Datei gewählt: FIX_BEFORE_AFTER_v1.txt
+17:50:31 | Plugin-Datei wurde gelesen
+17:50:31 | Tool: DEV_TOOL
+17:50:31 | Target-Version: 1.0.1.0
+17:50:31 | Update-Version: 1.0.3.7
+17:50:31 | Restart: YES
+17:50:31 | Aktion: REPLACE_PART
+17:50:31 | Zieldatei: app_core.py
+17:50:31 | Ziel-PART: ASSISTANT_PLUGIN_EXECUTE
+17:50:31 | Fertig: Plugin geladen
+17:50:31 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+17:50:32 | Plugin-Prüfung erfolgreich
+17:50:35 | REPLACE ausgeführt
+17:50:35 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_BEFORE_AFTER_v1.txt
+17:50:35 | Plugin archiviert
+17:50:35 | Update erfolgreich abgeschlossen
+17:50:35 | Neustart in 10 Sekunden...
+17:50:36 | Restart in 9s
+17:50:37 | Restart in 8s
+17:50:38 | Restart in 7s
+17:50:39 | Restart in 6s
+17:50:40 | Restart in 5s
+17:50:59 | Plugin-Laden abgebrochen
+17:53:08 | Plugin-Laden abgebrochen
+17:59:37 | Plugin-Laden abgebrochen
+18:00:02 | Start: Plugin laden
+18:00:02 | Plugin-Datei gewählt: test_before_v1.devupdate
+18:00:02 | Plugin-Datei wurde gelesen
+18:00:02 | Tool: DEV_TOOL
+18:00:02 | Target-Version: 1.0.1.0
+18:00:02 | Update-Version: 1.0.3.9
+18:00:02 | Restart: NO
+18:00:02 | Aktion: ADD_PART
+18:00:02 | Zieldatei: fake_target.py
+18:00:02 | Ziel-PART: TEST_BEFORE_V1
+18:00:02 | Fertig: Plugin geladen
+18:00:02 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:00:06 | FEHLER: Datei nicht gefunden: fake_target.py
+18:00:06 | STOP: Validation fehlgeschlagen
+18:00:23 | Plugin-Prüfung erfolgreich
+18:00:23 | ADD_PART eingefügt (BEFORE)
+18:00:23 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\test_before_v1.devupdate
+18:00:23 | Plugin archiviert
+18:00:23 | Update erfolgreich abgeschlossen
+18:06:17 | Start: Plugin laden
+18:06:17 | Plugin-Datei gewählt: test_after_v1.devupdate
+18:06:18 | Plugin-Datei wurde gelesen
+18:06:18 | Tool: DEV_TOOL
+18:06:18 | Target-Version: 1.0.1.0
+18:06:18 | Update-Version: 1.0.4.0
+18:06:18 | Restart: NO
+18:06:18 | Aktion: ADD_PART
+18:06:18 | Zieldatei: fake_target.py
+18:06:18 | Ziel-PART: TEST_AFTER_V1
+18:06:18 | Fertig: Plugin geladen
+18:06:18 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:06:25 | Plugin-Prüfung erfolgreich
+18:06:25 | ADD_PART eingefügt (AFTER)
+18:06:25 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\test_after_v1.devupdate
+18:06:25 | Plugin archiviert
+18:06:25 | Update erfolgreich abgeschlossen
+18:12:08 | Start: Plugin laden
+18:12:08 | Plugin-Datei gewählt: FIX_REMOVE_PART_v1.devupdate
+18:12:09 | Plugin-Datei wurde gelesen
+18:12:09 | Tool: DEV_TOOL
+18:12:09 | Target-Version: 1.0.1.0
+18:12:09 | Update-Version: 1.0.4.1
+18:12:09 | Restart: NO
+18:12:09 | Aktion: REPLACE_PART
+18:12:09 | Zieldatei: app_core.py
+18:12:09 | Ziel-PART: ASSISTANT_PLUGIN_EXECUTE
+18:12:09 | Fertig: Plugin geladen
+18:12:09 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:12:13 | Plugin-Prüfung erfolgreich
+18:12:16 | REPLACE ausgeführt
+18:12:16 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_REMOVE_PART_v1.devupdate
+18:12:16 | Plugin archiviert
+18:12:16 | Update erfolgreich abgeschlossen
+18:15:50 | Start: Plugin laden
+18:15:50 | Plugin-Datei gewählt: test_remove_v1.devupdate
+18:15:51 | Plugin-Datei wurde gelesen
+18:15:51 | Tool: DEV_TOOL
+18:15:51 | Target-Version: 1.0.1.0
+18:15:51 | Update-Version: 1.0.4.2
+18:15:51 | Restart: NO
+18:15:51 | Aktion: REMOVE_PART
+18:15:51 | Zieldatei: fake_target.py
+18:15:51 | Ziel-PART: TEST_ADD_PART_V1
+18:15:51 | Fertig: Plugin geladen
+18:15:51 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:15:53 | FEHLER: Aktion unbekannt: REMOVE_PART
+18:15:53 | STOP: Validation fehlgeschlagen
+18:15:57 | FEHLER: Aktion unbekannt: REMOVE_PART
+18:15:57 | STOP: Validation fehlgeschlagen
+18:20:37 | Start: Plugin laden
+18:20:37 | Plugin-Datei gewählt: FIX_REMOVE_PART_VALIDATOR_v1.devupdate
+18:20:37 | Plugin-Datei wurde gelesen
+18:20:37 | Tool: DEV_TOOL
+18:20:37 | Target-Version: 1.0.1.0
+18:20:37 | Update-Version: 1.0.4.3
+18:20:37 | Restart: NO
+18:20:37 | Aktion: REPLACE_PART
+18:20:37 | Zieldatei: app_core.py
+18:20:37 | Ziel-PART: ASSISTANT_PLUGIN_VALIDATE
+18:20:37 | Fertig: Plugin geladen
+18:20:37 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:20:41 | Plugin-Laden abgebrochen
+18:20:42 | Plugin-Prüfung erfolgreich
+18:20:42 | REPLACE ausgeführt
+18:20:42 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_REMOVE_PART_VALIDATOR_v1.devupdate
+18:20:42 | Plugin archiviert
+18:20:42 | Update erfolgreich abgeschlossen
+18:20:59 | Start: Plugin laden
+18:20:59 | Plugin-Datei gewählt: test_remove_v1.devupdate
+18:20:59 | Plugin-Datei wurde gelesen
+18:21:00 | Tool: DEV_TOOL
+18:21:00 | Target-Version: 1.0.1.0
+18:21:00 | Update-Version: 1.0.4.2
+18:21:00 | Restart: NO
+18:21:00 | Aktion: REMOVE_PART
+18:21:00 | Zieldatei: fake_target.py
+18:21:00 | Ziel-PART: TEST_ADD_PART_V1
+18:21:00 | Fertig: Plugin geladen
+18:21:00 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:21:02 | Plugin-Prüfung erfolgreich
+18:21:02 | REMOVE_PART ausgeführt
+18:21:02 | Backup gespeichert: removed_TEST_ADD_PART_V1_20260327_182102.txt
+18:21:02 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\test_remove_v1.devupdate
+18:21:02 | Plugin archiviert
+18:21:02 | Update erfolgreich abgeschlossen
+18:34:14 | Start: Plugin laden
+18:34:14 | Plugin-Datei gewählt: test_after_v1.devupdate
+18:34:14 | Plugin-Datei wurde gelesen
+18:34:15 | Tool: DEV_TOOL
+18:34:15 | Target-Version: 1.0.1.0
+18:34:15 | Update-Version: 1.0.4.0
+18:34:15 | Restart: NO
+18:34:15 | Aktion: ADD_PART
+18:34:15 | Zieldatei: fake_target.py
+18:34:15 | Ziel-PART: TEST_AFTER_V1
+18:34:15 | Fertig: Plugin geladen
+18:34:15 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:34:18 | FEHLER: PART existiert bereits
+18:34:18 | STOP: Validation fehlgeschlagen
+18:44:14 | Start: Plugin laden
+18:44:14 | Plugin-Datei gewählt: FIX_REMOVE_PART_FINAL_v1.devupdate
+18:44:14 | Plugin-Datei wurde gelesen
+18:44:14 | Tool: DEV_TOOL
+18:44:14 | Target-Version: 1.0.1.0
+18:44:14 | Update-Version: 1.0.4.4
+18:44:14 | Restart: NO
+18:44:14 | Aktion: REPLACE_PART
+18:44:14 | Zieldatei: app_core.py
+18:44:14 | Ziel-PART: ASSISTANT_PLUGIN_VALIDATE
+18:44:14 | Fertig: Plugin geladen
+18:44:14 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:44:17 | Plugin-Prüfung erfolgreich
+18:44:17 | REPLACE ausgeführt
+18:44:17 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_REMOVE_PART_FINAL_v1.devupdate
+18:44:17 | Plugin archiviert
+18:44:17 | Update erfolgreich abgeschlossen
+18:48:08 | Start: Plugin laden
+18:48:08 | Plugin-Datei gewählt: test_remove_v2.devupdate
+18:48:09 | Plugin-Datei wurde gelesen
+18:48:09 | Tool: DEV_TOOL
+18:48:09 | Target-Version: 1.0.1.0
+18:48:09 | Update-Version: 1.0.4.5
+18:48:09 | Restart: NO
+18:48:09 | Aktion: REMOVE_PART
+18:48:09 | Zieldatei: fake_target.py
+18:48:09 | Ziel-PART: TEST_AFTER_V1
+18:48:09 | Fertig: Plugin geladen
+18:48:09 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:48:13 | Plugin-Prüfung erfolgreich
+18:48:17 | Plugin-Prüfung erfolgreich
+18:48:17 | REMOVE_PART ausgeführt
+18:48:17 | Backup gespeichert: removed_TEST_AFTER_V1_20260327_184817.txt
+18:48:17 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\test_remove_v2.devupdate
+18:48:17 | Plugin archiviert
+18:48:17 | Update erfolgreich abgeschlossen
+18:48:24 | FEHLER: PART existiert nicht für REMOVE
+18:48:24 | STOP: Validation fehlgeschlagen
+18:55:35 | Start: Plugin laden
+18:55:35 | Plugin-Datei gewählt: test_remove_dev_test_area.devupdate
+18:55:36 | Plugin-Datei wurde gelesen
+18:55:36 | Tool: DEV_TOOL
+18:55:36 | Target-Version: 1.0.1.0
+18:55:36 | Update-Version: 1.0.4.6
+18:55:36 | Restart: NO
+18:55:36 | Aktion: REMOVE_PART
+18:55:36 | Zieldatei: fake_target.py
+18:55:36 | Ziel-PART: DEV_TEST_AREA
+18:55:36 | Fertig: Plugin geladen
+18:55:36 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+18:55:38 | Plugin-Prüfung erfolgreich
+18:55:38 | REMOVE_PART ausgeführt
+18:55:38 | Backup gespeichert: removed_DEV_TEST_AREA_20260327_185538.txt
+18:55:38 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\test_remove_dev_test_area.devupdate
+18:55:38 | Plugin archiviert
+18:55:38 | Update erfolgreich abgeschlossen
+19:36:08 | Start: Plugin laden
+19:36:08 | Plugin-Datei gewählt: FIX_INFO_POPUP_v1.devupdate
+19:36:09 | Plugin-Datei wurde gelesen
+19:36:09 | Tool: DEV_TOOL
+19:36:09 | Target-Version: 1.0.1.0
+19:36:09 | Update-Version: 1.0.4.7
+19:36:09 | Restart: YES
+19:36:09 | Aktion: REPLACE_PART
+19:36:09 | Zieldatei: app_core.py
+19:36:09 | Ziel-PART: ASSISTANT_PLUGIN_PARSE
+19:36:09 | Fertig: Plugin geladen
+19:36:09 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+19:36:13 | Plugin-Prüfung erfolgreich
+19:36:16 | REPLACE ausgeführt
+19:36:16 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_INFO_POPUP_v1.devupdate
+19:36:16 | Plugin archiviert
+19:36:16 | Update erfolgreich abgeschlossen
+19:38:55 | Plugin-Laden abgebrochen
+19:39:09 | Start: Plugin laden
+19:39:09 | Plugin-Datei gewählt: test_info_popup.devupdate
+19:39:09 | Plugin-Datei wurde gelesen
+19:39:09 | Tool: DEV_TOOL
+19:39:09 | Target-Version: 1.0.1.0
+19:39:09 | Update-Version: 1.0.4.8
+19:39:09 | Restart: NO
+19:39:09 | Aktion: ADD_PART
+19:39:09 | Zieldatei: fake_target.py
+19:39:09 | Ziel-PART: DUMMY_TEST
+19:39:09 | Fertig: Plugin geladen
+19:39:09 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+19:39:15 | Plugin-Prüfung erfolgreich
+19:39:18 | Plugin-Prüfung erfolgreich
+19:39:18 | ADD_PART eingefügt
+19:39:18 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\test_info_popup.devupdate
+19:39:18 | Plugin archiviert
+19:39:18 | Update erfolgreich abgeschlossen
+19:39:36 | Plugin-Laden abgebrochen
+19:53:10 | Plugin-Laden abgebrochen
+19:54:06 | Plugin-Laden abgebrochen
+19:58:21 | Start: Plugin laden
+19:58:21 | Plugin-Datei gewählt: FIX_INFO_POPUP_REPAIR_v1.devupdate
+19:58:21 | Plugin-Datei wurde gelesen
+19:58:22 | Tool: DEV_TOOL
+19:58:22 | Target-Version: 1.0.1.0
+19:58:22 | Update-Version: 1.0.4.9
+19:58:22 | Restart: YES
+19:58:22 | Aktion: REPLACE_PART
+19:58:22 | Zieldatei: app_core.py
+19:58:22 | Ziel-PART: ASSISTANT_PLUGIN_PARSE
+19:58:22 | Fertig: Plugin geladen
+19:58:22 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+19:58:26 | FEHLER: Datei nicht gefunden: app_core.py
+19:58:26 | STOP: Validation fehlgeschlagen
+19:59:46 | Plugin-Prüfung erfolgreich
+19:59:46 | REPLACE ausgeführt
+19:59:46 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_INFO_POPUP_REPAIR_v1.devupdate
+19:59:46 | Plugin archiviert
+19:59:46 | Update erfolgreich abgeschlossen
+20:00:07 | Plugin-Laden abgebrochen
+20:00:34 | Plugin-Laden abgebrochen
+20:04:58 | Start: Plugin laden
+20:04:58 | Plugin-Datei gewählt: FIX_INFO_POPUP_REPAIR_v1.devupdate
+20:04:58 | Plugin-Datei wurde gelesen
+20:04:59 | Tool: DEV_TOOL
+20:04:59 | Target-Version: 1.0.1.0
+20:04:59 | Update-Version: 1.0.4.9
+20:04:59 | Restart: YES
+20:04:59 | Aktion: REPLACE_PART
+20:04:59 | Zieldatei: app_core.py
+20:04:59 | Ziel-PART: ASSISTANT_PLUGIN_PARSE
+20:04:59 | Fertig: Plugin geladen
+20:04:59 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+20:05:01 | Plugin-Prüfung erfolgreich
+20:05:04 | REPLACE ausgeführt
+20:05:04 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins\_used_plugins\FIX_INFO_POPUP_REPAIR_v1.devupdate
+20:05:04 | Plugin archiviert
+20:05:04 | Update erfolgreich abgeschlossen
+20:05:23 | Start: Plugin laden
+20:05:23 | Plugin-Datei gewählt: FIX_INFO_POPUP_REPAIR_v1.devupdate
+20:05:23 | Plugin-Datei wurde gelesen
+20:05:24 | Tool: DEV_TOOL
+20:05:24 | Target-Version: 1.0.1.0
+20:05:24 | Update-Version: 1.0.4.9
+20:05:24 | Restart: YES
+20:05:24 | Aktion: REPLACE_PART
+20:05:24 | Zieldatei: app_core.py
+20:05:24 | Ziel-PART: ASSISTANT_PLUGIN_PARSE
+20:05:24 | Fertig: Plugin geladen
+20:05:24 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+20:05:27 | Plugin-Prüfung erfolgreich
+20:05:29 | REPLACE ausgeführt
+20:05:29 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins/_used_plugins\_used_plugins\FIX_INFO_POPUP_REPAIR_v1.devupdate
+20:05:29 | Plugin archiviert
+20:05:29 | Update erfolgreich abgeschlossen
+20:05:45 | Start: Plugin laden
+20:05:45 | Plugin-Datei gewählt: FIX_INFO_POPUP_REPAIR_v1.devupdate
+20:05:46 | Plugin-Datei wurde gelesen
+20:05:46 | Tool: DEV_TOOL
+20:05:46 | Target-Version: 1.0.1.0
+20:05:46 | Update-Version: 1.0.4.9
+20:05:46 | Restart: YES
+20:05:46 | Aktion: REPLACE_PART
+20:05:46 | Zieldatei: app_core.py
+20:05:46 | Ziel-PART: ASSISTANT_PLUGIN_PARSE
+20:05:46 | Fertig: Plugin geladen
+20:05:46 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+20:05:48 | Plugin-Prüfung erfolgreich
+20:05:49 | REPLACE ausgeführt
+20:05:49 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins/_used_plugins/_used_plugins\_used_plugins\FIX_INFO_POPUP_REPAIR_v1.devupdate
+20:05:49 | Plugin archiviert
+20:05:49 | Update erfolgreich abgeschlossen
+21:49:21 | Start: Plugin laden
+21:49:21 | Plugin-Datei gewählt: FIX_POPUP_STEP1_DIALOGS.devupdate
+21:49:22 | Plugin-Datei wurde gelesen
+21:49:22 | Tool: DEV_TOOL
+21:49:22 | Target-Version: 1.0.1.0
+21:49:22 | Update-Version: 1.0.5.0
+21:49:22 | Restart: NO
+21:49:22 | Aktion: REPLACE_PART
+21:49:22 | Zieldatei: app_core.py
+21:49:22 | Ziel-PART: ASSISTANT_DIALOGS
+21:49:22 | Fertig: Plugin geladen
+21:49:22 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+21:49:28 | FEHLER: Datei nicht gefunden: app_core.py
+21:49:28 | STOP: Validation fehlgeschlagen
+21:51:09 | Plugin-Prüfung erfolgreich
+21:51:11 | REPLACE ausgeführt
+21:51:11 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_POPUP_STEP1_DIALOGS.devupdate
+21:51:11 | Plugin archiviert
+21:51:11 | Update erfolgreich abgeschlossen
+21:52:21 | Plugin-Laden abgebrochen
+21:58:38 | Start: Plugin laden
+21:58:38 | Plugin-Datei gewählt: test_popup_control.devupdate
+21:58:38 | Plugin-Datei wurde gelesen
+21:58:39 | Tool: DEV_TOOL
+21:58:39 | Target-Version: 1.0.1.0
+21:58:39 | Update-Version: 1.0.5.1
+21:58:39 | Restart: NO
+21:58:39 | Aktion: ADD_PART
+21:58:39 | Zieldatei: fake_target.py
+21:58:39 | Ziel-PART: POPUP_CONTROL_TEST
+21:58:39 | Fertig: Plugin geladen
+21:58:39 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+21:59:06 | Plugin-Prüfung erfolgreich
+21:59:06 | ADD_PART eingefügt
+21:59:06 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\test_popup_control.devupdate
+21:59:06 | Plugin archiviert
+21:59:06 | Update erfolgreich abgeschlossen
+22:06:49 | Start: Plugin laden
+22:06:49 | Plugin-Datei gewählt: FIX_POPUP_STEP2_PLUGIN_IO.devupdate
+22:06:49 | Plugin-Datei wurde gelesen
+22:06:49 | Tool: DEV_TOOL
+22:06:49 | Target-Version: 1.0.1.0
+22:06:49 | Update-Version: 1.0.5.2
+22:06:49 | Restart: NO
+22:06:49 | Aktion: REPLACE_PART
+22:06:49 | Zieldatei: app_core.py
+22:06:49 | Ziel-PART: ASSISTANT_PLUGIN_IO
+22:06:49 | Fertig: Plugin geladen
+22:06:49 | Hinweis: Jetzt 'Plugin prüfen' oder direkt 'Update starten'
+22:06:55 | Plugin-Prüfung erfolgreich
+22:06:58 | REPLACE ausgeführt
+22:06:58 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_POPUP_STEP2_PLUGIN_IO.devupdate
+22:06:58 | Plugin archiviert
+22:06:58 | Update erfolgreich abgeschlossen
+22:07:20 | Plugin-Laden abgebrochen
+22:10:15 | Start: Plugin laden
+22:10:15 | Plugin-Datei gewählt: test_popup_control.devupdate
+22:10:15 | Plugin-Datei wurde gelesen
+22:10:16 | FEHLER: PART existiert bereits
+22:10:16 | Plugin-Prüfung fehlgeschlagen
+22:10:16 | Fertig: Plugin geladen
+22:29:05 | Start: Plugin laden
+22:29:05 | Plugin-Datei gewählt: FIX_POPUP_STEP3_FLOW.devupdate
+22:29:05 | Plugin-Datei wurde gelesen
+22:29:05 | Plugin-Prüfung erfolgreich
+22:29:25 | Fertig: Plugin geladen
+22:29:25 | Plugin-Prüfung erfolgreich
+22:29:26 | REPLACE ausgeführt
+22:29:26 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_POPUP_STEP3_FLOW.devupdate
+22:29:26 | Plugin archiviert
+22:29:26 | Update erfolgreich abgeschlossen
+22:41:20 | Start: Plugin laden
+22:41:20 | Plugin-Datei gewählt: FIX_POPUP_STEP4_CLEAN_UI.devupdate
+22:41:21 | Plugin-Datei wurde gelesen
+22:41:21 | Plugin-Prüfung erfolgreich
+22:41:26 | Fertig: Plugin geladen
+22:41:26 | Plugin-Prüfung erfolgreich
+22:41:26 | REPLACE ausgeführt
+22:41:26 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_POPUP_STEP4_CLEAN_UI.devupdate
+22:41:26 | Plugin archiviert
+22:41:26 | Update erfolgreich abgeschlossen
+22:42:46 | Start: Plugin laden
+22:42:46 | Plugin-Datei gewählt: test_popup_control.devupdate
+22:42:46 | Plugin-Datei wurde gelesen
+22:42:47 | FEHLER: PART existiert bereits
+22:42:47 | Plugin-Prüfung fehlgeschlagen
+22:42:47 | Fertig: Plugin geladen
+22:51:01 | Start: Plugin laden
+22:51:01 | Plugin-Datei gewählt: FIX_PREVIEW_DISABLE.devupdate
+22:51:02 | Plugin-Datei wurde gelesen
+22:51:02 | Plugin-Prüfung erfolgreich
+22:51:08 | Fertig: Plugin geladen
+22:51:08 | Plugin-Prüfung erfolgreich
+22:51:08 | REPLACE ausgeführt
+22:51:08 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_PREVIEW_DISABLE.devupdate
+22:51:08 | Plugin archiviert
+22:51:08 | Update erfolgreich abgeschlossen
+22:51:28 | Start: Plugin laden
+22:51:28 | Plugin-Datei gewählt: test_popup_control.devupdate
+22:51:29 | Plugin-Datei wurde gelesen
+22:51:29 | FEHLER: PART existiert bereits
+22:51:29 | Plugin-Prüfung fehlgeschlagen
+22:51:29 | Installation nicht möglich – Update wurde nicht gestartet
+22:51:29 | Fertig: Plugin geladen
+22:51:44 | Start: Plugin laden
+22:51:44 | Plugin-Datei gewählt: FIX_PREVIEW_DISABLE.devupdate
+22:51:45 | Plugin-Datei wurde gelesen
+22:51:45 | Plugin-Prüfung erfolgreich
+22:51:45 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:51:50 | Update vom Benutzer abgebrochen
+22:51:50 | Fertig: Plugin geladen
+22:58:28 | Start: Plugin laden
+22:58:28 | Plugin-Datei gewählt: FIX_PREVIEW_DISABLE_STEP2.devupdate
+22:58:28 | Plugin-Datei wurde gelesen
+22:58:29 | Plugin-Prüfung erfolgreich
+22:58:29 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:58:35 | Benutzer hat 'Update durchführen' gewählt
+22:58:35 | Fertig: Plugin geladen
+22:58:35 | Plugin-Prüfung erfolgreich
+22:58:38 | REPLACE ausgeführt
+22:58:39 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_PREVIEW_DISABLE_STEP2.devupdate
+22:58:39 | Plugin archiviert
+22:58:39 | Update erfolgreich abgeschlossen
+22:59:59 | Start: Plugin laden
+22:59:59 | Plugin-Datei gewählt: test_popup_control.devupdate
+22:59:59 | Plugin-Datei wurde gelesen
+23:00:00 | FEHLER: PART existiert bereits
+23:00:00 | Plugin-Prüfung fehlgeschlagen
+23:00:00 | Installation nicht möglich – Update wurde nicht gestartet
+23:00:00 | Fertig: Plugin geladen
+23:00:05 | Vorschau automatisch deaktiviert
+23:00:09 | Start: Plugin laden
+23:00:09 | Plugin-Datei gewählt: test_popup_control.devupdate
+23:00:09 | Plugin-Datei wurde gelesen
+23:00:10 | FEHLER: PART existiert bereits
+23:00:10 | Plugin-Prüfung fehlgeschlagen
+23:00:10 | Installation nicht möglich – Update wurde nicht gestartet
+23:00:10 | Fertig: Plugin geladen
+23:00:16 | Vorschau automatisch deaktiviert
+23:00:19 | Plugin-Laden abgebrochen
+23:00:46 | Plugin-Laden abgebrochen
+23:06:02 | Start: Plugin laden
+23:06:02 | Plugin-Datei gewählt: FIX_PARSER_INFO_STEP.devupdate
+23:06:03 | Plugin-Datei wurde gelesen
+23:06:03 | Plugin-Prüfung erfolgreich
+23:06:03 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+23:06:05 | Benutzer hat 'Update durchführen' gewählt
+23:06:05 | Fertig: Plugin geladen
+23:06:05 | Plugin-Prüfung erfolgreich
+23:06:05 | REPLACE ausgeführt
+23:06:05 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_PARSER_INFO_STEP.devupdate
+23:06:05 | Plugin archiviert
+23:06:05 | Update erfolgreich abgeschlossen
+23:07:10 | Vorschau automatisch deaktiviert
+23:07:13 | Start: Plugin laden
+23:07:13 | Plugin-Datei gewählt: test_popup_control.devupdate
+23:07:13 | Plugin-Datei wurde gelesen
+23:07:14 | FEHLER: PART existiert bereits
+23:07:14 | Plugin-Prüfung fehlgeschlagen
+23:07:14 | Installation nicht möglich – Update wurde nicht gestartet
+23:07:14 | Fertig: Plugin geladen
+23:10:24 | Start: Plugin laden
+23:10:24 | Plugin-Datei gewählt: STEP_EXPORT_PART_WITH_FOLDER.devupdate
+23:10:24 | Plugin-Datei wurde gelesen
+23:10:24 | FEHLER: PART existiert nicht für REPLACE
+23:10:24 | Plugin-Prüfung fehlgeschlagen
+23:10:24 | Installation nicht möglich – Update wurde nicht gestartet
+23:10:24 | Fertig: Plugin geladen
+23:13:12 | Vorschau automatisch deaktiviert
+23:13:18 | Start: Plugin laden
+23:13:18 | Plugin-Datei gewählt: STEP_EXPORT_PART_FIXED.devupdate
+23:13:19 | Plugin-Datei wurde gelesen
+23:13:19 | FEHLER: POSITION ungültig: 
+23:13:19 | Plugin-Prüfung fehlgeschlagen
+23:13:19 | Installation nicht möglich – Update wurde nicht gestartet
+23:13:19 | Fertig: Plugin geladen
+23:19:37 | Start: Plugin laden
+23:19:37 | Plugin-Datei gewählt: STEP_EXPORT_PART_FIXED2.devupdate
+23:19:37 | Plugin-Datei wurde gelesen
+23:19:38 | Plugin-Prüfung erfolgreich
+23:19:38 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+23:19:49 | Benutzer hat 'Update durchführen' gewählt
+23:19:49 | Fertig: Plugin geladen
+23:19:49 | Plugin-Prüfung erfolgreich
+23:19:49 | ADD_PART eingefügt
+23:19:49 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\STEP_EXPORT_PART_FIXED2.devupdate
+23:19:49 | Plugin archiviert
+23:19:49 | Update erfolgreich abgeschlossen
+23:41:09 | Plugin-Laden abgebrochen
+23:41:18 | Start: Plugin laden
+23:41:18 | Plugin-Datei gewählt: FIX_PART_EXPORT_WIRING.devupdate
+23:41:18 | Plugin-Datei wurde gelesen
+23:41:18 | Plugin-Prüfung erfolgreich
+23:41:18 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+23:41:41 | Benutzer hat 'Update durchführen' gewählt
+23:41:41 | Fertig: Plugin geladen
+23:41:41 | Plugin-Prüfung erfolgreich
+23:41:41 | REPLACE ausgeführt
+23:41:41 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_PART_EXPORT_WIRING.devupdate
+23:41:41 | Plugin archiviert
+23:41:41 | Update erfolgreich abgeschlossen
+23:41:58 | Fehler beim Export: 'Part' object has no attribute 'content'
+00:16:19 | Vorschau automatisch deaktiviert
+00:16:23 | Start: Plugin laden
+00:16:23 | Plugin-Datei gewählt: STEP_EXPORT_WITH_METADATA.devupdate
+00:16:23 | Plugin-Datei wurde gelesen
+00:16:24 | Plugin-Prüfung erfolgreich
+00:16:24 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+00:16:27 | Benutzer hat 'Update durchführen' gewählt
+00:16:27 | Fertig: Plugin geladen
+00:16:27 | Plugin-Prüfung erfolgreich
+00:16:27 | FEHLER REPLACE: 'CodeEditorApp' object has no attribute 'extract_part_name_and_inner_text'
+00:16:27 | Update NICHT erfolgreich – Plugin bleibt erhalten
+00:25:16 | Vorschau automatisch deaktiviert
+00:25:27 | Start: Plugin laden
+00:25:27 | Plugin-Datei gewählt: FIX_EXPORT_IMPORT_CLEAN.devupdate
+00:25:27 | Plugin-Datei wurde gelesen
+00:25:28 | Plugin-Prüfung erfolgreich
+00:25:28 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+00:25:38 | Benutzer hat 'Update durchführen' gewählt
+00:25:38 | Fertig: Plugin geladen
+00:25:38 | Plugin-Prüfung erfolgreich
+00:25:38 | FEHLER REPLACE: 'CodeEditorApp' object has no attribute 'extract_part_name_and_inner_text'
+00:25:38 | Update NICHT erfolgreich – Plugin bleibt erhalten
+00:31:00 | Vorschau automatisch deaktiviert
+00:31:04 | Start: Plugin laden
+00:31:04 | Plugin-Datei gewählt: FIX_EXPORT_IMPORT_CLEAN.devupdate
+00:31:05 | Plugin-Datei wurde gelesen
+00:31:05 | Plugin-Prüfung erfolgreich
+00:31:05 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+00:31:11 | Benutzer hat 'Update durchführen' gewählt
+00:31:11 | Fertig: Plugin geladen
+00:31:11 | Plugin-Prüfung erfolgreich
+00:31:11 | FEHLER REPLACE: 'CodeEditorApp' object has no attribute 'extract_part_name_and_inner_text'
+00:31:11 | Update NICHT erfolgreich – Plugin bleibt erhalten
+00:39:53 | Plugin-Laden abgebrochen
+00:40:04 | Start: Plugin laden
+00:40:04 | Plugin-Datei gewählt: FIX_REPLACE_HELPER.devupdate
+00:40:05 | Plugin-Datei wurde gelesen
+00:40:05 | Plugin-Prüfung erfolgreich
+00:40:05 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+00:40:10 | Benutzer hat 'Update durchführen' gewählt
+00:40:10 | Fertig: Plugin geladen
+00:40:10 | Plugin-Prüfung erfolgreich
+00:40:10 | ADD_PART eingefügt
+00:40:10 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_REPLACE_HELPER.devupdate
+00:40:10 | Plugin archiviert
+00:40:10 | Update erfolgreich abgeschlossen
+00:46:10 | Fehler beim Export: 'Part' object has no attribute 'content'
+00:46:21 | Fehler beim Export: 'Part' object has no attribute 'content'
+00:48:25 | Vorschau automatisch deaktiviert
+00:48:38 | Start: Plugin laden
+00:48:38 | Plugin-Datei gewählt: FIX_REPLACE_HELPER.devupdate
+00:48:39 | Plugin-Datei wurde gelesen
+00:48:39 | FEHLER: PART existiert bereits
+00:48:39 | Plugin-Prüfung fehlgeschlagen
+00:48:39 | Installation nicht möglich – Update wurde nicht gestartet
+00:48:39 | Fertig: Plugin geladen
+00:49:39 | Start: Plugin laden
+00:49:39 | Plugin-Datei gewählt: FIX_EXPORT_IMPORT_CLEAN.devupdate
+00:49:39 | Plugin-Datei wurde gelesen
+00:49:40 | Plugin-Prüfung erfolgreich
+00:49:40 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+00:49:43 | Benutzer hat 'Update durchführen' gewählt
+00:49:43 | Fertig: Plugin geladen
+00:49:43 | Plugin-Prüfung erfolgreich
+00:49:43 | REPLACE ausgeführt
+00:49:43 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_EXPORT_IMPORT_CLEAN.devupdate
+00:49:43 | Plugin archiviert
+00:49:43 | Update erfolgreich abgeschlossen
+00:50:27 | Fehler beim Export: 'Part' object has no attribute 'content'
+00:55:56 | Start: Plugin laden
+00:55:56 | Plugin-Datei gewählt: FIX_EXPORT_CLEAN_STEP2.devupdate
+00:55:57 | Plugin-Datei wurde gelesen
+00:55:57 | Plugin-Prüfung erfolgreich
+00:55:57 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+00:56:03 | Benutzer hat 'Update durchführen' gewählt
+00:56:03 | Fertig: Plugin geladen
+00:56:03 | Plugin-Prüfung erfolgreich
+00:56:03 | REPLACE ausgeführt
+00:56:03 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_EXPORT_CLEAN_STEP2.devupdate
+00:56:03 | Plugin archiviert
+00:56:03 | Update erfolgreich abgeschlossen
+00:56:48 | Fehler beim Export: 'Part' object has no attribute 'content'
+00:57:02 | Fehler beim Export: 'Part' object has no attribute 'content'
+00:58:25 | Vorschau automatisch deaktiviert
+00:58:50 | Plugin-Laden abgebrochen
+13:18:14 | Start: Plugin laden
+13:18:14 | Plugin-Datei gewählt: FIX_APP_CORE_EXPORT_ROUTING.devupdate
+13:18:15 | Plugin-Datei wurde gelesen
+13:18:15 | Plugin-Prüfung erfolgreich
+13:18:15 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+13:18:22 | Benutzer hat 'Update durchführen' gewählt
+13:18:22 | Fertig: Plugin geladen
+13:18:22 | Plugin-Prüfung erfolgreich
+13:18:22 | REPLACE ausgeführt
+13:18:22 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_APP_CORE_EXPORT_ROUTING.devupdate
+13:18:22 | Plugin archiviert
+13:18:22 | Update erfolgreich abgeschlossen
+13:18:34 | Fehler beim Export: 'Part' object has no attribute 'content'
+13:44:33 | Vorschau automatisch deaktiviert
+13:44:37 | Start: Plugin laden
+13:44:37 | Plugin-Datei gewählt: FIX_EXPORT_CRASH_AND_ERROR_TRAP.devupdate
+13:44:37 | Plugin-Datei wurde gelesen
+13:44:38 | Plugin-Prüfung erfolgreich
+13:44:38 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+13:44:47 | Benutzer hat 'Update durchführen' gewählt
+13:44:47 | Fertig: Plugin geladen
+13:44:47 | Plugin-Prüfung erfolgreich
+13:49:52 | REPLACE ausgeführt
+13:49:52 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_EXPORT_CRASH_AND_ERROR_TRAP.devupdate
+13:49:52 | Plugin archiviert
+13:49:52 | Update erfolgreich abgeschlossen
+16:57:48 | Vorschau automatisch deaktiviert
+16:57:51 | Start: Plugin laden
+16:57:51 | Plugin-Datei gewählt: FIX_PARTS_LOGIC_IMPORT_OS.devupdate
+16:57:51 | Plugin-Datei wurde gelesen
+16:57:52 | Plugin-Prüfung erfolgreich
+16:57:52 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+16:58:01 | Benutzer hat 'Update durchführen' gewählt
+16:58:01 | Fertig: Plugin geladen
+16:58:01 | Plugin-Prüfung erfolgreich
+16:58:01 | REPLACE ausgeführt
+16:58:01 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_PARTS_LOGIC_IMPORT_OS.devupdate
+16:58:01 | Plugin archiviert
+16:58:01 | Update erfolgreich abgeschlossen
+17:00:06 | PART exportiert nach: C:\Users\carst\Desktop\Tool\_parts_export\POPUP_CONTROL_TEST.py
+18:09:34 | Vorschau automatisch deaktiviert
+18:09:37 | Start: Plugin laden
+18:09:37 | Plugin-Datei gewählt: IMPORT_V1.devupdate
+18:09:37 | Plugin-Datei wurde gelesen
+18:09:38 | Plugin-Prüfung erfolgreich
+18:09:38 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+18:09:47 | Benutzer hat 'Update durchführen' gewählt
+18:09:47 | Fertig: Plugin geladen
+18:09:47 | Plugin-Prüfung erfolgreich
+18:09:54 | REPLACE ausgeführt
+18:09:54 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\IMPORT_V1.devupdate
+18:09:54 | Plugin archiviert
+18:09:54 | Update erfolgreich abgeschlossen
+18:10:00 | Plugin-Prüfung erfolgreich
+18:10:03 | Plugin-Prüfung erfolgreich
+18:10:09 | REPLACE ausgeführt
+18:10:09 | WARNUNG: Plugin konnte nicht verschoben werden: [WinError 2] Das System kann die angegebene Datei nicht finden
+18:10:09 | Plugin archiviert
+18:10:09 | Update erfolgreich abgeschlossen
+18:10:35 | Plugin-Prüfung erfolgreich
+18:10:36 | Plugin-Prüfung erfolgreich
+18:10:36 | REPLACE ausgeführt
+18:10:36 | WARNUNG: Plugin konnte nicht verschoben werden: [WinError 2] Das System kann die angegebene Datei nicht finden
+18:10:36 | Plugin archiviert
+18:10:36 | Update erfolgreich abgeschlossen
+18:58:05 | Vorschau automatisch deaktiviert
+18:58:08 | Start: Plugin laden
+18:58:08 | Plugin-Datei gewählt: IMPORT_V2_APPLY.devupdate
+18:58:08 | Plugin-Datei wurde gelesen
+18:58:09 | Plugin-Prüfung erfolgreich
+18:58:09 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+18:58:21 | Benutzer hat 'Update durchführen' gewählt
+18:58:21 | Fertig: Plugin geladen
+18:58:21 | Plugin-Prüfung erfolgreich
+18:58:21 | REPLACE ausgeführt
+18:58:21 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\IMPORT_V2_APPLY.devupdate
+18:58:21 | Plugin archiviert
+18:58:21 | Update erfolgreich abgeschlossen
+19:43:40 | Vorschau automatisch deaktiviert
+19:43:45 | Plugin-Laden abgebrochen
+19:43:48 | Plugin-Laden abgebrochen
+20:13:25 | Vorschau automatisch deaktiviert
+20:13:28 | Start: Plugin laden
+20:13:28 | Plugin-Datei gewählt: TEST_BUTTON_V1.devupdate
+20:13:29 | Plugin-Datei wurde gelesen
+20:13:29 | Plugin-Prüfung erfolgreich
+20:13:29 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+20:13:36 | Benutzer hat 'Update durchführen' gewählt
+20:13:36 | Fertig: Plugin geladen
+20:13:36 | Plugin-Prüfung erfolgreich
+20:13:36 | ADD_PART eingefügt
+20:13:36 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\TEST_BUTTON_V1.devupdate
+20:13:36 | Plugin archiviert
+20:13:36 | Update erfolgreich abgeschlossen
+21:02:46 | Vorschau automatisch deaktiviert
+21:02:49 | Start: Plugin laden
+21:02:49 | Plugin-Datei gewählt: FIX_TEST_BUTTON_UI.devupdate
+21:02:50 | Plugin-Datei wurde gelesen
+21:02:50 | Plugin-Prüfung erfolgreich
+21:02:50 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:03:02 | Benutzer hat 'Update durchführen' gewählt
+21:03:02 | Fertig: Plugin geladen
+21:03:02 | Plugin-Prüfung erfolgreich
+21:03:02 | REPLACE ausgeführt
+21:03:02 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_TEST_BUTTON_UI.devupdate
+21:03:02 | Plugin archiviert
+21:03:02 | Update erfolgreich abgeschlossen
+21:04:47 | TEST gestartet: C:/Users/carst/Desktop/Tool/fake_import_target_dialog_v1.py
+21:06:25 | TEST gestartet: C:/Users/carst/Desktop/Tool/fake_import_target_dialog_v1.py
+21:07:16 | TEST gestartet: C:/Users/carst/Desktop/Tool/fake_import_target_dialog_v1.py
+21:16:13 | Vorschau automatisch deaktiviert
+21:16:17 | Start: Plugin laden
+21:16:17 | Plugin-Datei gewählt: FIX_FAKE_IMPORT_DIALOG_DIRECT_START.devupdate
+21:16:17 | Plugin-Datei wurde gelesen
+21:16:17 | Plugin-Prüfung erfolgreich
+21:16:17 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:16:31 | Benutzer hat 'Update durchführen' gewählt
+21:16:31 | Fertig: Plugin geladen
+21:16:31 | Plugin-Prüfung erfolgreich
+21:16:31 | REPLACE ausgeführt
+21:16:31 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_FAKE_IMPORT_DIALOG_DIRECT_START.devupdate
+21:16:31 | Plugin archiviert
+21:16:31 | Update erfolgreich abgeschlossen
+21:16:40 | TEST gestartet: C:/Users/carst/Desktop/Tool/fake_import_target_dialog_v1.py
+21:44:03 | Start: Plugin laden
+21:44:03 | Plugin-Datei gewählt: IMPORT_TARGET_DIALOG_V1.devupdate
+21:44:03 | Plugin-Datei wurde gelesen
+21:44:04 | FEHLER: PART fehlt
+21:44:04 | FEHLER: Aktion unbekannt: CREATE_FILE
+21:44:04 | FEHLER: Datei nicht gefunden: import_target_dialog.py
+21:44:04 | Plugin-Prüfung fehlgeschlagen
+21:44:04 | Installation nicht möglich – Update wurde nicht gestartet
+21:44:04 | Fertig: Plugin geladen
+21:55:48 | Start: Plugin laden
+21:55:48 | Plugin-Datei gewählt: CREATE_FILE_SUPPORT_V1.devupdate
+21:55:48 | Plugin-Datei wurde gelesen
+21:55:49 | Plugin-Prüfung erfolgreich
+21:55:49 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:55:51 | Benutzer hat 'Update durchführen' gewählt
+21:55:51 | Fertig: Plugin geladen
+21:55:51 | Plugin-Prüfung erfolgreich
+21:55:51 | REPLACE ausgeführt
+21:55:51 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\CREATE_FILE_SUPPORT_V1.devupdate
+21:55:51 | Plugin archiviert
+21:55:51 | Update erfolgreich abgeschlossen
+21:56:50 | Vorschau automatisch deaktiviert
+21:56:53 | Start: Plugin laden
+21:56:53 | Plugin-Datei gewählt: IMPORT_TARGET_DIALOG_V1.devupdate
+21:56:54 | Plugin-Datei wurde gelesen
+21:56:54 | Plugin-Prüfung erfolgreich
+21:56:54 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:56:58 | Benutzer hat 'Update durchführen' gewählt
+21:56:58 | Fertig: Plugin geladen
+21:56:58 | Plugin-Prüfung erfolgreich
+21:56:58 | STOP: Aktion unbekannt: CREATE_FILE
+21:56:58 | Update NICHT erfolgreich – Plugin bleibt erhalten
+22:12:11 | Start: Plugin laden
+22:12:11 | Plugin-Datei gewählt: SAUBERKEITS_FIXBLOCK_V1.devupdate
+22:12:11 | Plugin-Datei wurde gelesen
+22:12:11 | Plugin-Prüfung erfolgreich
+22:12:11 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:12:18 | Benutzer hat 'Update durchführen' gewählt
+22:12:18 | Fertig: Plugin geladen
+22:12:18 | Plugin-Prüfung erfolgreich
+22:12:18 | REPLACE ausgeführt
+22:12:18 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\SAUBERKEITS_FIXBLOCK_V1.devupdate
+22:12:18 | Plugin archiviert
+22:12:18 | Update erfolgreich abgeschlossen
+22:31:17 | Vorschau automatisch deaktiviert
+22:31:23 | Start: Plugin laden
+22:31:23 | Plugin-Datei gewählt: IMPORT_TARGET_DIALOG_V1.devupdate
+22:31:24 | Plugin-Datei wurde gelesen
+22:31:24 | Plugin-Prüfung erfolgreich
+22:31:24 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:31:27 | Benutzer hat 'Update durchführen' gewählt
+22:31:27 | Fertig: Plugin geladen
+22:31:27 | Plugin-Prüfung erfolgreich
+22:31:27 | STOP: Aktion unbekannt: CREATE_FILE
+22:31:27 | Update NICHT erfolgreich – Plugin bleibt erhalten
+22:41:30 | Start: Plugin laden
+22:41:30 | Plugin-Datei gewählt: CREATE_FILE_SUPPORT_V1.devupdate
+22:41:30 | Plugin-Datei wurde gelesen
+22:41:31 | Plugin-Prüfung erfolgreich
+22:41:31 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:41:34 | Benutzer hat 'Update durchführen' gewählt
+22:41:34 | Fertig: Plugin geladen
+22:41:34 | Plugin-Prüfung erfolgreich
+22:41:34 | REPLACE ausgeführt
+22:41:34 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\CREATE_FILE_SUPPORT_V1_20260328_224134.devupdate
+22:41:34 | Plugin archiviert
+22:41:34 | Update erfolgreich abgeschlossen
+22:42:11 | Vorschau automatisch deaktiviert
+22:42:15 | Start: Plugin laden
+22:42:15 | Plugin-Datei gewählt: IMPORT_TARGET_DIALOG_V1.devupdate
+22:42:15 | Plugin-Datei wurde gelesen
+22:42:15 | Plugin-Prüfung erfolgreich
+22:42:15 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:42:17 | Benutzer hat 'Update durchführen' gewählt
+22:42:17 | Fertig: Plugin geladen
+22:42:17 | DEV Backup V2 wird erstellt...
+22:42:17 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260328_224217
+22:42:17 | DEV Backup V2 abgeschlossen
+22:42:17 | Start: Update starten
+22:42:17 | Sicherheitsprüfung wird vorbereitet...
+22:42:18 | Plugin-Prüfung erfolgreich
+22:42:18 | Neustart erforderlich: YES
+22:42:18 | Sicherheitsprüfung erfolgreich
+22:42:18 | CREATE_FILE ausgeführt
+22:42:18 | Update erfolgreich angewendet
+22:42:19 | Plugin wird archiviert...
+22:42:19 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\IMPORT_TARGET_DIALOG_V1.devupdate
+22:42:19 | Plugin archiviert
+22:42:19 | Update abgeschlossen
+22:42:19 | Fertig: Update fertig
+22:42:19 | Hinweis: Bitte Tool neu starten
+22:53:11 | Vorschau automatisch deaktiviert
+22:53:15 | Start: Plugin laden
+22:53:15 | Plugin-Datei gewählt: IMPORT_TARGET_DIALOG_INTEGRATION_V1.devupdate
+22:53:15 | Plugin-Datei wurde gelesen
+22:53:16 | Plugin-Prüfung erfolgreich
+22:53:16 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:53:21 | Benutzer hat 'Update durchführen' gewählt
+22:53:21 | Fertig: Plugin geladen
+22:53:21 | DEV Backup V2 wird erstellt...
+22:53:21 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260328_225321
+22:53:21 | DEV Backup V2 abgeschlossen
+22:53:21 | Start: Update starten
+22:53:21 | Sicherheitsprüfung wird vorbereitet...
+22:53:21 | Plugin-Prüfung erfolgreich
+22:53:21 | Neustart erforderlich: YES
+22:53:21 | Sicherheitsprüfung erfolgreich
+22:53:22 | REPLACE ausgeführt
+22:53:22 | Update erfolgreich angewendet
+22:53:22 | Plugin wird archiviert...
+22:53:23 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\IMPORT_TARGET_DIALOG_INTEGRATION_V1.devupdate
+22:53:23 | Plugin archiviert
+22:53:23 | Update abgeschlossen
+22:53:23 | Fertig: Update fertig
+22:53:23 | Hinweis: Bitte Tool neu starten
+23:02:32 | Vorschau automatisch deaktiviert
+23:02:35 | Start: Plugin laden
+23:02:35 | Plugin-Datei gewählt: FIX_IMPORT_DIALOG_INTEGRATION_V1.devupdate
+23:02:36 | Plugin-Datei wurde gelesen
+23:02:36 | Plugin-Prüfung erfolgreich
+23:02:36 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+23:02:38 | Benutzer hat 'Update durchführen' gewählt
+23:02:38 | Fertig: Plugin geladen
+23:02:38 | DEV Backup V2 wird erstellt...
+23:02:39 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260328_230238
+23:02:39 | DEV Backup V2 abgeschlossen
+23:02:39 | Start: Update starten
+23:02:39 | Sicherheitsprüfung wird vorbereitet...
+23:02:39 | Plugin-Prüfung erfolgreich
+23:02:39 | Neustart erforderlich: YES
+23:02:39 | Sicherheitsprüfung erfolgreich
+23:02:40 | REPLACE ausgeführt
+23:02:40 | Update erfolgreich angewendet
+23:02:40 | Plugin wird archiviert...
+23:02:40 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_IMPORT_DIALOG_INTEGRATION_V1.devupdate
+23:02:40 | Plugin archiviert
+23:02:40 | Update abgeschlossen
+23:02:41 | Fertig: Update fertig
+23:02:41 | Hinweis: Bitte Tool neu starten
+23:29:56 | Vorschau automatisch deaktiviert
+23:30:01 | Start: Plugin laden
+23:30:01 | Plugin-Datei gewählt: FIX_IMPORT_DIALOG_SCOPE_V1.devupdate
+23:30:01 | Plugin-Datei wurde gelesen
+23:30:02 | Plugin-Prüfung erfolgreich
+23:30:02 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+23:30:07 | Benutzer hat 'Update durchführen' gewählt
+23:30:07 | Fertig: Plugin geladen
+23:30:07 | DEV Backup V2 wird erstellt...
+23:30:07 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260328_233007
+23:30:07 | DEV Backup V2 abgeschlossen
+23:30:07 | Start: Update starten
+23:30:07 | Sicherheitsprüfung wird vorbereitet...
+23:30:08 | Plugin-Prüfung erfolgreich
+23:30:08 | Neustart erforderlich: YES
+23:30:08 | Sicherheitsprüfung erfolgreich
+23:30:09 | REPLACE ausgeführt
+23:30:09 | Update erfolgreich angewendet
+23:30:09 | Plugin wird archiviert...
+23:30:09 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_IMPORT_DIALOG_SCOPE_V1.devupdate
+23:30:09 | Plugin archiviert
+23:30:09 | Update abgeschlossen
+23:30:10 | Fertig: Update fertig
+23:30:10 | Hinweis: Bitte Tool neu starten
+23:54:46 | Import abgebrochen: keine Zieldatei gewählt
+23:55:16 | Import ersetzt in: fake_target.py
+23:56:21 | Import ersetzt in: fake_target.py
+23:57:39 | Import abgebrochen: keine Zieldatei gewählt
+23:59:40 | Import ersetzt in: fake_target.py
+00:52:25 | Vorschau automatisch deaktiviert
+00:52:29 | Start: Plugin laden
+00:52:29 | Plugin-Datei gewählt: FIX_RESTART_BUTTON_UI.devupdate
+00:52:30 | Plugin-Datei wurde gelesen
+00:52:30 | Plugin-Prüfung erfolgreich
+00:52:30 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+00:52:33 | Benutzer hat 'Update durchführen' gewählt
+00:52:33 | Fertig: Plugin geladen
+00:52:33 | DEV Backup V2 wird erstellt...
+00:52:33 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260329_005233
+00:52:33 | DEV Backup V2 abgeschlossen
+00:52:33 | Start: Update starten
+00:52:33 | Sicherheitsprüfung wird vorbereitet...
+00:52:33 | Plugin-Prüfung erfolgreich
+00:52:33 | Neustart erforderlich: YES
+00:52:33 | Sicherheitsprüfung erfolgreich
+00:52:34 | REPLACE ausgeführt
+00:52:34 | Update erfolgreich angewendet
+00:52:34 | Plugin wird archiviert...
+00:52:35 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_RESTART_BUTTON_UI.devupdate
+00:52:35 | Plugin archiviert
+00:52:35 | Update abgeschlossen
+00:52:35 | Fertig: Update fertig
+00:52:35 | Hinweis: Bitte Tool neu starten
+01:01:12 | Vorschau automatisch deaktiviert
+01:01:18 | Start: Plugin laden
+01:01:18 | Plugin-Datei gewählt: REPLACE_FIX_IMPORT_V1.devupdate
+01:01:18 | Plugin-Datei wurde gelesen
+01:01:19 | Plugin-Prüfung erfolgreich
+01:01:19 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+01:01:32 | Benutzer hat 'Update durchführen' gewählt
+01:01:32 | Fertig: Plugin geladen
+01:01:32 | DEV Backup V2 wird erstellt...
+01:01:33 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260329_010132
+01:01:33 | DEV Backup V2 abgeschlossen
+01:01:33 | Start: Update starten
+01:01:33 | Sicherheitsprüfung wird vorbereitet...
+01:01:33 | Plugin-Prüfung erfolgreich
+01:01:33 | Neustart erforderlich: YES
+01:01:33 | Sicherheitsprüfung erfolgreich
+01:01:34 | REPLACE ausgeführt
+01:01:34 | Update erfolgreich angewendet
+01:01:34 | Plugin wird archiviert...
+01:01:34 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\REPLACE_FIX_IMPORT_V1.devupdate
+01:01:34 | Plugin archiviert
+01:01:34 | Update abgeschlossen
+01:01:35 | Fertig: Update fertig
+01:01:35 | Hinweis: Bitte Tool neu starten
+15:17:50 | Vorschau automatisch deaktiviert
+15:17:53 | Start: Plugin laden
+15:17:53 | Plugin-Datei gewählt: STARTPARAMETER_MAIN_FILE_V1.devupdate
+15:17:53 | Plugin-Datei wurde gelesen
+15:17:54 | Plugin-Prüfung erfolgreich
+15:17:54 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+15:17:58 | Benutzer hat 'Update durchführen' gewählt
+15:17:58 | Fertig: Plugin geladen
+15:17:58 | DEV Backup V2 wird erstellt...
+15:17:59 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260329_151758
+15:17:59 | DEV Backup V2 abgeschlossen
+15:17:59 | Start: Update starten
+15:17:59 | Sicherheitsprüfung wird vorbereitet...
+15:17:59 | Plugin-Prüfung erfolgreich
+15:17:59 | Neustart erforderlich: YES
+15:17:59 | Sicherheitsprüfung erfolgreich
+15:17:59 | REPLACE ausgeführt
+15:17:59 | Update erfolgreich angewendet
+15:18:00 | Plugin wird archiviert...
+15:18:00 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\STARTPARAMETER_MAIN_FILE_V1.devupdate
+15:18:00 | Plugin archiviert
+15:18:00 | Update abgeschlossen
+15:18:01 | Fertig: Update fertig
+15:18:01 | Hinweis: Bitte Tool neu starten
+15:27:39 | Vorschau automatisch deaktiviert
+15:27:42 | Plugin-Laden abgebrochen
+15:43:35 | Startparameter geladen: C:\Users\carst\Desktop\Tool\main.py
+15:49:31 | Startparameter geladen: C:\Users\carst\Desktop\Tool\main.py
+16:02:21 | Vorschau automatisch deaktiviert
+16:02:24 | Start: Plugin laden
+16:02:24 | Plugin-Datei gewählt: CLEAN_IMPORT_TARGET_DIALOG_IMPORTS.devupdate
+16:02:24 | Plugin-Datei wurde gelesen
+16:02:24 | FEHLER: Datei nicht gefunden: import_target_dialog.py
+16:02:24 | Plugin-Prüfung fehlgeschlagen
+16:02:24 | Installation nicht möglich – Update wurde nicht gestartet
+16:02:24 | Fertig: Plugin geladen
+16:03:09 | DEV Backup V2 wird erstellt...
+16:03:09 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260329_160309
+16:03:09 | DEV Backup V2 abgeschlossen
+16:03:09 | Start: Update starten
+16:03:09 | Sicherheitsprüfung wird vorbereitet...
+16:03:09 | Plugin-Prüfung erfolgreich
+16:03:09 | Neustart erforderlich: YES
+16:03:09 | Sicherheitsprüfung erfolgreich
+16:03:15 | REPLACE ausgeführt
+16:03:15 | Update erfolgreich angewendet
+16:03:16 | Plugin wird archiviert...
+16:03:16 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\CLEAN_IMPORT_TARGET_DIALOG_IMPORTS.devupdate
+16:03:16 | Plugin archiviert
+16:03:16 | Update abgeschlossen
+16:03:17 | Fertig: Update fertig
+16:03:17 | Hinweis: Bitte Tool neu starten
+16:03:49 | Startparameter geladen: C:\Users\carst\Desktop\Tool\main.py
+16:03:54 | Vorschau automatisch deaktiviert
+16:03:57 | Plugin-Laden abgebrochen
+16:04:19 | Start: Plugin laden
+16:04:19 | Plugin-Datei gewählt: RESTORE_MAIN_CLEAN_BASE.devupdate
+16:04:19 | Plugin-Datei wurde gelesen
+16:04:20 | Plugin-Prüfung erfolgreich
+16:04:20 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+16:04:24 | Benutzer hat 'Update durchführen' gewählt
+16:04:24 | Fertig: Plugin geladen
+16:04:24 | DEV Backup V2 wird erstellt...
+16:04:24 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260329_160424
+16:04:24 | DEV Backup V2 abgeschlossen
+16:04:24 | Start: Update starten
+16:04:24 | Sicherheitsprüfung wird vorbereitet...
+16:04:25 | Plugin-Prüfung erfolgreich
+16:04:25 | Neustart erforderlich: YES
+16:04:25 | Sicherheitsprüfung erfolgreich
+16:04:25 | REPLACE ausgeführt
+16:04:25 | Update erfolgreich angewendet
+16:04:26 | Plugin wird archiviert...
+16:04:26 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\RESTORE_MAIN_CLEAN_BASE.devupdate
+16:04:26 | Plugin archiviert
+16:04:26 | Update abgeschlossen
+16:04:27 | Fertig: Update fertig
+16:04:27 | Hinweis: Bitte Tool neu starten
+16:39:39 | Vorschau automatisch deaktiviert
+16:39:42 | Start: Plugin laden
+16:39:42 | Plugin-Datei gewählt: STARTPARAMETER_STEP1_V1.devupdate
+16:39:43 | Plugin-Datei wurde gelesen
+16:39:43 | Plugin-Prüfung erfolgreich
+16:39:43 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+16:39:45 | Benutzer hat 'Update durchführen' gewählt
+16:39:45 | Fertig: Plugin geladen
+16:39:45 | DEV Backup V2 wird erstellt...
+16:39:45 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260329_163945
+16:39:45 | DEV Backup V2 abgeschlossen
+16:39:45 | Start: Update starten
+16:39:45 | Sicherheitsprüfung wird vorbereitet...
+16:39:46 | Plugin-Prüfung erfolgreich
+16:39:46 | Neustart erforderlich: YES
+16:39:46 | Sicherheitsprüfung erfolgreich
+16:39:46 | ADD_PART eingefügt
+16:39:46 | Update erfolgreich angewendet
+16:39:47 | Plugin wird archiviert...
+16:39:47 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\STARTPARAMETER_STEP1_V1.devupdate
+16:39:47 | Plugin archiviert
+16:39:47 | Update abgeschlossen
+16:39:48 | Fertig: Update fertig
+16:39:48 | Hinweis: Bitte Tool neu starten
+16:06:58 | TEST gestartet: C:/Users/carst/Desktop/webview chatgpt/main.py
+18:30:43 | Start: Plugin laden
+18:30:43 | Plugin-Datei gewählt: fake_update_add_part_after_dummy_test.devupdate
+18:30:43 | Plugin-Datei wurde gelesen
+18:30:43 | Plugin-Prüfung erfolgreich
+18:30:43 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+18:30:50 | Benutzer hat 'Update durchführen' gewählt
+18:30:50 | Fertig: Plugin geladen
+18:30:50 | DEV Backup V2 wird erstellt...
+18:30:50 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_183050
+18:30:50 | DEV Backup V2 abgeschlossen
+18:30:50 | Start: Update starten
+18:30:50 | Sicherheitsprüfung wird vorbereitet...
+18:30:50 | Plugin-Prüfung erfolgreich
+18:30:50 | Neustart erforderlich: NO
+18:30:50 | Sicherheitsprüfung erfolgreich
+18:30:51 | ADD_PART eingefügt
+18:30:51 | Update erfolgreich angewendet
+18:30:51 | Plugin wird archiviert...
+18:30:51 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\fake_update_add_part_after_dummy_test.devupdate
+18:30:51 | Plugin archiviert
+18:30:51 | Update abgeschlossen
+18:30:52 | Fertig: Update fertig
+18:30:58 | DEV Backup V2 wird erstellt...
+18:30:58 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_183058
+18:30:58 | DEV Backup V2 abgeschlossen
+18:30:58 | Start: Update starten
+18:30:58 | Sicherheitsprüfung wird vorbereitet...
+18:30:58 | FEHLER: PART existiert bereits
+18:30:58 | STOP: Update abgebrochen
+18:30:58 | Grund: Validierung fehlgeschlagen
+18:58:10 | Vorschau automatisch deaktiviert
+18:58:17 | Start: Plugin laden
+18:58:17 | Plugin-Datei gewählt: fake_update_add_part_after_dummy_test.devupdate
+18:58:18 | Plugin-Datei wurde gelesen
+18:58:18 | FEHLER: PART existiert bereits
+18:58:18 | Plugin-Prüfung fehlgeschlagen
+18:58:18 | Installation nicht möglich – Update wurde nicht gestartet
+18:58:18 | Fertig: Plugin geladen
+18:58:40 | Plugin-Prüfung erfolgreich
+18:58:43 | DEV Backup V2 wird erstellt...
+18:58:43 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_185843
+18:58:43 | DEV Backup V2 abgeschlossen
+18:58:43 | Start: Update starten
+18:58:43 | Sicherheitsprüfung wird vorbereitet...
+18:58:44 | Plugin-Prüfung erfolgreich
+18:58:44 | Neustart erforderlich: NO
+18:58:44 | Sicherheitsprüfung erfolgreich
+18:58:44 | ADD_PART im Monitor eingefügt
+18:58:44 | Update im Monitor angewendet
+18:58:44 | Plugin wird archiviert...
+18:58:45 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins\_used_plugins\fake_update_add_part_after_dummy_test.devupdate
+18:58:45 | Plugin archiviert
+18:58:45 | Update abgeschlossen
+18:58:45 | Fertig: Update fertig
+19:14:35 | Start: Plugin laden
+19:14:35 | Plugin-Datei gewählt: FIX_STRUCTURE_NAME_HELPERS_V1.devupdate
+19:14:36 | Plugin-Datei wurde gelesen
+19:14:36 | Plugin-Prüfung erfolgreich
+19:14:36 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+19:14:44 | Benutzer hat 'Update durchführen' gewählt
+19:14:44 | Fertig: Plugin geladen
+19:14:44 | DEV Backup V2 wird erstellt...
+19:14:44 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_191444
+19:14:44 | DEV Backup V2 abgeschlossen
+19:14:44 | Start: Update starten
+19:14:44 | Sicherheitsprüfung wird vorbereitet...
+19:14:45 | Plugin-Prüfung erfolgreich
+19:14:45 | Neustart erforderlich: YES
+19:14:45 | Sicherheitsprüfung erfolgreich
+19:14:50 | REPLACE im Monitor ausgeführt
+19:14:50 | Update im Monitor angewendet
+19:14:50 | Plugin wird archiviert...
+19:14:51 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_STRUCTURE_NAME_HELPERS_V1.devupdate
+19:14:51 | Plugin archiviert
+19:14:51 | Update abgeschlossen
+19:14:51 | Fertig: Update fertig
+19:14:51 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+19:15:36 | Vorschau automatisch deaktiviert
+19:15:42 | Plugin-Laden abgebrochen
+19:17:02 | Start: Plugin laden
+19:17:02 | Plugin-Datei gewählt: FIX_STRUCTURE_NAME_HELPERS_V1_CORRECTED.devupdate
+19:17:02 | Plugin-Datei wurde gelesen
+19:17:03 | Plugin-Prüfung erfolgreich
+19:17:03 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+19:17:05 | Benutzer hat 'Update durchführen' gewählt
+19:17:05 | Fertig: Plugin geladen
+19:17:05 | DEV Backup V2 wird erstellt...
+19:17:05 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_191705
+19:17:05 | DEV Backup V2 abgeschlossen
+19:17:05 | Start: Update starten
+19:17:05 | Sicherheitsprüfung wird vorbereitet...
+19:17:05 | Plugin-Prüfung erfolgreich
+19:17:05 | Neustart erforderlich: YES
+19:17:05 | Sicherheitsprüfung erfolgreich
+19:17:06 | REPLACE im Monitor ausgeführt
+19:17:06 | Update im Monitor angewendet
+19:17:06 | Plugin wird archiviert...
+19:17:07 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_STRUCTURE_NAME_HELPERS_V1_CORRECTED.devupdate
+19:17:07 | Plugin archiviert
+19:17:07 | Update abgeschlossen
+19:17:07 | Fertig: Update fertig
+19:17:07 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+19:21:18 | Vorschau automatisch deaktiviert
+19:21:21 | Start: Plugin laden
+19:21:21 | Plugin-Datei gewählt: FIX_STRUCTURE_NAME_HELPERS_V2.devupdate
+19:21:22 | Plugin-Datei wurde gelesen
+19:21:22 | Plugin-Prüfung erfolgreich
+19:21:22 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+19:21:24 | Benutzer hat 'Update durchführen' gewählt
+19:21:24 | Fertig: Plugin geladen
+19:21:24 | DEV Backup V2 wird erstellt...
+19:21:24 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_192124
+19:21:24 | DEV Backup V2 abgeschlossen
+19:21:24 | Start: Update starten
+19:21:24 | Sicherheitsprüfung wird vorbereitet...
+19:21:25 | Plugin-Prüfung erfolgreich
+19:21:25 | Neustart erforderlich: YES
+19:21:25 | Sicherheitsprüfung erfolgreich
+19:21:25 | REPLACE im Monitor ausgeführt
+19:21:25 | Update im Monitor angewendet
+19:21:26 | Plugin wird archiviert...
+19:21:26 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_STRUCTURE_NAME_HELPERS_V2.devupdate
+19:21:26 | Plugin archiviert
+19:21:26 | Update abgeschlossen
+19:21:26 | Fertig: Update fertig
+19:21:26 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+19:26:10 | Vorschau automatisch deaktiviert
+19:26:12 | Start: Plugin laden
+19:26:12 | Plugin-Datei gewählt: FIX_ADD_PART_USE_NAME_HELPERS_V1.devupdate
+19:26:13 | Plugin-Datei wurde gelesen
+19:26:13 | Plugin-Prüfung erfolgreich
+19:26:13 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+19:26:15 | Benutzer hat 'Update durchführen' gewählt
+19:26:15 | Fertig: Plugin geladen
+19:26:15 | DEV Backup V2 wird erstellt...
+19:26:15 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_192615
+19:26:15 | DEV Backup V2 abgeschlossen
+19:26:15 | Start: Update starten
+19:26:15 | Sicherheitsprüfung wird vorbereitet...
+19:26:16 | Plugin-Prüfung erfolgreich
+19:26:16 | Neustart erforderlich: YES
+19:26:16 | Sicherheitsprüfung erfolgreich
+19:26:16 | REPLACE im Monitor ausgeführt
+19:26:16 | Update im Monitor angewendet
+19:26:16 | Plugin wird archiviert...
+19:26:17 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_ADD_PART_USE_NAME_HELPERS_V1.devupdate
+19:26:17 | Plugin archiviert
+19:26:17 | Update abgeschlossen
+19:26:17 | Fertig: Update fertig
+19:26:17 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+20:21:44 | Vorschau automatisch deaktiviert
+20:21:48 | Start: Plugin laden
+20:21:48 | Plugin-Datei gewählt: FIX_CREATE_FILE_MONITOR_MODE_V1.devupdate
+20:21:49 | Plugin-Datei wurde gelesen
+20:21:49 | Plugin-Prüfung erfolgreich
+20:21:49 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+20:21:51 | Benutzer hat 'Update durchführen' gewählt
+20:21:51 | Fertig: Plugin geladen
+20:21:51 | DEV Backup V2 wird erstellt...
+20:21:51 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_202151
+20:21:51 | DEV Backup V2 abgeschlossen
+20:21:51 | Start: Update starten
+20:21:51 | Sicherheitsprüfung wird vorbereitet...
+20:21:52 | Plugin-Prüfung erfolgreich
+20:21:52 | Neustart erforderlich: YES
+20:21:52 | Sicherheitsprüfung erfolgreich
+20:21:52 | REPLACE im Monitor ausgeführt
+20:21:52 | Update im Monitor angewendet
+20:21:53 | Plugin wird archiviert...
+20:21:53 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_CREATE_FILE_MONITOR_MODE_V1.devupdate
+20:21:53 | Plugin archiviert
+20:21:53 | Update abgeschlossen
+20:21:54 | Fertig: Update fertig
+20:21:54 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+20:26:40 | Vorschau automatisch deaktiviert
+20:26:43 | Start: Plugin laden
+20:26:43 | Plugin-Datei gewählt: FIX_CREATE_FILE_MONITOR_MODE_V1.devupdate
+20:26:43 | Plugin-Datei wurde gelesen
+20:26:44 | Plugin-Prüfung erfolgreich
+20:26:44 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+20:26:47 | Benutzer hat 'Update durchführen' gewählt
+20:26:47 | Fertig: Plugin geladen
+20:26:47 | DEV Backup V2 wird erstellt...
+20:26:47 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_202647
+20:26:47 | DEV Backup V2 abgeschlossen
+20:26:47 | Start: Update starten
+20:26:47 | Sicherheitsprüfung wird vorbereitet...
+20:26:47 | Plugin-Prüfung erfolgreich
+20:26:47 | Neustart erforderlich: YES
+20:26:47 | Sicherheitsprüfung erfolgreich
+20:26:48 | REPLACE im Monitor ausgeführt
+20:26:48 | Update im Monitor angewendet
+20:26:48 | Plugin wird archiviert...
+20:26:48 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_CREATE_FILE_MONITOR_MODE_V1_20260407_202648.devupdate
+20:26:48 | Plugin archiviert
+20:26:48 | Update abgeschlossen
+20:26:49 | Fertig: Update fertig
+20:26:49 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+20:32:38 | Vorschau automatisch deaktiviert
+20:32:41 | Start: Plugin laden
+20:32:41 | Plugin-Datei gewählt: SESSION_NEW_FILES_BLUE_MARK_V1.devupdate
+20:32:41 | Plugin-Datei wurde gelesen
+20:32:42 | FEHLER: Aktion unbekannt: INSERT_AFTER
+20:32:42 | Plugin-Prüfung fehlgeschlagen
+20:32:42 | Installation nicht möglich – Update wurde nicht gestartet
+20:32:42 | Fertig: Plugin geladen
+20:34:21 | Plugin-Laden abgebrochen
+20:37:24 | Start: Plugin laden
+20:37:24 | Plugin-Datei gewählt: SESSION_NEW_FILES_BLUE_MARK_V2.devupdate
+20:37:24 | Plugin-Datei wurde gelesen
+20:37:25 | Plugin-Prüfung erfolgreich
+20:37:25 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+20:37:27 | Benutzer hat 'Update durchführen' gewählt
+20:37:27 | Fertig: Plugin geladen
+20:37:27 | DEV Backup V2 wird erstellt...
+20:37:28 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_203727
+20:37:28 | DEV Backup V2 abgeschlossen
+20:37:28 | Start: Update starten
+20:37:28 | Sicherheitsprüfung wird vorbereitet...
+20:37:28 | Plugin-Prüfung erfolgreich
+20:37:28 | Neustart erforderlich: NO
+20:37:28 | Sicherheitsprüfung erfolgreich
+20:37:28 | REPLACE im Monitor ausgeführt
+20:37:28 | Update im Monitor angewendet
+20:37:29 | Plugin wird archiviert...
+20:37:29 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\SESSION_NEW_FILES_BLUE_MARK_V2.devupdate
+20:37:29 | Plugin archiviert
+20:37:29 | Update abgeschlossen
+20:37:30 | Fertig: Update fertig
+20:40:19 | Vorschau automatisch deaktiviert
+20:40:22 | Start: Plugin laden
+20:40:22 | Plugin-Datei gewählt: TEST1_CREATE_NEW_FILE.devupdate
+20:40:22 | Plugin-Datei wurde gelesen
+20:40:23 | Plugin-Prüfung erfolgreich
+20:40:23 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+20:40:25 | Benutzer hat 'Update durchführen' gewählt
+20:40:25 | Fertig: Plugin geladen
+20:40:25 | DEV Backup V2 wird erstellt...
+20:40:25 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_204025
+20:40:25 | DEV Backup V2 abgeschlossen
+20:40:25 | Start: Update starten
+20:40:25 | Sicherheitsprüfung wird vorbereitet...
+20:40:26 | Plugin-Prüfung erfolgreich
+20:40:26 | Neustart erforderlich: NO
+20:40:26 | Sicherheitsprüfung erfolgreich
+20:40:26 | CREATE_FILE ausgeführt
+20:40:26 | Update im Monitor angewendet
+20:40:26 | Plugin wird archiviert...
+20:40:27 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\TEST1_CREATE_NEW_FILE.devupdate
+20:40:27 | Plugin archiviert
+20:40:27 | Update abgeschlossen
+20:40:27 | Fertig: Update fertig
+20:40:59 | Vorschau automatisch deaktiviert
+20:41:02 | Start: Plugin laden
+20:41:02 | Plugin-Datei gewählt: TEST2_LOAD_EXISTING_FILE.devupdate
+20:41:02 | Plugin-Datei wurde gelesen
+20:41:03 | FEHLER: Datei existiert bereits: fake_target.py
+20:41:03 | Plugin-Prüfung fehlgeschlagen
+20:41:03 | Installation nicht möglich – Update wurde nicht gestartet
+20:41:03 | Fertig: Plugin geladen
+20:41:34 | Vorschau automatisch deaktiviert
+20:41:39 | Start: Plugin laden
+20:41:39 | Plugin-Datei gewählt: TEST3_ADD_PART.devupdate
+20:41:40 | Plugin-Datei wurde gelesen
+20:41:40 | FEHLER: POSITION ungültig: 
+20:41:40 | Plugin-Prüfung fehlgeschlagen
+20:41:40 | Installation nicht möglich – Update wurde nicht gestartet
+20:41:40 | Fertig: Plugin geladen
+20:45:56 | Plugin-Laden abgebrochen
+20:58:30 | Start: Plugin laden
+20:58:30 | Plugin-Datei gewählt: FIX_BLUE_ONLY_FOR_TOOL_LOADS_V1.devupdate
+20:58:31 | Plugin-Datei wurde gelesen
+20:58:31 | Plugin-Prüfung erfolgreich
+20:58:31 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+20:58:33 | Benutzer hat 'Update durchführen' gewählt
+20:58:33 | Fertig: Plugin geladen
+20:58:33 | DEV Backup V2 wird erstellt...
+20:58:33 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_205833
+20:58:33 | DEV Backup V2 abgeschlossen
+20:58:33 | Start: Update starten
+20:58:33 | Sicherheitsprüfung wird vorbereitet...
+20:58:33 | Plugin-Prüfung erfolgreich
+20:58:33 | Neustart erforderlich: NO
+20:58:33 | Sicherheitsprüfung erfolgreich
+20:58:34 | REPLACE im Monitor ausgeführt
+20:58:34 | Update im Monitor angewendet
+20:58:34 | Plugin wird archiviert...
+20:58:35 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_BLUE_ONLY_FOR_TOOL_LOADS_V1.devupdate
+20:58:35 | Plugin archiviert
+20:58:35 | Update abgeschlossen
+20:58:35 | Fertig: Update fertig
+21:11:46 | Vorschau automatisch deaktiviert
+21:11:49 | Start: Plugin laden
+21:11:49 | Plugin-Datei gewählt: FIX_BLUE_TOOL_ONLY_CREATE_FILE_V1.devupdate
+21:11:50 | Plugin-Datei wurde gelesen
+21:11:50 | Plugin-Prüfung erfolgreich
+21:11:50 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:11:52 | Benutzer hat 'Update durchführen' gewählt
+21:11:52 | Fertig: Plugin geladen
+21:11:52 | DEV Backup V2 wird erstellt...
+21:11:52 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_211152
+21:11:52 | DEV Backup V2 abgeschlossen
+21:11:52 | Start: Update starten
+21:11:52 | Sicherheitsprüfung wird vorbereitet...
+21:11:52 | Plugin-Prüfung erfolgreich
+21:11:52 | Neustart erforderlich: NO
+21:11:52 | Sicherheitsprüfung erfolgreich
+21:11:53 | REPLACE im Monitor ausgeführt
+21:11:53 | Update im Monitor angewendet
+21:11:53 | Plugin wird archiviert...
+21:11:54 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_BLUE_TOOL_ONLY_CREATE_FILE_V1.devupdate
+21:11:54 | Plugin archiviert
+21:11:54 | Update abgeschlossen
+21:11:54 | Fertig: Update fertig
+21:13:43 | Vorschau automatisch deaktiviert
+21:13:46 | Start: Plugin laden
+21:13:46 | Plugin-Datei gewählt: TEST1_CREATE_NEW_FILE.devupdate
+21:13:46 | Plugin-Datei wurde gelesen
+21:13:47 | Plugin-Prüfung erfolgreich
+21:13:47 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:13:48 | Benutzer hat 'Update durchführen' gewählt
+21:13:48 | Fertig: Plugin geladen
+21:13:48 | DEV Backup V2 wird erstellt...
+21:13:49 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_211348
+21:13:49 | DEV Backup V2 abgeschlossen
+21:13:49 | Start: Update starten
+21:13:49 | Sicherheitsprüfung wird vorbereitet...
+21:13:49 | Plugin-Prüfung erfolgreich
+21:13:49 | Neustart erforderlich: NO
+21:13:49 | Sicherheitsprüfung erfolgreich
+21:13:49 | CREATE_FILE ausgeführt
+21:13:49 | Update im Monitor angewendet
+21:13:50 | Plugin wird archiviert...
+21:13:50 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\TEST1_CREATE_NEW_FILE_20260407_211350.devupdate
+21:13:50 | Plugin archiviert
+21:13:50 | Update abgeschlossen
+21:13:51 | Fertig: Update fertig
+21:16:34 | Start: Plugin laden
+21:16:34 | Plugin-Datei gewählt: FIX_BLUE_TOOL_ONLY_CREATE_FILE_V2.devupdate
+21:16:34 | Plugin-Datei wurde gelesen
+21:16:35 | Plugin-Prüfung erfolgreich
+21:16:35 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:16:36 | Benutzer hat 'Update durchführen' gewählt
+21:16:36 | Fertig: Plugin geladen
+21:16:36 | DEV Backup V2 wird erstellt...
+21:16:36 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_211636
+21:16:36 | DEV Backup V2 abgeschlossen
+21:16:36 | Start: Update starten
+21:16:36 | Sicherheitsprüfung wird vorbereitet...
+21:16:37 | Plugin-Prüfung erfolgreich
+21:16:37 | Neustart erforderlich: NO
+21:16:37 | Sicherheitsprüfung erfolgreich
+21:16:37 | REPLACE im Monitor ausgeführt
+21:16:37 | Update im Monitor angewendet
+21:16:38 | Plugin wird archiviert...
+21:16:38 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_BLUE_TOOL_ONLY_CREATE_FILE_V2.devupdate
+21:16:38 | Plugin archiviert
+21:16:38 | Update abgeschlossen
+21:16:38 | Fertig: Update fertig
+21:16:45 | Vorschau automatisch deaktiviert
+21:16:50 | Start: Plugin laden
+21:16:50 | Plugin-Datei gewählt: TEST1_CREATE_NEW_FILE_20260407_211350.devupdate
+21:16:50 | Plugin-Datei wurde gelesen
+21:16:51 | FEHLER: Datei existiert bereits: test_blue_create.py
+21:16:51 | Plugin-Prüfung fehlgeschlagen
+21:16:51 | Installation nicht möglich – Update wurde nicht gestartet
+21:16:51 | Fertig: Plugin geladen
+21:17:08 | FEHLER: Datei existiert bereits: test_blue_create.py
+21:17:18 | Start: Plugin laden
+21:17:18 | Plugin-Datei gewählt: TEST1_CREATE_NEW_FILE_20260407_211350.devupdate
+21:17:18 | Plugin-Datei wurde gelesen
+21:17:19 | FEHLER: Datei existiert bereits: test_blue_create.py
+21:17:19 | Plugin-Prüfung fehlgeschlagen
+21:17:19 | Installation nicht möglich – Update wurde nicht gestartet
+21:17:19 | Fertig: Plugin geladen
+21:17:55 | Vorschau automatisch deaktiviert
+21:18:00 | Start: Plugin laden
+21:18:00 | Plugin-Datei gewählt: TEST1_CREATE_NEW_FILE_20260407_211350.devupdate
+21:18:01 | Plugin-Datei wurde gelesen
+21:18:01 | Plugin-Prüfung erfolgreich
+21:18:01 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:18:03 | Benutzer hat 'Update durchführen' gewählt
+21:18:03 | Fertig: Plugin geladen
+21:18:04 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_211803
+21:18:04 | CREATE_FILE im Monitor vorbereitet
+21:18:04 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins\_used_plugins\TEST1_CREATE_NEW_FILE_20260407_211350.devupdate
+21:18:04 | Fertig: Update fertig
+21:20:08 | Start: Plugin laden
+21:20:08 | Plugin-Datei gewählt: TEST2_LOAD_EXISTING_FILE_V2.devupdate
+21:20:08 | Plugin-Datei wurde gelesen
+21:20:08 | FEHLER: Datei existiert bereits: fake_target.py
+21:20:08 | Plugin-Prüfung fehlgeschlagen
+21:20:08 | Installation nicht möglich – Update wurde nicht gestartet
+21:20:08 | Fertig: Plugin geladen
+21:20:21 | FEHLER: Datei existiert bereits: fake_target.py
+21:20:24 | FEHLER: Datei existiert bereits: fake_target.py
+21:20:27 | Plugin-Laden abgebrochen
+21:20:33 | Vorschau automatisch deaktiviert
+21:20:36 | Start: Plugin laden
+21:20:36 | Plugin-Datei gewählt: TEST2_LOAD_EXISTING_FILE_V2.devupdate
+21:20:36 | Plugin-Datei wurde gelesen
+21:20:37 | FEHLER: Datei existiert bereits: fake_target.py
+21:20:37 | Plugin-Prüfung fehlgeschlagen
+21:20:37 | Installation nicht möglich – Update wurde nicht gestartet
+21:20:37 | Fertig: Plugin geladen
+21:20:53 | Vorschau automatisch deaktiviert
+21:20:56 | Plugin-Laden abgebrochen
+21:21:22 | Start: Plugin laden
+21:21:22 | Plugin-Datei gewählt: TEST2_LOAD_EXISTING_FILE_V2.devupdate
+21:21:23 | Plugin-Datei wurde gelesen
+21:21:23 | Plugin-Prüfung erfolgreich
+21:21:23 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:21:25 | Benutzer hat 'Update durchführen' gewählt
+21:21:25 | Fertig: Plugin geladen
+21:21:25 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_212125
+21:21:25 | CREATE_FILE im Monitor vorbereitet
+21:21:25 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\TEST2_LOAD_EXISTING_FILE_V2.devupdate
+21:21:25 | Fertig: Update fertig
+21:21:46 | Vorschau automatisch deaktiviert
+21:21:49 | Start: Plugin laden
+21:21:49 | Plugin-Datei gewählt: TEST3_ADD_PART_FIXED_V2.devupdate
+21:21:50 | Plugin-Datei wurde gelesen
+21:21:50 | Plugin-Prüfung erfolgreich
+21:21:50 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:21:53 | Benutzer hat 'Update durchführen' gewählt
+21:21:53 | Fertig: Plugin geladen
+21:21:54 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_212153
+21:21:54 | Hinweis: Für diese Aktion wird noch der bestehende Ablauf verwendet
+21:22:42 | Vorschau automatisch deaktiviert
+21:22:49 | Plugin-Laden abgebrochen
+21:31:00 | Start: Plugin laden
+21:31:00 | Plugin-Datei gewählt: ACTIVE_NEW_DARKBLUE_V1.devupdate
+21:31:01 | Plugin-Datei wurde gelesen
+21:31:01 | Plugin-Prüfung erfolgreich
+21:31:01 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:31:04 | Benutzer hat 'Update durchführen' gewählt
+21:31:04 | Fertig: Plugin geladen
+21:31:04 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_213104
+21:31:04 | Hinweis: Für diese Aktion wird noch der bestehende Ablauf verwendet
+21:31:43 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_213143
+21:31:43 | Hinweis: Für diese Aktion wird noch der bestehende Ablauf verwendet
+21:32:48 | Vorschau automatisch deaktiviert
+21:32:54 | Start: Plugin laden
+21:32:54 | Plugin-Datei gewählt: ACTIVE_NEW_DARKBLUE_V1.devupdate
+21:32:55 | Plugin-Datei wurde gelesen
+21:32:55 | Plugin-Prüfung erfolgreich
+21:32:55 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:32:57 | Benutzer hat 'Update durchführen' gewählt
+21:32:57 | Fertig: Plugin geladen
+21:32:57 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_213257
+21:32:57 | Hinweis: Für diese Aktion wird noch der bestehende Ablauf verwendet
+21:33:06 | Plugin-Laden abgebrochen
+21:33:11 | Abbruch angefordert (ESC)
+21:34:56 | Start: Plugin laden
+21:34:56 | Plugin-Datei gewählt: ACTIVE_NEW_DARKBLUE_V1.devupdate
+21:34:56 | Plugin-Datei wurde gelesen
+21:34:57 | Plugin-Prüfung erfolgreich
+21:34:57 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:35:04 | Benutzer hat 'Update durchführen' gewählt
+21:35:04 | Fertig: Plugin geladen
+21:35:05 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_213504
+21:35:05 | Hinweis: Für diese Aktion wird noch der bestehende Ablauf verwendet
+21:41:24 | Vorschau automatisch deaktiviert
+21:41:29 | Start: Plugin laden
+21:41:29 | Plugin-Datei gewählt: FIX_REPAIR_ASSISTANT_PLUGIN_EXECUTE_V1.devupdate
+21:41:30 | Plugin-Datei wurde gelesen
+21:41:30 | Plugin-Prüfung erfolgreich
+21:41:30 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:41:32 | Benutzer hat 'Update durchführen' gewählt
+21:41:32 | Fertig: Plugin geladen
+21:41:33 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_214132
+21:41:33 | Hinweis: Für diese Aktion wird noch der bestehende Ablauf verwendet
+21:47:48 | Vorschau automatisch deaktiviert
+21:47:53 | Start: Plugin laden
+21:47:53 | Plugin-Datei gewählt: ACTIVE_NEW_DARKBLUE_V1.devupdate
+21:47:54 | Plugin-Datei wurde gelesen
+21:47:54 | Plugin-Prüfung erfolgreich
+21:47:54 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:47:56 | Benutzer hat 'Update durchführen' gewählt
+21:47:56 | Fertig: Plugin geladen
+21:47:56 | DEV Backup V2 wird erstellt...
+21:47:56 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_214756
+21:47:56 | DEV Backup V2 abgeschlossen
+21:47:56 | Start: Update starten
+21:47:56 | Sicherheitsprüfung wird vorbereitet...
+21:47:57 | Plugin-Prüfung erfolgreich
+21:47:57 | Neustart erforderlich: NO
+21:47:57 | Sicherheitsprüfung erfolgreich
+21:47:57 | REPLACE im Monitor ausgeführt
+21:47:57 | Update im Monitor angewendet
+21:47:58 | Plugin wird archiviert...
+21:47:58 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\ACTIVE_NEW_DARKBLUE_V1.devupdate
+21:47:58 | Plugin archiviert
+21:47:58 | Update abgeschlossen
+21:47:58 | Fertig: Update fertig
+21:48:35 | Vorschau automatisch deaktiviert
+21:48:38 | Plugin-Laden abgebrochen
+21:49:12 | Start: Plugin laden
+21:49:12 | Plugin-Datei gewählt: FIX_BLUE_TOOL_ONLY_CREATE_FILE_V2.devupdate
+21:49:12 | Plugin-Datei wurde gelesen
+21:49:13 | Plugin-Prüfung erfolgreich
+21:49:13 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:49:14 | Benutzer hat 'Update durchführen' gewählt
+21:49:14 | Fertig: Plugin geladen
+21:49:14 | DEV Backup V2 wird erstellt...
+21:49:14 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_214914
+21:49:14 | DEV Backup V2 abgeschlossen
+21:49:14 | Start: Update starten
+21:49:14 | Sicherheitsprüfung wird vorbereitet...
+21:49:15 | Plugin-Prüfung erfolgreich
+21:49:15 | Neustart erforderlich: NO
+21:49:15 | Sicherheitsprüfung erfolgreich
+21:49:15 | REPLACE im Monitor ausgeführt
+21:49:15 | Update im Monitor angewendet
+21:49:16 | Plugin wird archiviert...
+21:49:16 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins\_used_plugins\FIX_BLUE_TOOL_ONLY_CREATE_FILE_V2.devupdate
+21:49:16 | Plugin archiviert
+21:49:16 | Update abgeschlossen
+21:49:16 | Fertig: Update fertig
+21:49:52 | Vorschau automatisch deaktiviert
+21:49:56 | Plugin-Laden abgebrochen
+21:50:14 | Start: Plugin laden
+21:50:14 | Plugin-Datei gewählt: TEST_DARKBLUE_FINAL.devupdate
+21:50:15 | Plugin-Datei wurde gelesen
+21:50:15 | Plugin-Prüfung erfolgreich
+21:50:15 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:50:18 | Benutzer hat 'Update durchführen' gewählt
+21:50:18 | Fertig: Plugin geladen
+21:50:18 | DEV Backup V2 wird erstellt...
+21:50:18 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_215018
+21:50:18 | DEV Backup V2 abgeschlossen
+21:50:18 | Start: Update starten
+21:50:18 | Sicherheitsprüfung wird vorbereitet...
+21:50:18 | Plugin-Prüfung erfolgreich
+21:50:18 | Neustart erforderlich: NO
+21:50:18 | Sicherheitsprüfung erfolgreich
+21:50:19 | CREATE_FILE im Monitor vorbereitet
+21:50:19 | Update im Monitor angewendet
+21:50:19 | Plugin wird archiviert...
+21:50:20 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\TEST_DARKBLUE_FINAL.devupdate
+21:50:20 | Plugin archiviert
+21:50:20 | Update abgeschlossen
+21:50:20 | Fertig: Update fertig
+21:51:24 | Vorschau automatisch deaktiviert
+21:51:28 | Start: Plugin laden
+21:51:28 | Plugin-Datei gewählt: TEST_DARKBLUE_FINAL.devupdate
+21:51:29 | Plugin-Datei wurde gelesen
+21:51:29 | FEHLER: Datei existiert bereits: test_darkblue_check.py
+21:51:29 | Plugin-Prüfung fehlgeschlagen
+21:51:29 | Installation nicht möglich – Update wurde nicht gestartet
+21:51:29 | Fertig: Plugin geladen
+21:52:00 | Vorschau automatisch deaktiviert
+21:52:04 | Start: Plugin laden
+21:52:04 | Plugin-Datei gewählt: TEST_DARKBLUE_FINAL.devupdate
+21:52:04 | Plugin-Datei wurde gelesen
+21:52:05 | Plugin-Prüfung erfolgreich
+21:52:05 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:52:06 | Benutzer hat 'Update durchführen' gewählt
+21:52:06 | Fertig: Plugin geladen
+21:52:06 | DEV Backup V2 wird erstellt...
+21:52:06 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_215206
+21:52:06 | DEV Backup V2 abgeschlossen
+21:52:06 | Start: Update starten
+21:52:06 | Sicherheitsprüfung wird vorbereitet...
+21:52:07 | Plugin-Prüfung erfolgreich
+21:52:07 | Neustart erforderlich: NO
+21:52:07 | Sicherheitsprüfung erfolgreich
+21:52:07 | CREATE_FILE im Monitor vorbereitet
+21:52:07 | Update im Monitor angewendet
+21:52:07 | Plugin wird archiviert...
+21:52:08 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins\_used_plugins\TEST_DARKBLUE_FINAL.devupdate
+21:52:08 | Plugin archiviert
+21:52:08 | Update abgeschlossen
+21:52:08 | Fertig: Update fertig
+21:52:36 | Start: Plugin laden
+21:52:36 | Plugin-Datei gewählt: FIX_ACTIVE_NEW_DARKBLUE_V2.devupdate
+21:52:37 | Plugin-Datei wurde gelesen
+21:52:37 | Plugin-Prüfung erfolgreich
+21:52:37 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:52:39 | Benutzer hat 'Update durchführen' gewählt
+21:52:39 | Fertig: Plugin geladen
+21:52:39 | DEV Backup V2 wird erstellt...
+21:52:39 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_215239
+21:52:39 | DEV Backup V2 abgeschlossen
+21:52:39 | Start: Update starten
+21:52:39 | Sicherheitsprüfung wird vorbereitet...
+21:52:39 | Plugin-Prüfung erfolgreich
+21:52:39 | Neustart erforderlich: NO
+21:52:39 | Sicherheitsprüfung erfolgreich
+21:52:41 | REPLACE im Monitor ausgeführt
+21:52:41 | Update im Monitor angewendet
+21:52:42 | Plugin wird archiviert...
+21:52:42 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_ACTIVE_NEW_DARKBLUE_V2.devupdate
+21:52:42 | Plugin archiviert
+21:52:42 | Update abgeschlossen
+21:52:43 | Fertig: Update fertig
+21:53:18 | Vorschau automatisch deaktiviert
+21:53:27 | Start: Plugin laden
+21:53:27 | Plugin-Datei gewählt: TEST_DARKBLUE_FINAL.devupdate
+21:53:27 | Plugin-Datei wurde gelesen
+21:53:28 | Plugin-Prüfung erfolgreich
+21:53:28 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:53:29 | Benutzer hat 'Update durchführen' gewählt
+21:53:29 | Fertig: Plugin geladen
+21:53:29 | DEV Backup V2 wird erstellt...
+21:53:30 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_215329
+21:53:30 | DEV Backup V2 abgeschlossen
+21:53:30 | Start: Update starten
+21:53:30 | Sicherheitsprüfung wird vorbereitet...
+21:53:30 | Plugin-Prüfung erfolgreich
+21:53:30 | Neustart erforderlich: NO
+21:53:30 | Sicherheitsprüfung erfolgreich
+21:53:30 | CREATE_FILE im Monitor vorbereitet
+21:53:30 | Update im Monitor angewendet
+21:53:31 | Plugin wird archiviert...
+21:53:31 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\TEST_DARKBLUE_FINAL.devupdate
+21:53:31 | Plugin archiviert
+21:53:31 | Update abgeschlossen
+21:53:32 | Fertig: Update fertig
+21:56:10 | Vorschau automatisch deaktiviert
+21:56:15 | Start: Plugin laden
+21:56:15 | Plugin-Datei gewählt: TEST_DARKBLUE_FINAL.devupdate
+21:56:15 | Plugin-Datei wurde gelesen
+21:56:16 | Plugin-Prüfung erfolgreich
+21:56:16 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:56:17 | Benutzer hat 'Update durchführen' gewählt
+21:56:17 | Fertig: Plugin geladen
+21:56:17 | DEV Backup V2 wird erstellt...
+21:56:18 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_215617
+21:56:18 | DEV Backup V2 abgeschlossen
+21:56:18 | Start: Update starten
+21:56:18 | Sicherheitsprüfung wird vorbereitet...
+21:56:18 | Plugin-Prüfung erfolgreich
+21:56:18 | Neustart erforderlich: NO
+21:56:18 | Sicherheitsprüfung erfolgreich
+21:56:18 | CREATE_FILE im Monitor vorbereitet
+21:56:18 | Update im Monitor angewendet
+21:56:19 | Plugin wird archiviert...
+21:56:19 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins\_used_plugins\TEST_DARKBLUE_FINAL_20260407_215619.devupdate
+21:56:19 | Plugin archiviert
+21:56:19 | Update abgeschlossen
+21:56:20 | Fertig: Update fertig
+21:56:44 | Start: Plugin laden
+21:56:44 | Plugin-Datei gewählt: ACTIVE_NEW_DARKBLUE_V1.devupdate
+21:56:44 | Plugin-Datei wurde gelesen
+21:56:44 | Plugin-Prüfung erfolgreich
+21:56:44 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:56:46 | Benutzer hat 'Update durchführen' gewählt
+21:56:46 | Fertig: Plugin geladen
+21:56:46 | DEV Backup V2 wird erstellt...
+21:56:46 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260407_215646
+21:56:46 | DEV Backup V2 abgeschlossen
+21:56:46 | Start: Update starten
+21:56:46 | Sicherheitsprüfung wird vorbereitet...
+21:56:46 | Plugin-Prüfung erfolgreich
+21:56:46 | Neustart erforderlich: NO
+21:56:46 | Sicherheitsprüfung erfolgreich
+21:56:47 | REPLACE im Monitor ausgeführt
+21:56:47 | Update im Monitor angewendet
+21:56:47 | Plugin wird archiviert...
+21:56:48 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins\_used_plugins\ACTIVE_NEW_DARKBLUE_V1.devupdate
+21:56:48 | Plugin archiviert
+21:56:48 | Update abgeschlossen
+21:56:48 | Fertig: Update fertig
+14:03:39 | Vorschau automatisch deaktiviert
+14:03:42 | Plugin-Laden abgebrochen
+14:05:59 | Start: Plugin laden
+14:05:59 | Plugin-Datei gewählt: FIX_UPDATE_AUTOLOAD_VISIBLE_V1.devupdate
+14:05:59 | Plugin-Datei wurde gelesen
+14:06:00 | Plugin-Prüfung erfolgreich
+14:06:00 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+14:06:03 | Benutzer hat 'Update durchführen' gewählt
+14:06:03 | Fertig: Plugin geladen
+14:06:03 | DEV Backup V2 wird erstellt...
+14:06:03 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_140603
+14:06:03 | DEV Backup V2 abgeschlossen
+14:06:03 | Start: Update starten
+14:06:03 | Sicherheitsprüfung wird vorbereitet...
+14:06:03 | Plugin-Prüfung erfolgreich
+14:06:03 | Neustart erforderlich: NO
+14:06:03 | Sicherheitsprüfung erfolgreich
+14:06:04 | REPLACE im Monitor ausgeführt
+14:06:04 | Update im Monitor angewendet
+14:06:04 | Plugin wird archiviert...
+14:06:05 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_UPDATE_AUTOLOAD_VISIBLE_V1.devupdate
+14:06:05 | Plugin archiviert
+14:06:05 | Update abgeschlossen
+14:06:05 | Fertig: Update fertig
+14:07:26 | Vorschau automatisch deaktiviert
+14:07:29 | Start: Plugin laden
+14:07:29 | Plugin-Datei gewählt: TEST_AUTOLOAD_FAKE_TARGET_V1.devupdate
+14:07:30 | Plugin-Datei wurde gelesen
+14:07:30 | FEHLER: PART existiert nicht für REPLACE
+14:07:30 | Plugin-Prüfung fehlgeschlagen
+14:07:30 | Installation nicht möglich – Update wurde nicht gestartet
+14:07:30 | Fertig: Plugin geladen
+14:09:01 | Start: Plugin laden
+14:09:01 | Plugin-Datei gewählt: TEST_AUTOLOAD_FAKE_TARGET_V2.devupdate
+14:09:02 | Plugin-Datei wurde gelesen
+14:09:02 | Plugin-Prüfung erfolgreich
+14:09:02 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+14:09:05 | Benutzer hat 'Update durchführen' gewählt
+14:09:05 | Fertig: Plugin geladen
+14:09:05 | DEV Backup V2 wird erstellt...
+14:09:06 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_140905
+14:09:06 | DEV Backup V2 abgeschlossen
+14:09:06 | Start: Update starten
+14:09:06 | Sicherheitsprüfung wird vorbereitet...
+14:09:06 | Plugin-Prüfung erfolgreich
+14:09:06 | Neustart erforderlich: NO
+14:09:06 | Sicherheitsprüfung erfolgreich
+14:09:07 | ADD_PART im Monitor eingefügt
+14:09:07 | Update im Monitor angewendet
+14:09:07 | Plugin wird archiviert...
+14:09:07 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\TEST_AUTOLOAD_FAKE_TARGET_V2.devupdate
+14:09:07 | Plugin archiviert
+14:09:07 | Update abgeschlossen
+14:09:08 | Fertig: Update fertig
+14:36:45 | Start: Plugin laden
+14:36:45 | Plugin-Datei gewählt: FIX_UPDATE_OPEN_CONFIRM_V1.devupdate
+14:36:45 | Plugin-Datei wurde gelesen
+14:36:46 | Plugin-Prüfung erfolgreich
+14:36:46 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+14:36:47 | Benutzer hat 'Update durchführen' gewählt
+14:36:47 | Fertig: Plugin geladen
+14:36:48 | DEV Backup V2 wird erstellt...
+14:36:48 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_143648
+14:36:48 | DEV Backup V2 abgeschlossen
+14:36:48 | Start: Update starten
+14:36:48 | Sicherheitsprüfung wird vorbereitet...
+14:36:48 | Plugin-Prüfung erfolgreich
+14:36:48 | Neustart erforderlich: NO
+14:36:48 | Sicherheitsprüfung erfolgreich
+14:36:49 | REPLACE im Monitor ausgeführt
+14:36:49 | Update im Monitor angewendet
+14:36:49 | Plugin wird archiviert...
+14:36:50 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_UPDATE_OPEN_CONFIRM_V1.devupdate
+14:36:50 | Plugin archiviert
+14:36:50 | Update abgeschlossen
+14:36:50 | Fertig: Update fertig
+15:40:21 | Vorschau automatisch deaktiviert
+15:40:24 | Start: Plugin laden
+15:40:24 | Plugin-Datei gewählt: BUILD_RENAME_SELECTED_MARKER_V1.devupdate
+15:40:25 | Plugin-Datei wurde gelesen
+15:40:25 | Plugin-Prüfung erfolgreich
+15:40:25 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+15:40:28 | Benutzer hat 'Update durchführen' gewählt
+15:40:28 | Fertig: Plugin geladen
+15:40:28 | DEV Backup V2 wird erstellt...
+15:40:28 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_154028
+15:40:28 | DEV Backup V2 abgeschlossen
+15:40:28 | Start: Update starten
+15:40:28 | Plugin-Prüfung erfolgreich
+15:40:50 | Datei wird für Update geöffnet: parts_logic.py
+15:40:50 | Update vorbereitet – Ziel-Datei geöffnet
+15:40:50 | Fertig: Update bereit
+15:40:54 | DEV Backup V2 wird erstellt...
+15:40:54 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_154054
+15:40:54 | DEV Backup V2 abgeschlossen
+15:40:54 | Start: Update starten
+15:40:54 | Plugin-Prüfung erfolgreich
+15:40:54 | Update vorbereitet – Ziel-Datei geöffnet
+15:40:54 | Fertig: Update bereit
+15:42:22 | Plugin-Laden abgebrochen
+15:44:09 | Start: Plugin laden
+15:44:09 | Plugin-Datei gewählt: BUILD_RENAME_SELECTED_MARKER_V1.devupdate
+15:44:09 | Plugin-Datei wurde gelesen
+15:44:09 | Plugin-Prüfung erfolgreich
+15:44:09 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+15:44:11 | Benutzer hat 'Update durchführen' gewählt
+15:44:11 | Fertig: Plugin geladen
+15:44:11 | DEV Backup V2 wird erstellt...
+15:44:11 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_154411
+15:44:11 | DEV Backup V2 abgeschlossen
+15:44:11 | Start: Update starten
+15:44:11 | Plugin-Prüfung erfolgreich
+15:44:11 | Update vorbereitet – Ziel-Datei geöffnet
+15:44:11 | Fertig: Update bereit
+15:44:22 | DEV Backup V2 wird erstellt...
+15:44:22 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_154422
+15:44:22 | DEV Backup V2 abgeschlossen
+15:44:22 | Start: Update starten
+15:44:22 | Plugin-Prüfung erfolgreich
+15:44:22 | Update vorbereitet – Ziel-Datei geöffnet
+15:44:22 | Fertig: Update bereit
+15:55:39 | Start: Plugin laden
+15:55:39 | Plugin-Datei gewählt: FIX_UPDATE_OPEN_RULE_AND_FLOW_V1.devupdate
+15:55:39 | Plugin-Datei wurde gelesen
+15:55:40 | Plugin-Prüfung erfolgreich
+15:55:40 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+15:55:41 | Benutzer hat 'Update durchführen' gewählt
+15:55:41 | Fertig: Plugin geladen
+15:55:41 | DEV Backup V2 wird erstellt...
+15:55:41 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_155541
+15:55:41 | DEV Backup V2 abgeschlossen
+15:55:41 | Start: Update starten
+15:55:41 | Plugin-Prüfung erfolgreich
+15:55:43 | Datei wird für Update geöffnet: app_core.py
+15:55:43 | Update vorbereitet – Ziel-Datei geöffnet
+15:55:43 | Fertig: Update bereit
+15:55:53 | DEV Backup V2 wird erstellt...
+15:55:53 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_155553
+15:55:53 | DEV Backup V2 abgeschlossen
+15:55:53 | Start: Update starten
+15:55:53 | Plugin-Prüfung erfolgreich
+15:55:53 | Update vorbereitet – Ziel-Datei geöffnet
+15:55:53 | Fertig: Update bereit
+15:55:59 | Plugin-Laden abgebrochen
+16:03:46 | Vorschau automatisch deaktiviert
+16:04:47 | Start: Plugin laden
+16:04:47 | Plugin-Datei gewählt: BUILD_RENAME_SELECTED_MARKER_V1.devupdate
+16:04:48 | Plugin-Datei wurde gelesen
+16:04:48 | Plugin-Prüfung erfolgreich
+16:04:48 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+16:05:23 | Benutzer hat 'Update durchführen' gewählt
+16:05:23 | Fertig: Plugin geladen
+16:05:23 | DEV Backup V2 wird erstellt...
+16:05:23 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_160523
+16:05:23 | DEV Backup V2 abgeschlossen
+16:05:23 | Start: Update starten
+16:05:23 | Plugin-Prüfung erfolgreich
+16:06:05 | STOP: Öffnen vom Nutzer abgelehnt
+16:09:05 | Vorschau automatisch deaktiviert
+16:09:15 | Start: Plugin laden
+16:09:15 | Plugin-Datei gewählt: BUILD_RENAME_SELECTED_MARKER_V1.devupdate
+16:09:15 | Plugin-Datei wurde gelesen
+16:09:16 | Plugin-Prüfung erfolgreich
+16:09:16 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+16:09:21 | Update vom Benutzer abgebrochen
+16:09:21 | Fertig: Plugin geladen
+16:09:27 | Plugin-Prüfung erfolgreich
+16:09:29 | DEV Backup V2 wird erstellt...
+16:09:30 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_160929
+16:09:30 | DEV Backup V2 abgeschlossen
+16:09:30 | Start: Update starten
+16:09:30 | Sicherheitsprüfung wird vorbereitet...
+16:09:30 | Plugin-Prüfung erfolgreich
+16:09:30 | Neustart erforderlich: YES
+16:09:30 | Sicherheitsprüfung erfolgreich
+16:09:30 | Hinweis: Geladene Datei wird für Update geöffnet: parts_logic.py
+16:09:30 | ADD_PART im Monitor eingefügt
+16:09:30 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\BUILD_RENAME_SELECTED_MARKER_V1.devupdate
+16:09:30 | Plugin archiviert
+16:09:30 | Fertig: Update fertig
+17:27:36 | Start: Plugin laden
+17:27:36 | Plugin-Datei gewählt: BUILD_RENAME_SELECTED_PART_FINAL_V1.devupdate
+17:27:37 | Plugin-Datei wurde gelesen
+17:27:37 | Plugin-Prüfung erfolgreich
+17:27:37 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+17:27:40 | Benutzer hat 'Update durchführen' gewählt
+17:27:40 | Fertig: Plugin geladen
+17:27:40 | DEV Backup V2 wird erstellt...
+17:27:40 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_172740
+17:27:40 | DEV Backup V2 abgeschlossen
+17:27:40 | Start: Update starten
+17:27:40 | Sicherheitsprüfung wird vorbereitet...
+17:27:40 | Plugin-Prüfung erfolgreich
+17:27:40 | Neustart erforderlich: YES
+17:27:40 | Sicherheitsprüfung erfolgreich
+17:27:41 | Hinweis: Geladene Datei wird für Update geöffnet: parts_logic.py
+17:27:41 | ADD_PART im Monitor eingefügt
+17:27:41 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\BUILD_RENAME_SELECTED_PART_FINAL_V1.devupdate
+17:27:41 | Plugin archiviert
+17:27:41 | Fertig: Update fertig
+17:32:35 | Start: Plugin laden
+17:32:35 | Plugin-Datei gewählt: ADD_TEMP_MENU_PART_RENAME_TEST_V1.devupdate
+17:32:35 | Plugin-Datei wurde gelesen
+17:32:36 | Plugin-Prüfung erfolgreich
+17:32:36 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+17:32:38 | Benutzer hat 'Update durchführen' gewählt
+17:32:38 | Fertig: Plugin geladen
+17:32:38 | DEV Backup V2 wird erstellt...
+17:32:38 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_173238
+17:32:38 | DEV Backup V2 abgeschlossen
+17:32:38 | Start: Update starten
+17:32:38 | Sicherheitsprüfung wird vorbereitet...
+17:32:39 | Plugin-Prüfung erfolgreich
+17:32:39 | Neustart erforderlich: YES
+17:32:39 | Sicherheitsprüfung erfolgreich
+17:32:39 | Hinweis: Geladene Datei wird für Update geöffnet: app_core.py
+17:32:39 | REPLACE im Monitor ausgeführt
+17:32:39 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\ADD_TEMP_MENU_PART_RENAME_TEST_V1.devupdate
+17:32:39 | Plugin archiviert
+17:32:39 | Fertig: Update fertig
+18:07:02 | TEST: PART umbenennen gestartet
+18:15:32 | TEST: PART umbenennen gestartet
+18:15:52 | TEST: PART umbenennen gestartet
+18:18:26 | TEST: PART umbenennen gestartet
+18:23:55 | TEST: PART umbenennen gestartet
+18:28:05 | TEST: PART umbenennen gestartet
+18:29:47 | TEST: PART umbenennen gestartet
+18:30:00 | TEST: PART umbenennen gestartet
+18:30:30 | TEST: PART umbenennen gestartet
+18:31:31 | TEST: PART umbenennen gestartet
+18:33:25 | TEST: PART umbenennen gestartet
+18:33:41 | TEST: PART umbenennen gestartet
+19:33:54 | Vorschau automatisch deaktiviert
+19:34:00 | Start: Plugin laden
+19:34:00 | Plugin-Datei gewählt: ADD_CREATE_PART_FROM_SELECTION_V1.devupdate
+19:34:00 | Plugin-Datei wurde gelesen
+19:34:01 | Plugin-Prüfung erfolgreich
+19:34:01 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+19:34:03 | Benutzer hat 'Update durchführen' gewählt
+19:34:03 | Fertig: Plugin geladen
+19:34:03 | DEV Backup V2 wird erstellt...
+19:34:04 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_193403
+19:34:04 | DEV Backup V2 abgeschlossen
+19:34:04 | Start: Update starten
+19:34:04 | Plugin-Prüfung erfolgreich
+19:34:17 | Datei wird für Update geöffnet: parts_logic.py
+19:34:17 | Update vorbereitet – Ziel-Datei geöffnet
+19:34:17 | Fertig: Update bereit
+19:34:21 | DEV Backup V2 wird erstellt...
+19:34:21 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_193421
+19:34:21 | DEV Backup V2 abgeschlossen
+19:34:21 | Start: Update starten
+19:34:21 | Plugin-Prüfung erfolgreich
+19:34:21 | Update vorbereitet – Ziel-Datei geöffnet
+19:34:21 | Fertig: Update bereit
+19:34:48 | Plugin-Laden abgebrochen
+19:40:11 | TEST: PART umbenennen gestartet
+19:48:07 | TEST: PART umbenennen gestartet
+19:48:42 | TEST: PART umbenennen gestartet
+19:48:59 | TEST: PART umbenennen gestartet
+19:49:24 | TEST: PART umbenennen gestartet
+19:54:16 | TEST: PART umbenennen gestartet
+19:54:31 | TEST: PART umbenennen gestartet
+20:57:13 | Vorschau automatisch deaktiviert
+20:57:19 | Start: Plugin laden
+20:57:19 | Plugin-Datei gewählt: TEST_FAKE_UPDATE.devupdate
+20:57:19 | Plugin-Datei wurde gelesen
+20:57:20 | FEHLER: Aktion unbekannt: REPLACE_TEXT
+20:57:20 | Plugin-Prüfung fehlgeschlagen
+20:57:20 | Installation nicht möglich – Update wurde nicht gestartet
+20:57:20 | Fertig: Plugin geladen
+20:58:38 | Plugin-Laden abgebrochen
+20:59:03 | Start: Plugin laden
+20:59:03 | Plugin-Datei gewählt: TEST_FAKE_UPDATE_V2.devupdate
+20:59:03 | Plugin-Datei wurde gelesen
+20:59:03 | Plugin-Prüfung erfolgreich
+20:59:03 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+20:59:06 | Benutzer hat 'Update durchführen' gewählt
+20:59:06 | Fertig: Plugin geladen
+20:59:06 | DEV Backup V2 wird erstellt...
+20:59:06 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_205906
+20:59:06 | DEV Backup V2 abgeschlossen
+20:59:06 | Start: Update starten
+20:59:06 | Plugin-Prüfung erfolgreich
+20:59:22 | Datei wird für Update geöffnet: fake_target.py
+20:59:22 | Update vorbereitet – Ziel-Datei geöffnet
+20:59:22 | Fertig: Update bereit
+21:07:41 | Start: Plugin laden
+21:07:41 | Plugin-Datei gewählt: TEST_FAKE_UPDATE_V2.devupdate
+21:07:41 | Plugin-Datei wurde gelesen
+21:07:42 | Plugin-Prüfung erfolgreich
+21:07:42 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:07:43 | Benutzer hat 'Update durchführen' gewählt
+21:07:43 | Fertig: Plugin geladen
+21:07:43 | DEV Backup V2 wird erstellt...
+21:07:44 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_210743
+21:07:44 | DEV Backup V2 abgeschlossen
+21:07:44 | Start: Update starten
+21:07:44 | Plugin-Prüfung erfolgreich
+21:07:47 | STOP: Öffnen vom Nutzer abgelehnt
+21:07:52 | Vorschau automatisch deaktiviert
+21:07:57 | Start: Plugin laden
+21:07:57 | Plugin-Datei gewählt: TEST_FAKE_UPDATE_V2.devupdate
+21:07:58 | Plugin-Datei wurde gelesen
+21:07:58 | Plugin-Prüfung erfolgreich
+21:07:58 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:08:00 | Benutzer hat 'Update durchführen' gewählt
+21:08:00 | Fertig: Plugin geladen
+21:08:00 | DEV Backup V2 wird erstellt...
+21:08:00 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_210800
+21:08:00 | DEV Backup V2 abgeschlossen
+21:08:00 | Start: Update starten
+21:08:00 | Sicherheitsprüfung wird vorbereitet...
+21:08:01 | Plugin-Prüfung erfolgreich
+21:08:01 | Neustart erforderlich: YES
+21:08:01 | Sicherheitsprüfung erfolgreich
+21:08:01 | Hinweis: Bereits geladene Datei wird für Update aktiviert: fake_target.py
+21:08:01 | ADD_PART im Monitor eingefügt
+21:08:01 | Update im Monitor angewendet
+21:08:01 | Plugin wird archiviert...
+21:08:02 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\TEST_FAKE_UPDATE_V2.devupdate
+21:08:02 | Plugin archiviert
+21:08:02 | Update abgeschlossen
+21:08:02 | Fertig: Update fertig
+21:08:02 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+21:10:23 | Vorschau automatisch deaktiviert
+21:10:29 | Start: Plugin laden
+21:10:29 | Plugin-Datei gewählt: TEST_FAKE_UPDATE_V2.devupdate
+21:10:30 | Plugin-Datei wurde gelesen
+21:10:30 | Plugin-Prüfung erfolgreich
+21:10:30 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:10:32 | Benutzer hat 'Update durchführen' gewählt
+21:10:32 | Fertig: Plugin geladen
+21:10:32 | DEV Backup V2 wird erstellt...
+21:10:32 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_211032
+21:10:32 | DEV Backup V2 abgeschlossen
+21:10:32 | Start: Update starten
+21:10:32 | Sicherheitsprüfung wird vorbereitet...
+21:10:32 | Plugin-Prüfung erfolgreich
+21:10:32 | Neustart erforderlich: YES
+21:10:32 | Sicherheitsprüfung erfolgreich
+21:10:39 | Hinweis: Datei war noch nicht geladen und wird für Update geöffnet: fake_target.py
+21:10:39 | ADD_PART im Monitor eingefügt
+21:10:39 | Update im Monitor angewendet
+21:10:39 | Plugin wird archiviert...
+21:10:40 | Plugin verschoben nach: C:/Users/carst/Downloads/_used_plugins\_used_plugins\TEST_FAKE_UPDATE_V2.devupdate
+21:10:40 | Plugin archiviert
+21:10:40 | Update abgeschlossen
+21:10:40 | Fertig: Update fertig
+21:10:40 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+21:54:29 | Vorschau automatisch deaktiviert
+21:54:32 | Start: Plugin laden
+21:54:32 | Plugin-Datei gewählt: BUILD_BLOCK_PICKER_PREVIEW_FILE_V1.devupdate
+21:54:33 | Plugin-Datei wurde gelesen
+21:54:33 | Plugin-Prüfung erfolgreich
+21:54:33 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:54:34 | Benutzer hat 'Update durchführen' gewählt
+21:54:34 | Fertig: Plugin geladen
+21:54:34 | DEV Backup V2 wird erstellt...
+21:54:35 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_215434
+21:54:35 | DEV Backup V2 abgeschlossen
+21:54:35 | Start: Update starten
+21:54:35 | Sicherheitsprüfung wird vorbereitet...
+21:54:35 | Plugin-Prüfung erfolgreich
+21:54:35 | Neustart erforderlich: YES
+21:54:35 | Sicherheitsprüfung erfolgreich
+21:54:40 | Hinweis: Datei war noch nicht geladen und wird für Update geöffnet: test_darkblue_check.py
+21:54:54 | REPLACE im Monitor ausgeführt
+21:54:54 | Update im Monitor angewendet
+21:54:55 | Plugin wird archiviert...
+21:54:55 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\BUILD_BLOCK_PICKER_PREVIEW_FILE_V1.devupdate
+21:54:55 | Plugin archiviert
+21:54:55 | Update abgeschlossen
+21:54:55 | Fertig: Update fertig
+21:54:55 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+21:55:58 | TEST: PART umbenennen gestartet
+21:58:16 | Vorschau automatisch deaktiviert
+21:58:19 | Start: Plugin laden
+21:58:19 | Plugin-Datei gewählt: FIX_REMOVE_WRAPPER_PART_TEST_DARKBLUE.devupdate
+21:58:20 | Plugin-Datei wurde gelesen
+21:58:20 | Plugin-Prüfung erfolgreich
+21:58:20 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+21:58:42 | Benutzer hat 'Update durchführen' gewählt
+21:58:42 | Fertig: Plugin geladen
+21:58:42 | DEV Backup V2 wird erstellt...
+21:58:42 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_215842
+21:58:42 | DEV Backup V2 abgeschlossen
+21:58:42 | Start: Update starten
+21:58:42 | Sicherheitsprüfung wird vorbereitet...
+21:58:42 | Plugin-Prüfung erfolgreich
+21:58:42 | Neustart erforderlich: YES
+21:58:42 | Sicherheitsprüfung erfolgreich
+21:58:43 | Hinweis: Bereits geladene Datei wird für Update aktiviert: test_darkblue_check.py
+21:58:43 | FEHLER REMOVE_PART: name 'datetime' is not defined
+21:58:43 | Update NICHT erfolgreich – Plugin bleibt erhalten
+22:01:33 | Plugin-Laden abgebrochen
+22:01:43 | Start: Plugin laden
+22:01:43 | Plugin-Datei gewählt: FIX_REMOVE_PART_DATETIME_IMPORT_V1.devupdate
+22:01:43 | Plugin-Datei wurde gelesen
+22:01:43 | Plugin-Prüfung erfolgreich
+22:01:43 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:01:45 | Benutzer hat 'Update durchführen' gewählt
+22:01:45 | Fertig: Plugin geladen
+22:01:45 | DEV Backup V2 wird erstellt...
+22:01:45 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_220145
+22:01:45 | DEV Backup V2 abgeschlossen
+22:01:45 | Start: Update starten
+22:01:45 | Sicherheitsprüfung wird vorbereitet...
+22:01:46 | Plugin-Prüfung erfolgreich
+22:01:46 | Neustart erforderlich: YES
+22:01:46 | Sicherheitsprüfung erfolgreich
+22:01:46 | Hinweis: Bereits geladene Datei wird für Update aktiviert: app_core.py
+22:01:46 | REPLACE im Monitor ausgeführt
+22:01:46 | Update im Monitor angewendet
+22:01:47 | Plugin wird archiviert...
+22:01:47 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_REMOVE_PART_DATETIME_IMPORT_V1.devupdate
+22:01:47 | Plugin archiviert
+22:01:47 | Update abgeschlossen
+22:01:48 | Fertig: Update fertig
+22:01:48 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:02:14 | Vorschau automatisch deaktiviert
+22:02:23 | Plugin-Laden abgebrochen
+22:02:40 | Start: Plugin laden
+22:02:40 | Plugin-Datei gewählt: FIX_REMOVE_WRAPPER_PART_TEST_DARKBLUE.devupdate
+22:02:40 | Plugin-Datei wurde gelesen
+22:02:40 | Plugin-Prüfung erfolgreich
+22:02:40 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:02:42 | Benutzer hat 'Update durchführen' gewählt
+22:02:42 | Fertig: Plugin geladen
+22:02:42 | DEV Backup V2 wird erstellt...
+22:02:43 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_220242
+22:02:43 | DEV Backup V2 abgeschlossen
+22:02:43 | Start: Update starten
+22:02:43 | Sicherheitsprüfung wird vorbereitet...
+22:02:43 | Plugin-Prüfung erfolgreich
+22:02:43 | Neustart erforderlich: YES
+22:02:43 | Sicherheitsprüfung erfolgreich
+22:02:43 | Hinweis: Bereits geladene Datei wird für Update aktiviert: test_darkblue_check.py
+22:02:44 | REMOVE_PART im Monitor ausgeführt
+22:02:44 | Backup gespeichert: removed_TEST_DARKBLUE_20260408_220244.txt
+22:02:44 | Update im Monitor angewendet
+22:02:44 | Plugin wird archiviert...
+22:02:44 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_REMOVE_WRAPPER_PART_TEST_DARKBLUE.devupdate
+22:02:44 | Plugin archiviert
+22:02:44 | Update abgeschlossen
+22:02:45 | Fertig: Update fertig
+22:02:45 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:07:24 | Start: Plugin laden
+22:07:24 | Plugin-Datei gewählt: RESTORE_TEST_DARKBLUE_PART_V1.devupdate
+22:07:25 | Plugin-Datei wurde gelesen
+22:07:25 | Plugin-Prüfung erfolgreich
+22:07:25 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:07:27 | Benutzer hat 'Update durchführen' gewählt
+22:07:27 | Fertig: Plugin geladen
+22:07:27 | DEV Backup V2 wird erstellt...
+22:07:27 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_220727
+22:07:27 | DEV Backup V2 abgeschlossen
+22:07:27 | Start: Update starten
+22:07:27 | Sicherheitsprüfung wird vorbereitet...
+22:07:28 | Plugin-Prüfung erfolgreich
+22:07:28 | Neustart erforderlich: YES
+22:07:28 | Sicherheitsprüfung erfolgreich
+22:07:28 | Hinweis: Zieldatei ist bereits aktiv
+22:07:28 | ADD_PART im Monitor eingefügt
+22:07:28 | Update im Monitor angewendet
+22:07:28 | Plugin wird archiviert...
+22:07:29 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\RESTORE_TEST_DARKBLUE_PART_V1.devupdate
+22:07:29 | Plugin archiviert
+22:07:29 | Update abgeschlossen
+22:07:29 | Fertig: Update fertig
+22:07:29 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:10:15 | Start: Plugin laden
+22:10:15 | Plugin-Datei gewählt: BUILD_BLOCK_PICKER_PREVIEW_STEP1_IMPORTS.devupdate
+22:10:15 | Plugin-Datei wurde gelesen
+22:10:15 | Plugin-Prüfung erfolgreich
+22:10:15 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:10:17 | Benutzer hat 'Update durchführen' gewählt
+22:10:17 | Fertig: Plugin geladen
+22:10:17 | DEV Backup V2 wird erstellt...
+22:10:17 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_221017
+22:10:17 | DEV Backup V2 abgeschlossen
+22:10:17 | Start: Update starten
+22:10:17 | Sicherheitsprüfung wird vorbereitet...
+22:10:18 | Plugin-Prüfung erfolgreich
+22:10:18 | Neustart erforderlich: YES
+22:10:18 | Sicherheitsprüfung erfolgreich
+22:10:18 | Hinweis: Zieldatei ist bereits aktiv
+22:10:18 | ADD_PART im Monitor eingefügt
+22:10:18 | Update im Monitor angewendet
+22:10:18 | Plugin wird archiviert...
+22:10:19 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\BUILD_BLOCK_PICKER_PREVIEW_STEP1_IMPORTS.devupdate
+22:10:19 | Plugin archiviert
+22:10:19 | Update abgeschlossen
+22:10:19 | Fertig: Update fertig
+22:10:19 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:12:45 | Vorschau automatisch deaktiviert
+22:12:49 | Start: Plugin laden
+22:12:49 | Plugin-Datei gewählt: BUILD_BLOCK_PICKER_PREVIEW_STEP2_BLOCK_SCAN.devupdate
+22:12:50 | Plugin-Datei wurde gelesen
+22:12:50 | Plugin-Prüfung erfolgreich
+22:12:50 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:12:52 | Benutzer hat 'Update durchführen' gewählt
+22:12:52 | Fertig: Plugin geladen
+22:12:52 | DEV Backup V2 wird erstellt...
+22:12:52 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_221252
+22:12:52 | DEV Backup V2 abgeschlossen
+22:12:52 | Start: Update starten
+22:12:52 | Sicherheitsprüfung wird vorbereitet...
+22:12:53 | Plugin-Prüfung erfolgreich
+22:12:53 | Neustart erforderlich: YES
+22:12:53 | Sicherheitsprüfung erfolgreich
+22:12:53 | Hinweis: Zieldatei ist bereits aktiv
+22:12:53 | ADD_PART im Monitor eingefügt
+22:12:53 | Update im Monitor angewendet
+22:12:54 | Plugin wird archiviert...
+22:12:54 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\BUILD_BLOCK_PICKER_PREVIEW_STEP2_BLOCK_SCAN.devupdate
+22:12:54 | Plugin archiviert
+22:12:54 | Update abgeschlossen
+22:12:54 | Fertig: Update fertig
+22:12:54 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:15:29 | Vorschau automatisch deaktiviert
+22:15:32 | Start: Plugin laden
+22:15:32 | Plugin-Datei gewählt: BUILD_BLOCK_PICKER_PREVIEW_STEP3_UI_BUILD.devupdate
+22:15:33 | Plugin-Datei wurde gelesen
+22:15:33 | Plugin-Prüfung erfolgreich
+22:15:33 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:15:34 | Benutzer hat 'Update durchführen' gewählt
+22:15:34 | Fertig: Plugin geladen
+22:15:34 | DEV Backup V2 wird erstellt...
+22:15:35 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_221534
+22:15:35 | DEV Backup V2 abgeschlossen
+22:15:35 | Start: Update starten
+22:15:35 | Sicherheitsprüfung wird vorbereitet...
+22:15:35 | Plugin-Prüfung erfolgreich
+22:15:35 | Neustart erforderlich: YES
+22:15:35 | Sicherheitsprüfung erfolgreich
+22:15:36 | Hinweis: Zieldatei ist bereits aktiv
+22:15:36 | ADD_PART im Monitor eingefügt
+22:15:36 | Update im Monitor angewendet
+22:15:36 | Plugin wird archiviert...
+22:15:36 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\BUILD_BLOCK_PICKER_PREVIEW_STEP3_UI_BUILD.devupdate
+22:15:36 | Plugin archiviert
+22:15:36 | Update abgeschlossen
+22:15:37 | Fertig: Update fertig
+22:15:37 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:17:21 | Vorschau automatisch deaktiviert
+22:17:23 | Start: Plugin laden
+22:17:23 | Plugin-Datei gewählt: BUILD_BLOCK_PICKER_PREVIEW_STEP4_BLOCK_RENDER.devupdate
+22:17:24 | Plugin-Datei wurde gelesen
+22:17:24 | Plugin-Prüfung erfolgreich
+22:17:24 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:17:25 | Benutzer hat 'Update durchführen' gewählt
+22:17:25 | Fertig: Plugin geladen
+22:17:25 | DEV Backup V2 wird erstellt...
+22:17:26 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_221725
+22:17:26 | DEV Backup V2 abgeschlossen
+22:17:26 | Start: Update starten
+22:17:26 | Sicherheitsprüfung wird vorbereitet...
+22:17:26 | Plugin-Prüfung erfolgreich
+22:17:26 | Neustart erforderlich: YES
+22:17:26 | Sicherheitsprüfung erfolgreich
+22:17:27 | Hinweis: Zieldatei ist bereits aktiv
+22:17:27 | ADD_PART im Monitor eingefügt
+22:17:27 | Update im Monitor angewendet
+22:17:27 | Plugin wird archiviert...
+22:17:27 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\BUILD_BLOCK_PICKER_PREVIEW_STEP4_BLOCK_RENDER.devupdate
+22:17:27 | Plugin archiviert
+22:17:27 | Update abgeschlossen
+22:17:28 | Fertig: Update fertig
+22:17:28 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:18:37 | Plugin-Laden abgebrochen
+22:18:51 | Start: Plugin laden
+22:18:51 | Plugin-Datei gewählt: BUILD_BLOCK_PICKER_PREVIEW_STEP5_ENTRY_POINT.devupdate
+22:18:51 | Plugin-Datei wurde gelesen
+22:18:52 | Plugin-Prüfung erfolgreich
+22:18:52 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:18:53 | Benutzer hat 'Update durchführen' gewählt
+22:18:53 | Fertig: Plugin geladen
+22:18:53 | DEV Backup V2 wird erstellt...
+22:18:54 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_221853
+22:18:54 | DEV Backup V2 abgeschlossen
+22:18:54 | Start: Update starten
+22:18:54 | Sicherheitsprüfung wird vorbereitet...
+22:18:54 | Plugin-Prüfung erfolgreich
+22:18:54 | Neustart erforderlich: YES
+22:18:54 | Sicherheitsprüfung erfolgreich
+22:18:54 | Hinweis: Zieldatei ist bereits aktiv
+22:18:54 | ADD_PART im Monitor eingefügt
+22:18:54 | Update im Monitor angewendet
+22:18:55 | Plugin wird archiviert...
+22:18:55 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\BUILD_BLOCK_PICKER_PREVIEW_STEP5_ENTRY_POINT.devupdate
+22:18:55 | Plugin archiviert
+22:18:55 | Update abgeschlossen
+22:18:56 | Fertig: Update fertig
+22:18:56 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:19:10 | TEST: PART umbenennen gestartet
+22:19:19 | TEST: PART umbenennen gestartet
+22:21:01 | Vorschau automatisch deaktiviert
+22:21:04 | Start: Plugin laden
+22:21:04 | Plugin-Datei gewählt: FIX_TEST_BUTTON_RUN_CURRENT_FILE_V1.devupdate
+22:21:05 | Plugin-Datei wurde gelesen
+22:21:05 | Plugin-Prüfung erfolgreich
+22:21:05 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:21:06 | Benutzer hat 'Update durchführen' gewählt
+22:21:06 | Fertig: Plugin geladen
+22:21:06 | DEV Backup V2 wird erstellt...
+22:21:07 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_222106
+22:21:07 | DEV Backup V2 abgeschlossen
+22:21:07 | Start: Update starten
+22:21:07 | Sicherheitsprüfung wird vorbereitet...
+22:21:07 | Plugin-Prüfung erfolgreich
+22:21:07 | Neustart erforderlich: YES
+22:21:07 | Sicherheitsprüfung erfolgreich
+22:21:07 | Hinweis: Bereits geladene Datei wird für Update aktiviert: app_core.py
+22:21:08 | REPLACE im Monitor ausgeführt
+22:21:08 | Update im Monitor angewendet
+22:21:08 | Plugin wird archiviert...
+22:21:08 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_TEST_BUTTON_RUN_CURRENT_FILE_V1.devupdate
+22:21:08 | Plugin archiviert
+22:21:08 | Update abgeschlossen
+22:21:09 | Fertig: Update fertig
+22:21:09 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:21:20 | TEST: Aktuelle Datei starten
+22:21:20 | TEST gestartet: C:/Users/carst/Desktop/Tool/fake_target.py
+22:21:24 | TEST: Aktuelle Datei starten
+22:21:24 | TEST gestartet: C:/Users/carst/Desktop/Tool/fake_target.py
+22:21:38 | TEST: Aktuelle Datei starten
+22:21:38 | TEST gestartet: C:\Users\carst\Desktop\Tool\test_darkblue_check.py
+22:27:36 | Vorschau automatisch deaktiviert
+22:27:39 | Start: Plugin laden
+22:27:39 | Plugin-Datei gewählt: INTEGRATE_REAL_BLOCK_PICKER_ON_TESTBUTTON_V1.devupdate
+22:27:40 | Plugin-Datei wurde gelesen
+22:27:40 | Plugin-Prüfung erfolgreich
+22:27:40 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:27:41 | Benutzer hat 'Update durchführen' gewählt
+22:27:41 | Fertig: Plugin geladen
+22:27:41 | DEV Backup V2 wird erstellt...
+22:27:42 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_222741
+22:27:42 | DEV Backup V2 abgeschlossen
+22:27:42 | Start: Update starten
+22:27:42 | Sicherheitsprüfung wird vorbereitet...
+22:27:42 | Plugin-Prüfung erfolgreich
+22:27:42 | Neustart erforderlich: YES
+22:27:42 | Sicherheitsprüfung erfolgreich
+22:27:43 | Hinweis: Bereits geladene Datei wird für Update aktiviert: app_core.py
+22:27:43 | REPLACE im Monitor ausgeführt
+22:27:43 | Update im Monitor angewendet
+22:27:43 | Plugin wird archiviert...
+22:27:44 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\INTEGRATE_REAL_BLOCK_PICKER_ON_TESTBUTTON_V1.devupdate
+22:27:44 | Plugin archiviert
+22:27:44 | Update abgeschlossen
+22:27:44 | Fertig: Update fertig
+22:27:44 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:28:05 | TEST: create_part_from_selection gestartet
+22:28:09 | TEST: create_part_from_selection gestartet
+22:31:37 | Vorschau automatisch deaktiviert
+22:31:40 | Start: Plugin laden
+22:31:40 | Plugin-Datei gewählt: FIX_REAL_BLOCK_PICKER_IN_PARTS_LOGIC_V1.devupdate
+22:31:40 | Plugin-Datei wurde gelesen
+22:31:41 | Plugin-Prüfung erfolgreich
+22:31:41 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:31:42 | Benutzer hat 'Update durchführen' gewählt
+22:31:42 | Fertig: Plugin geladen
+22:31:42 | DEV Backup V2 wird erstellt...
+22:31:42 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_223142
+22:31:42 | DEV Backup V2 abgeschlossen
+22:31:42 | Start: Update starten
+22:31:42 | Sicherheitsprüfung wird vorbereitet...
+22:31:43 | Plugin-Prüfung erfolgreich
+22:31:43 | Neustart erforderlich: YES
+22:31:43 | Sicherheitsprüfung erfolgreich
+22:31:43 | Hinweis: Bereits geladene Datei wird für Update aktiviert: parts_logic.py
+22:31:43 | ADD_PART im Monitor eingefügt
+22:31:43 | Update im Monitor angewendet
+22:31:44 | Plugin wird archiviert...
+22:31:44 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_REAL_BLOCK_PICKER_IN_PARTS_LOGIC_V1.devupdate
+22:31:44 | Plugin archiviert
+22:31:44 | Update abgeschlossen
+22:31:45 | Fertig: Update fertig
+22:31:45 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:31:57 | TEST: create_part_from_selection gestartet
+22:36:58 | Vorschau automatisch deaktiviert
+22:37:01 | Start: Plugin laden
+22:37:01 | Plugin-Datei gewählt: FIX_REAL_BLOCK_PICKER_AFTER_MANUAL_PART_V2.devupdate
+22:37:02 | Plugin-Datei wurde gelesen
+22:37:02 | Plugin-Prüfung erfolgreich
+22:37:02 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:37:04 | Benutzer hat 'Update durchführen' gewählt
+22:37:04 | Fertig: Plugin geladen
+22:37:04 | DEV Backup V2 wird erstellt...
+22:37:04 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_223704
+22:37:04 | DEV Backup V2 abgeschlossen
+22:37:04 | Start: Update starten
+22:37:04 | Sicherheitsprüfung wird vorbereitet...
+22:37:04 | Plugin-Prüfung erfolgreich
+22:37:04 | Neustart erforderlich: YES
+22:37:04 | Sicherheitsprüfung erfolgreich
+22:37:05 | Hinweis: Zieldatei ist bereits aktiv
+22:37:05 | REPLACE im Monitor ausgeführt
+22:37:05 | Update im Monitor angewendet
+22:37:05 | Plugin wird archiviert...
+22:37:06 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_REAL_BLOCK_PICKER_AFTER_MANUAL_PART_V2.devupdate
+22:37:06 | Plugin archiviert
+22:37:06 | Update abgeschlossen
+22:37:06 | Fertig: Update fertig
+22:37:06 | Hinweis: Bitte Tool erst nach dem Speichern neu starten
+22:37:18 | TEST: create_part_from_selection gestartet
+22:40:51 | Vorschau automatisch deaktiviert
+22:40:54 | Plugin-Laden abgebrochen
+22:44:59 | TEST: create_part_from_selection gestartet
+22:49:54 | TEST: create_part_from_selection gestartet
+22:51:37 | TEST: create_part_from_selection gestartet
+22:54:58 | TEST: create_part_from_selection gestartet
+22:55:33 | TEST: create_part_from_selection gestartet
+23:00:57 | TEST: create_part_from_selection gestartet
+23:10:23 | TEST: create_part_from_selection gestartet
+23:10:55 | TEST: create_part_from_selection gestartet
+23:17:59 | TEST: create_part_from_selection gestartet
+23:39:05 | Vorschau automatisch deaktiviert
+23:39:08 | Start: Plugin laden
+23:39:08 | Plugin-Datei gewählt: TESTFENSTER_NEUE_PICKER_RICHTUNG_V1.devupdate
+23:39:09 | Plugin-Datei wurde gelesen
+23:39:09 | Plugin-Prüfung erfolgreich
+23:39:09 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+23:39:10 | Benutzer hat 'Update durchführen' gewählt
+23:39:10 | Fertig: Plugin geladen
+23:39:10 | DEV Backup V2 wird erstellt...
+23:39:11 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260408_233910
+23:39:11 | DEV Backup V2 abgeschlossen
+23:39:11 | Start: Update starten
+23:39:11 | Sicherheitsprüfung wird vorbereitet...
+23:39:11 | Plugin-Prüfung erfolgreich
+23:39:11 | Neustart erforderlich: NO
+23:39:11 | Sicherheitsprüfung erfolgreich
+23:39:12 | Hinweis: Bereits geladene Datei wird für Update aktiviert: test_darkblue_check.py
+23:39:12 | REPLACE im Monitor ausgeführt
+23:39:12 | Update im Monitor angewendet
+23:39:12 | Plugin wird archiviert...
+23:39:13 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\TESTFENSTER_NEUE_PICKER_RICHTUNG_V1.devupdate
+23:39:13 | Plugin archiviert
+23:39:13 | Update abgeschlossen
+23:39:13 | Fertig: Update fertig
+23:39:23 | TEST: create_part_from_selection gestartet
+23:40:00 | TEST: create_part_from_selection gestartet
+23:40:13 | TEST: create_part_from_selection gestartet
+23:40:18 | TEST: create_part_from_selection gestartet
+23:40:37 | TEST: create_part_from_selection gestartet
+23:42:18 | TEST: create_part_from_selection gestartet
+23:49:08 | TEST: create_part_from_selection gestartet
+23:50:49 | TEST: create_part_from_selection gestartet
+23:53:11 | TEST: create_part_from_selection gestartet
+23:55:15 | TEST: create_part_from_selection gestartet
+23:58:31 | TEST: create_part_from_selection gestartet
+00:00:15 | TEST: create_part_from_selection gestartet
+00:01:05 | TEST: create_part_from_selection gestartet
+00:01:52 | TEST: create_part_from_selection gestartet
+00:01:58 | TEST: create_part_from_selection gestartet
+00:02:24 | TEST: create_part_from_selection gestartet
+00:07:26 | TEST: create_part_from_selection gestartet
+00:07:58 | TEST: create_part_from_selection gestartet
+00:17:42 | TEST: create_part_from_selection gestartet
+00:30:19 | TEST: Block-Picker-Testfenster starten
+00:35:51 | TEST: Block-Picker-Testfenster starten
+12:03:50 | TEST: Block-Picker-Testfenster starten
+12:05:20 | TEST: Block-Picker-Testfenster starten
+12:08:14 | TEST: Block-Picker-Testfenster starten
+12:19:09 | TEST: Block-Picker-Testfenster starten
+14:02:22 | TEST: Block-Picker-Testfenster starten
+14:05:43 | TEST: Block-Picker-Testfenster starten
+14:09:34 | TEST: Block-Picker-Testfenster starten
+14:09:40 | TEST: Block-Picker-Testfenster starten
+14:12:51 | TEST: Block-Picker-Testfenster starten
+14:16:42 | TEST: Block-Picker-Testfenster starten
+14:19:52 | TEST: Block-Picker-Testfenster starten
+14:43:40 | Start: Plugin laden
+14:43:40 | Plugin-Datei gewählt: AUSLAGERUNG_MARKIERER_CORE_V1.devupdate
+14:43:41 | Plugin-Datei wurde gelesen
+14:43:41 | Plugin-Prüfung erfolgreich
+14:43:41 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+14:43:42 | Benutzer hat 'Update durchführen' gewählt
+14:43:42 | Fertig: Plugin geladen
+14:43:42 | DEV Backup V2 wird erstellt...
+14:43:43 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260409_144342
+14:43:43 | DEV Backup V2 abgeschlossen
+14:43:43 | Start: Update starten
+14:43:43 | Sicherheitsprüfung wird vorbereitet...
+14:43:43 | Plugin-Prüfung erfolgreich
+14:43:43 | Neustart erforderlich: NO
+14:43:43 | Sicherheitsprüfung erfolgreich
+14:43:44 | Hinweis: Zieldatei ist bereits aktiv
+14:43:44 | REPLACE im Monitor ausgeführt
+14:43:44 | Update im Monitor angewendet
+14:43:44 | Plugin wird archiviert...
+14:43:45 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\AUSLAGERUNG_MARKIERER_CORE_V1.devupdate
+14:43:45 | Plugin archiviert
+14:43:45 | Update abgeschlossen
+14:43:45 | Fertig: Update fertig
+14:47:33 | Vorschau automatisch deaktiviert
+14:47:37 | Start: Plugin laden
+14:47:37 | Plugin-Datei gewählt: ERSTER_ANSCHLUSS_MARKIERER_CORE_V1.devupdate
+14:47:37 | Plugin-Datei wurde gelesen
+14:47:38 | Plugin-Prüfung erfolgreich
+14:47:38 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+14:47:40 | Benutzer hat 'Update durchführen' gewählt
+14:47:40 | Fertig: Plugin geladen
+14:47:40 | DEV Backup V2 wird erstellt...
+14:47:40 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260409_144740
+14:47:40 | DEV Backup V2 abgeschlossen
+14:47:40 | Start: Update starten
+14:47:40 | Sicherheitsprüfung wird vorbereitet...
+14:47:40 | Plugin-Prüfung erfolgreich
+14:47:40 | Neustart erforderlich: NO
+14:47:40 | Sicherheitsprüfung erfolgreich
+14:47:41 | Hinweis: Bereits geladene Datei wird für Update aktiviert: parts_logic.py
+14:47:41 | REPLACE im Monitor ausgeführt
+14:47:41 | Update im Monitor angewendet
+14:47:41 | Plugin wird archiviert...
+14:47:42 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\ERSTER_ANSCHLUSS_MARKIERER_CORE_V1.devupdate
+14:47:42 | Plugin archiviert
+14:47:42 | Update abgeschlossen
+14:47:42 | Fertig: Update fertig
+15:03:35 | TEST: Block-Picker-Testfenster starten
+15:04:21 | TEST: Block-Picker-Testfenster starten
+15:10:54 | TEST: Block-Picker-Testfenster starten
+15:11:11 | TEST: Block-Picker-Testfenster starten
+15:18:04 | TEST: Block-Picker-Testfenster starten
+15:25:47 | Vorschau automatisch deaktiviert
+15:25:50 | Start: Plugin laden
+15:25:50 | Plugin-Datei gewählt: PICKER_NUTZT_MARKIERER_CORE_V1.devupdate
+15:25:50 | Plugin-Datei wurde gelesen
+15:25:51 | Plugin-Prüfung erfolgreich
+15:25:51 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+15:25:52 | Benutzer hat 'Update durchführen' gewählt
+15:25:52 | Fertig: Plugin geladen
+15:25:52 | DEV Backup V2 wird erstellt...
+15:25:53 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260409_152552
+15:25:53 | DEV Backup V2 abgeschlossen
+15:25:53 | Start: Update starten
+15:25:53 | Sicherheitsprüfung wird vorbereitet...
+15:25:53 | Plugin-Prüfung erfolgreich
+15:25:53 | Neustart erforderlich: NO
+15:25:53 | Sicherheitsprüfung erfolgreich
+15:25:53 | Hinweis: Bereits geladene Datei wird für Update aktiviert: auslagerung_markierer.py
+15:25:54 | REPLACE im Monitor ausgeführt
+15:25:54 | Update im Monitor angewendet
+15:25:54 | Plugin wird archiviert...
+15:25:54 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\PICKER_NUTZT_MARKIERER_CORE_V1.devupdate
+15:25:54 | Plugin archiviert
+15:25:54 | Update abgeschlossen
+15:25:55 | Fertig: Update fertig
+15:26:03 | TEST: Block-Picker-Testfenster starten
+16:08:51 | TEST: Block-Picker-Testfenster starten
+16:12:20 | TEST: Block-Picker-Testfenster starten
+16:17:06 | TEST: Block-Picker-Testfenster starten
+16:17:45 | TEST: Block-Picker-Testfenster starten
+16:23:25 | TEST: Block-Picker-Testfenster starten
+16:49:20 | Start: Plugin laden
+16:49:20 | Plugin-Datei gewählt: PREVIEW_ENGINE_AUSLAGERN_V1.devupdate
+16:49:20 | Plugin-Datei wurde gelesen
+16:49:21 | Plugin-Prüfung erfolgreich
+16:49:21 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+16:49:22 | Benutzer hat 'Update durchführen' gewählt
+16:49:22 | Fertig: Plugin geladen
+16:49:22 | DEV Backup V2 wird erstellt...
+16:49:23 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260409_164922
+16:49:23 | DEV Backup V2 abgeschlossen
+16:49:23 | Start: Update starten
+16:49:23 | Sicherheitsprüfung wird vorbereitet...
+16:49:23 | Plugin-Prüfung erfolgreich
+16:49:23 | Neustart erforderlich: NO
+16:49:23 | Sicherheitsprüfung erfolgreich
+16:49:24 | Hinweis: Bereits geladene Datei wird für Update aktiviert: auslagerung_markierer.py
+16:49:24 | REPLACE im Monitor ausgeführt
+16:49:24 | Update im Monitor angewendet
+16:49:24 | Plugin wird archiviert...
+16:49:25 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\PREVIEW_ENGINE_AUSLAGERN_V1.devupdate
+16:49:25 | Plugin archiviert
+16:49:25 | Update abgeschlossen
+16:49:25 | Fertig: Update fertig
+16:51:56 | TEST: Block-Picker-Testfenster starten
+16:56:05 | TEST: Block-Picker-Testfenster starten
+16:56:35 | TEST: Block-Picker-Testfenster starten
+17:08:49 | Vorschau automatisch deaktiviert
+17:08:52 | Start: Plugin laden
+17:08:52 | Plugin-Datei gewählt: FIX_TEST_DARKBLUE_NUTZT_ENGINE_WIRKLICH_V1.devupdate
+17:08:53 | Plugin-Datei wurde gelesen
+17:08:53 | Plugin-Prüfung erfolgreich
+17:08:53 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+17:08:54 | Update vom Benutzer abgebrochen
+17:08:54 | Fertig: Plugin geladen
+17:09:17 | Start: Plugin laden
+17:09:17 | Plugin-Datei gewählt: FIX_TEST_DARKBLUE_NUTZT_ENGINE_WIRKLICH_V1.devupdate
+17:09:17 | Plugin-Datei wurde gelesen
+17:09:18 | Plugin-Prüfung erfolgreich
+17:09:18 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+17:09:20 | Benutzer hat 'Update durchführen' gewählt
+17:09:20 | Fertig: Plugin geladen
+17:09:20 | DEV Backup V2 wird erstellt...
+17:09:20 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260409_170920
+17:09:20 | DEV Backup V2 abgeschlossen
+17:09:20 | Start: Update starten
+17:09:20 | Sicherheitsprüfung wird vorbereitet...
+17:09:21 | Plugin-Prüfung erfolgreich
+17:09:21 | Neustart erforderlich: NO
+17:09:21 | Sicherheitsprüfung erfolgreich
+17:09:21 | Hinweis: Bereits geladene Datei wird für Update aktiviert: test_darkblue_check.py
+17:09:21 | REPLACE im Monitor ausgeführt
+17:09:21 | Update im Monitor angewendet
+17:09:22 | Plugin wird archiviert...
+17:09:22 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\FIX_TEST_DARKBLUE_NUTZT_ENGINE_WIRKLICH_V1.devupdate
+17:09:22 | Plugin archiviert
+17:09:22 | Update abgeschlossen
+17:09:22 | Fertig: Update fertig
+17:09:32 | TEST: Block-Picker-Testfenster starten
+17:11:59 | TEST: Block-Picker-Testfenster starten
+17:21:36 | Vorschau automatisch deaktiviert
+17:21:40 | Start: Plugin laden
+17:21:40 | Plugin-Datei gewählt: WIRKLICH_ENGINE_UND_DIFF_AKTIVIEREN_V1.devupdate
+17:21:40 | Plugin-Datei wurde gelesen
+17:21:41 | Plugin-Prüfung erfolgreich
+17:21:41 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+17:21:45 | Benutzer hat 'Update durchführen' gewählt
+17:21:45 | Fertig: Plugin geladen
+17:21:45 | DEV Backup V2 wird erstellt...
+17:21:45 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260409_172145
+17:21:45 | DEV Backup V2 abgeschlossen
+17:21:45 | Start: Update starten
+17:21:45 | Sicherheitsprüfung wird vorbereitet...
+17:21:45 | Plugin-Prüfung erfolgreich
+17:21:45 | Neustart erforderlich: NO
+17:21:45 | Sicherheitsprüfung erfolgreich
+17:21:46 | Hinweis: Bereits geladene Datei wird für Update aktiviert: auslagerung_markierer.py
+17:21:46 | REPLACE im Monitor ausgeführt
+17:21:46 | Update im Monitor angewendet
+17:21:46 | Plugin wird archiviert...
+17:21:47 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\WIRKLICH_ENGINE_UND_DIFF_AKTIVIEREN_V1.devupdate
+17:21:47 | Plugin archiviert
+17:21:47 | Update abgeschlossen
+17:21:47 | Fertig: Update fertig
+17:22:01 | TEST: Block-Picker-Testfenster starten
+17:25:07 | TEST: Block-Picker-Testfenster starten
+17:51:17 | TEST: Block-Picker-Testfenster starten
+17:54:54 | TEST: Block-Picker-Testfenster starten
+18:28:45 | TEST: Block-Picker-Testfenster starten
+18:34:00 | TEST: Block-Picker-Testfenster starten
+18:34:59 | TEST: Block-Picker-Testfenster starten
+18:35:05 | TEST: Block-Picker-Testfenster starten
+18:42:51 | TEST: Block-Picker-Testfenster starten
+18:42:59 | TEST: Block-Picker-Testfenster starten
+18:44:09 | TEST: Block-Picker-Testfenster starten
+18:44:22 | TEST: Block-Picker-Testfenster starten
+18:49:52 | TEST: Block-Picker-Testfenster starten
+18:50:02 | TEST: Block-Picker-Testfenster starten
+18:54:29 | TEST: Block-Picker-Testfenster starten
+18:54:50 | TEST: Block-Picker-Testfenster starten
+20:41:38 | TEST: Block-Picker-Testfenster starten
+20:43:02 | TEST: Block-Picker-Testfenster starten
+20:46:15 | TEST: Block-Picker-Testfenster starten
+20:46:22 | TEST: Block-Picker-Testfenster starten
+20:47:40 | TEST: Block-Picker-Testfenster starten
+20:49:10 | TEST: Block-Picker-Testfenster starten
+20:49:35 | TEST: Block-Picker-Testfenster starten
+20:49:41 | TEST: Block-Picker-Testfenster starten
+20:49:56 | TEST: Block-Picker-Testfenster starten
+20:51:35 | TEST: Block-Picker-Testfenster starten
+20:57:53 | TEST: Block-Picker-Testfenster starten
+20:58:09 | TEST: Block-Picker-Testfenster starten
+20:58:15 | TEST: Block-Picker-Testfenster starten
+20:58:19 | TEST: Block-Picker-Testfenster starten
+21:52:08 | TEST: Block-Picker-Testfenster starten
+22:01:15 | TEST: Block-Picker-Testfenster starten
+22:03:05 | TEST: Block-Picker-Testfenster starten
+22:05:15 | TEST: Block-Picker-Testfenster starten
+22:06:11 | TEST: Block-Picker-Testfenster starten
+22:06:27 | TEST: Block-Picker-Testfenster starten
+22:19:58 | TEST: Block-Picker-Testfenster starten
+22:20:39 | TEST: Block-Picker-Testfenster starten
+22:36:02 | Start: Plugin laden
+22:36:02 | Plugin-Datei gewählt: PICKER_PARTS_SPLIT_V1.devupdate
+22:36:03 | Plugin-Datei wurde gelesen
+22:36:03 | FEHLER: PART existiert nicht für REPLACE
+22:36:03 | Plugin-Prüfung fehlgeschlagen
+22:36:03 | Installation nicht möglich – Update wurde nicht gestartet
+22:36:03 | Fertig: Plugin geladen
+22:38:10 | Start: Plugin laden
+22:38:10 | Plugin-Datei gewählt: BLOCK_RENDER_SPLIT_V1.devupdate
+22:38:10 | Plugin-Datei wurde gelesen
+22:38:10 | FEHLER: FILE fehlt
+22:38:10 | FEHLER: PART fehlt
+22:38:10 | FEHLER: CONTENT fehlt
+22:38:10 | FEHLER: Datei nicht gefunden: 
+22:38:10 | Plugin-Prüfung fehlgeschlagen
+22:38:10 | Installation nicht möglich – Update wurde nicht gestartet
+22:38:10 | Fertig: Plugin geladen
+22:41:37 | Start: Plugin laden
+22:41:37 | Plugin-Datei gewählt: PICKER_PARTS_SPLIT_V1_FIXED.devupdate
+22:41:38 | Plugin-Datei wurde gelesen
+22:41:38 | Plugin-Prüfung erfolgreich
+22:41:38 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:41:40 | Benutzer hat 'Update durchführen' gewählt
+22:41:40 | Fertig: Plugin geladen
+22:41:40 | DEV Backup V2 wird erstellt...
+22:41:40 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260409_224140
+22:41:40 | DEV Backup V2 abgeschlossen
+22:41:40 | Start: Update starten
+22:41:40 | Sicherheitsprüfung wird vorbereitet...
+22:41:41 | Plugin-Prüfung erfolgreich
+22:41:41 | Neustart erforderlich: NO
+22:41:41 | Sicherheitsprüfung erfolgreich
+22:41:41 | Hinweis: Bereits geladene Datei wird für Update aktiviert: test_darkblue_check.py
+22:42:09 | REPLACE im Monitor ausgeführt
+22:42:09 | Update im Monitor angewendet
+22:42:10 | Plugin wird archiviert...
+22:42:10 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\PICKER_PARTS_SPLIT_V1_FIXED.devupdate
+22:42:10 | Plugin archiviert
+22:42:10 | Update abgeschlossen
+22:42:11 | Fertig: Update fertig
+22:42:29 | Plugin-Laden abgebrochen
+22:44:30 | Start: Plugin laden
+22:44:30 | Plugin-Datei gewählt: REPAIR_BLOCK_RENDER_SUBS.devupdate
+22:44:30 | Plugin-Datei wurde gelesen
+22:44:30 | Plugin-Prüfung erfolgreich
+22:44:30 | Plugin-Prüfung erfolgreich – warte auf Entscheidung
+22:44:32 | Benutzer hat 'Update durchführen' gewählt
+22:44:32 | Fertig: Plugin geladen
+22:44:32 | DEV Backup V2 wird erstellt...
+22:44:32 | Backup erstellt: C:\Users\carst\Desktop\Tool\_backups\backup_20260409_224432
+22:44:32 | DEV Backup V2 abgeschlossen
+22:44:32 | Start: Update starten
+22:44:32 | Sicherheitsprüfung wird vorbereitet...
+22:44:33 | Plugin-Prüfung erfolgreich
+22:44:33 | Neustart erforderlich: NO
+22:44:33 | Sicherheitsprüfung erfolgreich
+22:44:33 | Hinweis: Zieldatei ist bereits aktiv
+22:44:33 | REPLACE im Monitor ausgeführt
+22:44:33 | Update im Monitor angewendet
+22:44:34 | Plugin wird archiviert...
+22:44:34 | Plugin verschoben nach: C:/Users/carst/Downloads\_used_plugins\REPAIR_BLOCK_RENDER_SUBS.devupdate
+22:44:34 | Plugin archiviert
+22:44:34 | Update abgeschlossen
+22:44:34 | Fertig: Update fertig
+22:45:53 | TEST: Block-Picker-Testfenster starten
+22:46:01 | TEST: Block-Picker-Testfenster starten
+22:47:41 | Vorschau automatisch deaktiviert
+22:47:52 | Start: Plugin laden
+22:47:52 | Plugin-Datei gewählt: FIX_PICKER_DATA_BUILD_V1.devupdate
+22:47:52 | Plugin-Datei wurde gelesen
+22:47:52 | FEHLER: Aktion unbekannt: REPLACE_SUB
+22:47:52 | Plugin-Prüfung fehlgeschlagen
+22:47:52 | Installation nicht möglich – Update wurde nicht gestartet
+22:47:52 | Fertig: Plugin geladen
+22:49:39 | Vorschau automatisch deaktiviert
+22:50:03 | Start: Plugin laden
+22:50:03 | Plugin-Datei gewählt: Neues Textdokument.txt
+22:50:03 | Plugin-Datei wurde gelesen
+22:50:03 | FEHLER: Aktion unbekannt: REPLACE
+22:50:03 | Plugin-Prüfung fehlgeschlagen
+22:50:03 | Installation nicht möglich – Update wurde nicht gestartet
+22:50:03 | Fertig: Plugin geladen
+22:50:48 | Start: Plugin laden
+22:50:48 | Plugin-Datei gewählt: FIX_PICKER_DATA_BUILD_V1.devupdate
+22:50:48 | Plugin-Datei wurde gelesen
+22:50:49 | FEHLER: Aktion unbekannt: REPLACE_SUB
+22:50:49 | Plugin-Prüfung fehlgeschlagen
+22:50:49 | Installation nicht möglich – Update wurde nicht gestartet
+22:50:49 | Fertig: Plugin geladen
+22:58:08 | TEST: Block-Picker-Testfenster starten
+23:02:05 | Plugin-Laden abgebrochen
+23:03:07 | TEST: Block-Picker-Testfenster starten
+23:07:12 | Vorschau automatisch deaktiviert
+23:07:16 | Start: Plugin laden
+23:07:16 | Plugin-Datei gewählt: UPDATE_PICKER_BLOCK_INFO_V1.devupdate
+23:07:16 | Plugin-Datei wurde gelesen
+23:07:17 | FEHLER: Aktion unbekannt: REPLACE
+23:07:17 | Plugin-Prüfung fehlgeschlagen
+23:07:17 | Installation nicht möglich – Update wurde nicht gestartet
+23:07:17 | Fertig: Plugin geladen
+23:09:39 | Plugin-Laden abgebrochen
+23:10:43 | Start: Plugin laden
+23:10:43 | Plugin-Datei gewählt: FIX_PICKER_DATA_BUILD_BLOCKINFO_V1.devupdate
+23:10:43 | Plugin-Datei wurde gelesen
+23:10:44 | FEHLER: FILE fehlt
+23:10:44 | FEHLER: PART fehlt
+23:10:44 | FEHLER: CONTENT fehlt
+23:10:44 | FEHLER: Datei nicht gefunden: 
+23:10:44 | Plugin-Prüfung fehlgeschlagen
+23:10:44 | Installation nicht möglich – Update wurde nicht gestartet
+23:10:44 | Fertig: Plugin geladen
+23:16:29 | Start: Plugin laden
+23:16:29 | Plugin-Datei gewählt: FIX_BLOCKINFO_SIMPLE_V1.devupdate
+23:16:30 | Plugin-Datei wurde gelesen
+23:16:30 | FEHLER: FILE fehlt
+23:16:30 | FEHLER: PART fehlt
+23:16:30 | FEHLER: CONTENT fehlt
+23:16:30 | FEHLER: Datei nicht gefunden: 
+23:16:30 | Plugin-Prüfung fehlgeschlagen
+23:16:30 | Installation nicht möglich – Update wurde nicht gestartet
+23:16:30 | Fertig: Plugin geladen
