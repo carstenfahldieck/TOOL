@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 from helpers import find_part_index_by_name, find_part_index_by_name_fuzzy
 from dialogs_custom import ask_three_way
-from structure_dialogs import prompt_unique_structure_name, open_structure_placement_dialog_v1
+from structure_dialogs import prompt_unique_structure_name, open_structure_placement_dialog_v1, open_structure_simple_dialog_v1
 from structure_core import create_new_part_text
 # ===== PART: IMPORTS END =====
 
@@ -285,12 +285,19 @@ class PartsLogicMixin:
             except Exception:
                 selected_index = None
 
-        dialog_result = open_structure_placement_dialog_v1(
-            self,
-            parts_for_dialog,
-            selected_index=selected_index,
-            suggested_name=""
-        )
+        # ===== ZENTRALE FENSTER-ENTSCHEIDUNG =====
+        if len(self.parts) == 0:
+            dialog_result = open_structure_simple_dialog_v1(
+                self.root,
+                suggested_name=""
+            )
+        else:
+            dialog_result = open_structure_placement_dialog_v1(
+                self,
+                parts_for_dialog,
+                selected_index=selected_index,
+                suggested_name=""
+            )
 
         if not dialog_result:
             self.status_var.set("Einfügen abgebrochen")
@@ -1869,3 +1876,107 @@ class PartsLogicMixin:
         )
         self.status_var.set("Block-Auswahl erfolgreich")
 # ===== PART: CREATE_PART_FROM_SELECTION END =====
+# ===== PART: MOVE_PART START =====
+    def move_part(self):
+        if not self.part_listbox.curselection():
+            self.status_var.set("Kein PART ausgewählt")
+            return
+
+        selected_index = self.part_listbox.curselection()[0]
+        selected_part = self.parts[selected_index]
+        part_name = selected_part.name
+
+        parts_for_dialog = []
+        i = 0
+        while i < len(self.parts):
+            parts_for_dialog.append(self.parts[i].name)
+            i += 1
+
+        dialog_result = open_structure_placement_dialog_v1(
+            self,
+            parts_for_dialog,
+            selected_index=selected_index,
+            suggested_name=part_name
+        )
+
+        if not dialog_result:
+            self.status_var.set("Verschieben abgebrochen")
+            return
+
+        position_index = dialog_result.get("position_index")
+
+        if position_index is None:
+            self.status_var.set("Verschieben abgebrochen")
+            return
+
+        # ===== PART TEXT HOLEN =====
+        part_start = selected_part.start_line
+        part_end = selected_part.end_line
+
+        full_text = self.text_editor.get("1.0", tk.END)
+        lines = full_text.splitlines()
+
+        part_block = lines[part_start:part_end + 1]
+
+        # ===== ALTEN PART ENTFERNEN =====
+        remaining_lines = lines[:part_start] + lines[part_end + 1:]
+
+        new_text_base = "\n".join(remaining_lines)
+        if new_text_base != "":
+            new_text_base += "\n"
+
+        # ===== ZIEL BESTIMMEN (wie bei ADD_PART) =====
+        target_part = None
+        position = None
+
+        if position_index == 0:
+            target_part = self.parts[0]
+            position = "before"
+        else:
+            free_slot_number = position_index // 2
+
+            if free_slot_number <= 0:
+                target_part = self.parts[0]
+                position = "before"
+            else:
+                target_index = free_slot_number - 1
+
+                if target_index < 0:
+                    target_index = 0
+
+                if target_index >= len(self.parts):
+                    target_index = len(self.parts) - 1
+
+                target_part = self.parts[target_index]
+                position = "after"
+
+        # ===== WIEDER EINFÜGEN =====
+        try:
+            new_text = create_new_part_text(
+                text=new_text_base,
+                part_name=part_name,
+                existing_parts=self.parts,
+                target_part=target_part,
+                position=position,
+                marker_prefix="#",
+                custom_block=part_block  # wichtig!
+            )
+        except Exception as ex:
+            messagebox.showerror("Fehler", str(ex))
+            self.status_var.set("Verschieben fehlgeschlagen")
+            return
+
+        self.text_editor.delete("1.0", tk.END)
+        self.text_editor.insert("1.0", new_text)
+
+        self.rescan_all()
+
+        new_index = find_part_index_by_name(self, part_name)
+        if new_index is not None:
+            self.part_listbox.selection_clear(0, tk.END)
+            self.part_listbox.selection_set(new_index)
+            self.part_listbox.activate(new_index)
+            self.on_part_select(None)
+
+        self.status_var.set("PART verschoben: " + part_name)
+# ===== PART: MOVE_PART END =====

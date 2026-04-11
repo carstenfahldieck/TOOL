@@ -95,3 +95,44 @@ def create_new_part_text(
     # ===== FALLBACK =====
     raise ValueError("Ungültiger Zustand für PART-Erstellung")
 # ===== PART: MAIN_ENTRY END =====
+# ===== PART: CREATE_NEW_PART_TEXT START =====
+def create_new_part_text(text, part_name, existing_parts, target_part, position, marker_prefix="#", custom_block=None):
+    lines = text.splitlines()
+
+    # ===== BLOCK ERZEUGEN ODER ÜBERNEHMEN =====
+    if custom_block is not None:
+        # vorhandener Block (z. B. beim Verschieben)
+        block_lines = custom_block
+    else:
+        # neuer PART
+        block_lines = [
+            f"{marker_prefix} ===== PART: {part_name} START =====",
+            "",
+            "",
+            f"{marker_prefix} ===== PART: {part_name} END ====="
+        ]
+
+    # ===== FALL: KEINE PARTS VORHANDEN =====
+    if not existing_parts or target_part is None or position is None:
+        new_lines = lines + block_lines
+        return "\n".join(new_lines) + "\n"
+
+    # ===== POSITION ERMITTELN =====
+    insert_index = None
+
+    if position == "before":
+        insert_index = target_part.start_line
+    elif position == "after":
+        insert_index = target_part.end_line + 1
+    else:
+        raise ValueError("Ungültige Position")
+
+    # ===== EINFÜGEN =====
+    new_lines = (
+        lines[:insert_index]
+        + block_lines
+        + lines[insert_index:]
+    )
+
+    return "\n".join(new_lines) + "\n"
+# ===== PART: CREATE_NEW_PART_TEXT END =====
