@@ -63,3 +63,16 @@ def create_menu_bar(app):
 def bind_shortcuts(app):
     app.root.bind("<Control-f>", lambda e: app.open_search_window())
 # ===== PART: SHORTCUTS END =====
+# ===== PART: MENU_BUILD START =====
+def build_menu(root, app):
+    menubar = tk.Menu(root)
+
+    menu = tk.Menu(menubar, tearoff=0)
+
+    menu.add_command(label="Neuer PART", command=app.add_new_part)
+    menu.add_command(label="PART verschieben", command=app.move_part)
+
+    menubar.add_cascade(label="Struktur", menu=menu)
+
+    root.config(menu=menubar)
+# ===== PART: MENU_BUILD END =====

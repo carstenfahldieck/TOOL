@@ -1886,16 +1886,35 @@ class PartsLogicMixin:
         selected_part = self.parts[selected_index]
         part_name = selected_part.name
 
+        # ===== PART BLOCK AUSLESEN =====
+        full_text = self.text_editor.get("1.0", tk.END)
+        lines = full_text.splitlines()
+
+        part_block = lines[selected_part.start:selected_part.end + 1]
+
+        # ===== ALTEN PART ENTFERNEN =====
+        remaining_lines = lines[:selected_part.start] + lines[selected_part.end + 1:]
+
+        new_text_base = "\n".join(remaining_lines)
+        if new_text_base != "":
+            new_text_base += "\n"
+
+        # ===== PART-LISTE NEU ERMITTELN (WICHTIG!) =====
+        self.text_editor.delete("1.0", tk.END)
+        self.text_editor.insert("1.0", new_text_base)
+        self.rescan_all()
+
         parts_for_dialog = []
         i = 0
         while i < len(self.parts):
             parts_for_dialog.append(self.parts[i].name)
             i += 1
 
+        # ===== POSITIONS-FENSTER =====
         dialog_result = open_structure_placement_dialog_v1(
             self,
             parts_for_dialog,
-            selected_index=selected_index,
+            selected_index=None,
             suggested_name=part_name
         )
 
@@ -1909,27 +1928,14 @@ class PartsLogicMixin:
             self.status_var.set("Verschieben abgebrochen")
             return
 
-        # ===== PART TEXT HOLEN =====
-        part_start = selected_part.start_line
-        part_end = selected_part.end_line
-
-        full_text = self.text_editor.get("1.0", tk.END)
-        lines = full_text.splitlines()
-
-        part_block = lines[part_start:part_end + 1]
-
-        # ===== ALTEN PART ENTFERNEN =====
-        remaining_lines = lines[:part_start] + lines[part_end + 1:]
-
-        new_text_base = "\n".join(remaining_lines)
-        if new_text_base != "":
-            new_text_base += "\n"
-
-        # ===== ZIEL BESTIMMEN (wie bei ADD_PART) =====
+        # ===== ZIEL BESTIMMEN =====
         target_part = None
         position = None
 
-        if position_index == 0:
+        if len(self.parts) == 0:
+            target_part = None
+            position = None
+        elif position_index == 0:
             target_part = self.parts[0]
             position = "before"
         else:
@@ -1952,14 +1958,14 @@ class PartsLogicMixin:
 
         # ===== WIEDER EINFÜGEN =====
         try:
-            new_text = create_new_part_text(
+            final_text = create_new_part_text(
                 text=new_text_base,
                 part_name=part_name,
                 existing_parts=self.parts,
                 target_part=target_part,
                 position=position,
                 marker_prefix="#",
-                custom_block=part_block  # wichtig!
+                custom_block=part_block
             )
         except Exception as ex:
             messagebox.showerror("Fehler", str(ex))
@@ -1967,7 +1973,7 @@ class PartsLogicMixin:
             return
 
         self.text_editor.delete("1.0", tk.END)
-        self.text_editor.insert("1.0", new_text)
+        self.text_editor.insert("1.0", final_text)
 
         self.rescan_all()
 

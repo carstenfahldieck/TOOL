@@ -121,9 +121,9 @@ def create_new_part_text(text, part_name, existing_parts, target_part, position,
     insert_index = None
 
     if position == "before":
-        insert_index = target_part.start_line
+        insert_index = target_part.start
     elif position == "after":
-        insert_index = target_part.end_line + 1
+        insert_index = target_part.end + 1
     else:
         raise ValueError("Ungültige Position")
 
