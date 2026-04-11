@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, simpledialog
 
 
 # ===== PART: PICKER_HELPERS START =====
@@ -99,6 +99,157 @@ def picker_toggle_color(color_name):
 # ===== PART: PICKER_HELPERS END =====
 
 
+# ===== PART: PICKER_ACTIONS START =====
+def picker_try_get_editor(master):
+    candidates = [
+        "text_editor",
+        "editor",
+        "main_text",
+        "code_text",
+        "text_widget"
+    ]
+
+    index = 0
+    while index < len(candidates):
+        name = candidates[index]
+        if hasattr(master, name):
+            widget = getattr(master, name)
+            try:
+                widget.get("1.0", tk.END)
+                return widget
+            except Exception:
+                pass
+        index += 1
+
+    return None
+
+
+def picker_try_mark_dirty(master):
+    if hasattr(master, "status_var"):
+        try:
+            master.status_var.set("PART durch Block-Picker eingefügt")
+        except Exception:
+            pass
+
+    if hasattr(master, "detected_part_var"):
+        try:
+            master.detected_part_var.set("Kein Ziel erkannt")
+        except Exception:
+            pass
+
+    if hasattr(master, "clear_replace_diff_marks"):
+        try:
+            master.clear_replace_diff_marks()
+        except Exception:
+            pass
+
+    if hasattr(master, "rescan_all"):
+        try:
+            master.rescan_all()
+        except Exception:
+            pass
+
+    if hasattr(master, "update_dirty_parts"):
+        try:
+            master.update_dirty_parts()
+        except Exception:
+            pass
+
+    if hasattr(master, "update_action_states"):
+        try:
+            master.update_action_states()
+        except Exception:
+            pass
+
+
+def picker_insert_part_into_editor(master, preview_window, target_file, src_start, src_end):
+    editor = picker_try_get_editor(master)
+
+    if editor is None:
+        messagebox.showerror(
+            "Fehler",
+            "Es wurde kein Editor-Widget gefunden.\n\nEs wird bewusst NICHT direkt auf Platte geschrieben.",
+            parent=preview_window
+        )
+        return
+
+    part_name = simpledialog.askstring(
+        "PART erstellen",
+        "PART-Name eingeben:",
+        parent=preview_window
+    )
+
+    if part_name is None:
+        return
+
+    part_name = str(part_name).strip()
+    if part_name == "":
+        messagebox.showwarning("Hinweis", "PART-Name fehlt.", parent=preview_window)
+        return
+
+    try:
+        current_text = editor.get("1.0", tk.END)
+        lines = current_text.splitlines()
+
+        if len(lines) == 0:
+            lines = [""]
+
+        if src_start < 0:
+            src_start = 0
+        if src_end >= len(lines):
+            src_end = len(lines) - 1
+
+        start_marker = "# ===== PART: {0} START =====".format(part_name)
+        end_marker = "# ===== PART: {0} END =====".format(part_name)
+
+        before_lines = lines[:src_start]
+        selected_lines = lines[src_start:src_end + 1]
+        after_lines = lines[src_end + 1:]
+
+        new_lines = []
+        new_lines.extend(before_lines)
+
+        # ------------------------------------------------------------
+        # Nur ergänzen, nicht löschen:
+        # Vor PART START genau dann eine Leerzeile einfügen,
+        # wenn davor überhaupt Text steht und die letzte Zeile
+        # keine Leerzeile ist.
+        # ------------------------------------------------------------
+        if len(new_lines) > 0:
+            if str(new_lines[-1]).strip() != "":
+                new_lines.append("")
+
+        new_lines.append(start_marker)
+        new_lines.extend(selected_lines)
+        new_lines.append(end_marker)
+
+        # ------------------------------------------------------------
+        # Nur ergänzen, nicht löschen:
+        # Nach PART END genau dann eine Leerzeile einfügen,
+        # wenn danach noch weiterer Text kommt und die erste
+        # Folgezeile keine Leerzeile ist.
+        # ------------------------------------------------------------
+        if len(after_lines) > 0:
+            if str(after_lines[0]).strip() != "":
+                new_lines.append("")
+
+        new_lines.extend(after_lines)
+
+        editor.delete("1.0", tk.END)
+        editor.insert("1.0", "\n".join(new_lines) + "\n")
+
+        picker_try_mark_dirty(master)
+
+        try:
+            preview_window.destroy()
+        except Exception:
+            pass
+
+    except Exception as e:
+        messagebox.showerror("Fehler", str(e), parent=preview_window)
+# ===== PART: PICKER_ACTIONS END =====
+
+
 # ===== PART: PICKER_DATA_BUILD START =====
 def picker_build_rendered_items(lines):
     free_buffer = []
@@ -143,6 +294,9 @@ def picker_build_rendered_items(lines):
         if seen_first_free_block and len(pending_parts) > 0:
             append_part_group_if_needed()
 
+        src_start = cleaned_block[0][0]
+        src_end = cleaned_block[-1][0]
+
         index = 0
         while index < len(cleaned_block):
             src_idx, line = cleaned_block[index]
@@ -153,6 +307,12 @@ def picker_build_rendered_items(lines):
                 "src_idx": src_idx
             })
             index += 1
+
+        rendered_items.append({
+            "kind": "block_button",
+            "src_start": src_start,
+            "src_end": src_end
+        })
 
         rendered_items.append({"kind": "blank"})
 
@@ -209,7 +369,7 @@ def picker_build_rendered_items(lines):
 
 
 # ===== PART: PICKER_VIEW_BUILD START =====
-def picker_build_view(parent, rendered):
+def picker_build_view(parent, master, target_file, rendered):
     wrapper = tk.Frame(parent, bg="white")
     wrapper.pack(fill=tk.BOTH, expand=True)
 
@@ -236,6 +396,7 @@ def picker_build_view(parent, rendered):
     text_widget.tag_configure("divider_line", foreground="#888888")
 
     items = rendered["items"]
+    line_no = 1
 
     item_index = 0
     while item_index < len(items):
@@ -244,28 +405,28 @@ def picker_build_view(parent, rendered):
 
         if kind == "blank":
             text_widget.insert("end", "\n")
+            line_no += 1
 
         elif kind == "divider":
             text_widget.insert("end", "────────────────────────────────────────────────────────\n")
-            line_no = int(text_widget.index("end-1c").split(".")[0])
             text_widget.tag_add(
                 "divider_line",
                 "{0}.0".format(line_no),
                 "{0}.end".format(line_no)
             )
+            line_no += 1
 
         elif kind == "part":
             text_widget.insert("end", item["text"] + "\n")
-            line_no = int(text_widget.index("end-1c").split(".")[0])
             text_widget.tag_add(
                 "part_line",
                 "{0}.0".format(line_no),
                 "{0}.end".format(line_no)
             )
+            line_no += 1
 
         elif kind == "block_line":
             text_widget.insert("end", item["text"] + "\n")
-            line_no = int(text_widget.index("end-1c").split(".")[0])
 
             if item["color"] == "yellow":
                 text_widget.tag_add(
@@ -279,6 +440,29 @@ def picker_build_view(parent, rendered):
                     "{0}.0".format(line_no),
                     "{0}.end".format(line_no)
                 )
+
+            line_no += 1
+
+        elif kind == "block_button":
+            button_host = tk.Frame(text_widget, bg="white")
+            btn = tk.Button(
+                button_host,
+                text="➕ Bereich übernehmen",
+                padx=6,
+                pady=2,
+                command=lambda s=item["src_start"], e=item["src_end"]: picker_insert_part_into_editor(
+                    master,
+                    parent,
+                    target_file,
+                    s,
+                    e
+                )
+            )
+            btn.pack(side=tk.RIGHT)
+
+            text_widget.window_create("end", window=button_host)
+            text_widget.insert("end", "\n")
+            line_no += 1
 
         item_index += 1
 
@@ -306,13 +490,17 @@ def show_block_picker_preview(master, target_file):
             )
             return
 
-        win = tk.Toplevel(master)
+        try:
+            win = tk.Toplevel(master.root)
+        except Exception:
+            win = tk.Toplevel(master)
+
         win.title("Block-Picker Vorschau")
         win.geometry("900x600")
 
         header = tk.Label(
             win,
-            text="REPARATUR-STUFE 2: Freie Bereiche und PART-Zwischenblöcke sichtbar. Buttons noch nicht aktiv.",
+            text="REPARATUR-STUFE 3: Buttons erzeugen PARTs jetzt im Editor. Kein direktes Schreiben auf Platte.",
             anchor="w",
             bg="#cc0000",
             fg="white",
@@ -321,7 +509,7 @@ def show_block_picker_preview(master, target_file):
         )
         header.pack(fill=tk.X)
 
-        picker_build_view(win, rendered)
+        picker_build_view(win, master, target_file, rendered)
 
     except Exception as e:
         messagebox.showerror("Fehler", str(e))

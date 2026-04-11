@@ -3,9 +3,11 @@ import os
 import re
 from datetime import datetime
 import tkinter as tk
-from tkinter import filedialog, messagebox, simpledialog
+from tkinter import filedialog, messagebox
 from helpers import find_part_index_by_name, find_part_index_by_name_fuzzy
 from dialogs_custom import ask_three_way
+from structure_dialogs import prompt_unique_structure_name, open_structure_placement_dialog_v1
+from structure_core import create_new_part_text
 # ===== PART: IMPORTS END =====
 
 
@@ -119,6 +121,73 @@ class PartsLogicMixin:
         self.ensure_part_visible_nicely(part)
     # ===== PART: VIEW_HELPERS END =====
 
+# ===== PART: STRUCTURE_NAME_DIALOGS START =====
+    def prompt_unique_structure_name(
+        self,
+        initial_name,
+        title_text,
+        prompt_text,
+        exclude_name=None,
+        empty_warning_text="Der Name darf nicht leer sein",
+        duplicate_title="Name existiert bereits",
+        duplicate_intro_text="Ein Struktur-Name mit diesem Namen existiert bereits."
+    ):
+        effective_name = self._normalize_structure_name(initial_name)
+        normalized_exclude = self._normalize_structure_name(exclude_name)
+
+        while True:
+            if effective_name == "":
+                new_name = simpledialog.askstring(
+                    title_text,
+                    prompt_text,
+                    initialvalue=""
+                )
+
+                if new_name is None:
+                    self.status_var.set("Vorgang abgebrochen")
+                    return None
+
+                effective_name = self._normalize_structure_name(new_name)
+
+                if effective_name == "":
+                    messagebox.showwarning("Hinweis", empty_warning_text)
+                    continue
+
+            if not self.is_structure_name_in_use(effective_name, exclude_name=normalized_exclude):
+                return effective_name
+
+            suggestions = self.build_structure_name_suggestions(
+                effective_name,
+                exclude_name=normalized_exclude
+            )
+
+            message = (
+                duplicate_intro_text + "\n\n"
+                "Vorhandener Name: " + effective_name + "\n\n"
+                "Vorschläge:\n"
+                "- " + suggestions[0] + "\n"
+                "- " + suggestions[1] + "\n"
+                "- " + suggestions[2] + "\n\n"
+                "Bitte neuen Namen eingeben oder Abbrechen wählen."
+            )
+
+            new_name = simpledialog.askstring(
+                duplicate_title,
+                message,
+                initialvalue=suggestions[0]
+            )
+
+            if new_name is None:
+                self.status_var.set("Vorgang abgebrochen")
+                return None
+
+            effective_name = self._normalize_structure_name(new_name)
+
+            if effective_name == "":
+                messagebox.showwarning("Hinweis", empty_warning_text)
+                continue
+# ===== PART: STRUCTURE_NAME_DIALOGS END =====
+
     # ===== PART: RIGHT_DIFF_HELPERS START =====
     def clear_replace_diff_marks(self):
         self.replace_input.tag_remove("replace_diff_line", "1.0", tk.END)
@@ -203,99 +272,132 @@ class PartsLogicMixin:
 
     # ===== PART: ADD_PART START =====
     def add_new_part(self):
-        part_name = simpledialog.askstring("Neuer PART", "Name des neuen PART:")
+        parts_for_dialog = []
+        index = 0
+        while index < len(self.parts):
+            parts_for_dialog.append(self.parts[index].name)
+            index += 1
+
+        selected_index = None
+        if self.part_listbox.curselection():
+            try:
+                selected_index = self.part_listbox.curselection()[0]
+            except Exception:
+                selected_index = None
+
+        dialog_result = open_structure_placement_dialog_v1(
+            self,
+            parts_for_dialog,
+            selected_index=selected_index,
+            suggested_name=""
+        )
+
+        if not dialog_result:
+            self.status_var.set("Einfügen abgebrochen")
+            return
+
+        part_name = dialog_result.get("name")
+        position_index = dialog_result.get("position_index")
+
         if not part_name:
+            self.status_var.set("Einfügen abgebrochen")
             return
 
         effective_name = self._normalize_structure_name(part_name)
         if effective_name == "":
+            self.status_var.set("Einfügen abgebrochen")
             return
 
-        while self.is_structure_name_in_use(effective_name):
-            suggestions = self.build_structure_name_suggestions(effective_name)
+        current_text = self.text_editor.get("1.0", tk.END).rstrip("\n")
+        if current_text != "":
+            current_text += "\n"
 
-            message = (
-                "Ein PART mit diesem Namen existiert bereits in der aktuellen Datei.\n\n"
-                "Vorhandener Name: " + effective_name + "\n\n"
-                "Vorschläge:\n"
-                "- " + suggestions[0] + "\n"
-                "- " + suggestions[1] + "\n"
-                "- " + suggestions[2] + "\n\n"
-                "Bitte neuen Namen eingeben oder Abbrechen wählen."
-            )
-
-            new_name = simpledialog.askstring(
-                "Name existiert bereits",
-                message,
-                initialvalue=suggestions[0]
-            )
-
-            if new_name is None:
-                self.status_var.set("Einfügen abgebrochen")
+        # ===== FALL 1: DATEI HAT NOCH KEINEN PART =====
+        if len(self.parts) == 0:
+            try:
+                new_text = create_new_part_text(
+                    text=current_text,
+                    part_name=effective_name,
+                    existing_parts=[],
+                    target_part=None,
+                    position=None,
+                    marker_prefix="#"
+                )
+            except Exception as ex:
+                messagebox.showerror("Fehler", str(ex))
+                self.status_var.set("Neuen PART konnte nicht erstellt werden")
                 return
 
-            effective_name = self._normalize_structure_name(new_name)
+            self.text_editor.delete("1.0", tk.END)
+            self.text_editor.insert("1.0", new_text)
 
-            if effective_name == "":
-                messagebox.showwarning("Hinweis", "Der neue Name darf nicht leer sein")
-                continue
+            self.clear_replace_diff_marks()
+            self.detected_part_var.set("Kein Ziel erkannt")
 
-        new_part_lines = [
-            "# ===== PART: " + effective_name + " START =====",
-            "",
-            "# ===== PART: " + effective_name + " END ====="
-        ]
+            self.rescan_all()
+            self.update_dirty_parts()
 
-        lines = self.text_editor.get("1.0", tk.END).splitlines()
-        insert_index = None
+            new_index = find_part_index_by_name(self, effective_name)
+            if new_index is not None:
+                self.part_listbox.selection_clear(0, tk.END)
+                self.part_listbox.selection_set(new_index)
+                self.part_listbox.activate(new_index)
+                self.on_part_select(None)
 
-        if self.part_listbox.curselection():
-            sel_index = self.part_listbox.curselection()[0]
-            selected_part = self.parts[sel_index]
+            self.status_var.set("Neuer PART erstellt: " + effective_name)
+            return
 
-            answer = ask_three_way(
-                self.root,
-                "PART einfügen",
-                "Wo soll der neue PART eingefügt werden?\n\n"
-                "Gewählter PART: " + selected_part.name,
-                ("Vor", "v"),
-                ("Nach", "n"),
-                ("Abbrechen", "a")
-            )
+        # ===== FALL 2: ES GIBT BEREITS PARTS =====
+        if position_index is None:
+            self.status_var.set("Einfügen abgebrochen")
+            return
 
-            if answer == "option3" or answer is None:
-                self.status_var.set("Einfügen abgebrochen")
-                return
+        target_part = None
+        position = None
 
-            if answer == "option1":
-                insert_index = selected_part.start
-            else:
-                insert_index = selected_part.end + 1
+        # Dialog-Zeilen:
+        # 0 = [frei] vor dem ersten PART
+        # 1 = PART 0
+        # 2 = [frei] nach PART 0
+        # 3 = PART 1
+        # 4 = [frei] nach PART 1
+        if position_index == 0:
+            target_part = self.parts[0]
+            position = "before"
         else:
-            answer = ask_three_way(
-                self.root,
-                "PART einfügen",
-                "Es ist noch kein Ziel-PART ausgewählt.\n\n"
-                "Was soll passieren?",
-                ("PART auswählen", "p"),
-                ("Am Ende", "e"),
-                ("Abbrechen", "a")
+            free_slot_number = position_index // 2
+
+            if free_slot_number <= 0:
+                target_part = self.parts[0]
+                position = "before"
+            else:
+                target_index = free_slot_number - 1
+
+                if target_index < 0:
+                    target_index = 0
+
+                if target_index >= len(self.parts):
+                    target_index = len(self.parts) - 1
+
+                target_part = self.parts[target_index]
+                position = "after"
+
+        try:
+            new_text = create_new_part_text(
+                text=current_text,
+                part_name=effective_name,
+                existing_parts=self.parts,
+                target_part=target_part,
+                position=position,
+                marker_prefix="#"
             )
-
-            if answer == "option3" or answer is None:
-                self.status_var.set("Einfügen abgebrochen")
-                return
-
-            if answer == "option1":
-                self.status_var.set("Bitte links Ziel-PART auswählen und 'Neuer PART' erneut ausführen")
-                return
-
-            insert_index = len(lines)
-
-        new_lines = self.insert_block_with_spacing(lines, insert_index, new_part_lines)
+        except Exception as ex:
+            messagebox.showerror("Fehler", str(ex))
+            self.status_var.set("Neuen PART konnte nicht erstellt werden")
+            return
 
         self.text_editor.delete("1.0", tk.END)
-        self.text_editor.insert("1.0", "\n".join(new_lines).rstrip("\n") + "\n")
+        self.text_editor.insert("1.0", new_text)
 
         self.clear_replace_diff_marks()
         self.detected_part_var.set("Kein Ziel erkannt")

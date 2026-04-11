@@ -27,19 +27,79 @@ class CodeEditorApp(
 # ===== PART: TEST_BUTTON_HANDLER START =====
     def test_button_action(self):
         try:
-            self.append_assistant_log("TEST: Block-Picker-Testfenster starten")
+            self.append_assistant_log("[TEST] Neuer Struktur-Dialog V1 starten")
         except Exception:
             pass
 
         try:
-            target_file = self.current_file
-            if not target_file:
-                target_file = "fake_target.py"
+            from structure_dialogs import open_structure_placement_dialog_v1
 
-            show_block_picker_preview(self.root, target_file)
-        except Exception as exc:
+            # ===== PARTS sammeln =====
+            parts = []
+
+            if hasattr(self, "part_listbox"):
+                count = self.part_listbox.size()
+                i = 0
+                while i < count:
+                    entry = self.part_listbox.get(i)
+
+                    # Format: "[PY] NAME"
+                    if "] " in entry:
+                        name = entry.split("] ", 1)[1]
+                    else:
+                        name = entry
+
+                    parts.append(name)
+                    i += 1
+
+            # Fallback (falls leer)
+            if not parts:
+                parts = ["TEST_A", "TEST_B", "TEST_C"]
+
+            # ===== aktuelle Auswahl =====
+            selected_index = None
+
+            if hasattr(self, "part_listbox"):
+                sel = self.part_listbox.curselection()
+                if sel:
+                    selected_index = sel[0]
+
+            # ===== Dialog aufrufen =====
+            result = open_structure_placement_dialog_v1(
+                self,
+                parts,
+                selected_index=selected_index,
+                suggested_name="NEUER_PART"
+            )
+
+            # ===== Ergebnis verarbeiten =====
+            if result and result.get("name"):
+                msg = (
+                    "[TEST] Ergebnis:\n"
+                    + "Name: " + str(result.get("name")) + "\n"
+                    + "Position: " + str(result.get("position_index")) + "\n"
+                    + "Hashtags: " + str(result.get("hashtags"))
+                )
+
+                try:
+                    self.append_assistant_log(msg)
+                except Exception:
+                    pass
+
+                try:
+                    messagebox.showinfo("TEST Ergebnis", msg)
+                except Exception:
+                    pass
+
+            else:
+                try:
+                    self.append_assistant_log("[TEST] Abgebrochen")
+                except Exception:
+                    pass
+
+        except Exception as ex:
             try:
-                messagebox.showerror("Fehler im TEST", str(exc))
+                messagebox.showerror("Fehler im TEST", str(ex))
             except Exception:
                 pass
 # ===== PART: TEST_BUTTON_HANDLER END =====

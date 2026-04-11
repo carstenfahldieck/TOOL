@@ -3013,3 +3013,116 @@
 23:16:30 | Plugin-Prüfung fehlgeschlagen
 23:16:30 | Installation nicht möglich – Update wurde nicht gestartet
 23:16:30 | Fertig: Plugin geladen
+00:11:17 | TEST: Block-Picker-Testfenster starten
+00:12:45 | TEST: Block-Picker-Testfenster starten
+00:13:55 | TEST: Block-Picker-Testfenster starten
+00:22:30 | Plugin-Laden abgebrochen
+00:23:35 | TEST: Block-Picker-Testfenster starten
+00:25:00 | TEST: Block-Picker-Testfenster starten
+00:41:51 | TEST: Block-Picker-Testfenster starten
+00:42:14 | TEST: Block-Picker-Testfenster starten
+01:01:38 | TEST: Block-Picker-Testfenster starten
+01:02:14 | TEST: Block-Picker-Testfenster starten
+01:04:45 | TEST: Block-Picker-Testfenster starten
+01:05:47 | TEST: Block-Picker-Testfenster starten
+01:08:59 | TEST: Block-Picker-Testfenster starten
+01:11:35 | TEST: Block-Picker-Testfenster starten
+01:11:44 | TEST: Block-Picker-Testfenster starten
+12:51:00 | TEST: Block-Picker-Testfenster starten
+12:53:16 | TEST: Block-Picker-Testfenster starten
+12:55:59 | TEST: Block-Picker-Testfenster starten
+12:56:38 | TEST: Block-Picker-Testfenster starten
+16:17:03 | TEST: Block-Picker-Testfenster starten
+16:17:12 | TEST: Block-Picker-Testfenster starten
+16:17:46 | TEST: Block-Picker-Testfenster starten
+16:22:14 | [TEST] Struktur-Dialog testen
+16:23:11 | [TEST] Struktur-Dialog testen
+16:32:28 | [TEST] Struktur-Dialog testen
+16:32:38 | [TEST] Struktur-Dialog testen
+16:32:51 | [TEST] Struktur-Dialog testen
+16:38:09 | [TEST] Struktur-Dialog testen
+16:38:20 | [TEST] Struktur-Dialog testen
+17:18:21 | [TEST] Struktur-Dialog testen
+17:18:34 | [TEST] Struktur-Dialog testen
+17:25:05 | [TEST] Struktur-Dialog testen
+17:27:03 | [TEST] Struktur-Dialog testen
+17:27:14 | [TEST] Struktur-Dialog testen
+17:33:07 | [TEST] Struktur-Dialog testen
+17:34:08 | [TEST] Struktur-Dialog testen
+17:40:24 | [TEST] Struktur-Dialog testen
+17:40:29 | [TEST] Struktur-Dialog testen
+17:40:45 | [TEST] Struktur-Dialog testen
+17:41:08 | [TEST] Struktur-Dialog testen
+18:08:34 | [TEST] Struktur-Dialog testen
+18:08:59 | [TEST] Struktur-Dialog testen
+18:09:26 | [TEST] Struktur-Dialog testen
+18:10:55 | [TEST] Struktur-Dialog testen
+18:19:45 | [TEST] Struktur-Dialog testen
+18:19:53 | [TEST] Struktur-Dialog testen
+18:26:35 | [TEST] Struktur-Dialog testen
+18:26:42 | [TEST] Struktur-Dialog testen
+18:41:21 | [TEST] Struktur-Dialog testen
+18:41:54 | [TEST] Struktur-Dialog testen
+18:48:47 | [TEST] Struktur-Dialog testen
+18:49:09 | [TEST] Struktur-Dialog testen
+18:49:28 | [TEST] Struktur-Dialog testen
+20:29:16 | [TEST] Struktur-Dialog testen
+20:29:29 | [TEST] Struktur-Dialog testen
+20:29:39 | [TEST] Struktur-Dialog testen
+20:36:00 | [TEST] Struktur-Dialog testen
+20:36:09 | [TEST] Struktur-Dialog testen
+20:36:15 | [TEST] Struktur-Dialog testen
+20:36:28 | [TEST] Struktur-Dialog testen
+20:36:40 | [TEST] Struktur-Dialog testen
+20:38:00 | [TEST] Struktur-Dialog testen
+20:38:16 | [TEST] Struktur-Dialog testen
+20:41:23 | [TEST] Struktur-Dialog testen
+20:41:29 | [TEST] Struktur-Dialog testen
+20:42:19 | [TEST] Struktur-Dialog testen
+20:42:26 | [TEST] Struktur-Dialog testen
+20:44:15 | [TEST] Struktur-Dialog testen
+20:57:31 | [TEST] Struktur-Dialog testen
+22:22:59 | [TEST] Struktur-Dialog testen
+22:23:07 | [TEST] Struktur-Dialog testen
+01:11:44 | [TEST] Neuer Struktur-Dialog V1 starten
+01:11:52 | [TEST] Abgebrochen
+01:11:56 | [TEST] Neuer Struktur-Dialog V1 starten
+01:18:49 | [TEST] Abgebrochen
+01:25:02 | [TEST] Neuer Struktur-Dialog V1 starten
+01:25:17 | [TEST] Abgebrochen
+01:25:26 | [TEST] Neuer Struktur-Dialog V1 starten
+01:30:28 | [TEST] Abgebrochen
+01:34:20 | [TEST] Neuer Struktur-Dialog V1 starten
+01:34:35 | [TEST] Abgebrochen
+01:53:13 | [TEST] Neuer Struktur-Dialog V1 starten
+01:53:25 | [TEST] Abgebrochen
+01:53:27 | [TEST] Neuer Struktur-Dialog V1 starten
+01:53:34 | [TEST] Abgebrochen
+16:59:49 | [TEST] Neuer Struktur-Dialog V1 starten
+16:59:51 | [TEST] Abgebrochen
+16:59:54 | [TEST] Neuer Struktur-Dialog V1 starten
+17:00:11 | [TEST] Abgebrochen
+17:00:12 | [TEST] Neuer Struktur-Dialog V1 starten
+17:00:16 | [TEST] Ergebnis:
+Name: NEUER_PART
+Position: 6
+Hashtags: []
+17:00:24 | [TEST] Neuer Struktur-Dialog V1 starten
+17:00:30 | [TEST] Ergebnis:
+Name: NEUER_PART
+Position: 6
+Hashtags: []
+17:01:29 | [TEST] Neuer Struktur-Dialog V1 starten
+17:01:45 | [TEST] Ergebnis:
+Name: NEUER_PART
+Position: 6
+Hashtags: []
+17:01:55 | [TEST] Neuer Struktur-Dialog V1 starten
+17:02:05 | [TEST] Ergebnis:
+Name: NEUER_PART
+Position: 6
+Hashtags: []
+18:40:35 | [TEST] Neuer Struktur-Dialog V1 starten
+18:40:37 | [TEST] Abgebrochen
+22:50:13 | [TEST] Neuer Struktur-Dialog V1 starten
+22:50:14 | [TEST] Abgebrochen

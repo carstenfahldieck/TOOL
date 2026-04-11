@@ -15,9 +15,7 @@ print("TEST_AUTOLOAD_ADD wurde per Update eingefügt")
 # ===== PART: MAIN_TEST START =====
 
 # ===== PART: MAIN_TEST END =====
-fdfdf
-fefffx
-xrewxer
+
 
 # ===== PART: TEST_UPDATE_MARKER START =====
 print("UPDATE TEST AKTIV")
@@ -37,7 +35,7 @@ xrgrcggcd
 
        ccccccghv hsv
      ch ghv ghg
-
+cfg_haus = 4
 
 gvhdhghnhgcvh
 v ghnhcvnbvg
@@ -45,3 +43,6 @@ v ghnhcvnbvg
 # ===== PART: MEIN_TEST11 START =====
 
 # ===== PART: MEIN_TEST11 END =====
+# ===== PART: 111 START =====
+
+# ===== PART: 111 END =====
