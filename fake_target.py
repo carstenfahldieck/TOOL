@@ -12,9 +12,6 @@ print("TEST_AUTOLOAD_ADD wurde per Update eingefügt")
 
 
 
-# ===== PART: MEIN_TEST12 START =====
-
-# ===== PART: MEIN_TEST12 END =====
 
 
 xgsgrg
@@ -30,9 +27,6 @@ v ghnhcvnbvg
 # ===== PART: 111 START =====
 
 # ===== PART: 111 END =====
-# ===== PART: MAIN_TEST START =====
-
-# ===== PART: MAIN_TEST END =====
 # ===== PART: TEST_LOAD START =====
 print("TEST2: LOAD über TOOL")
 # ===== PART: TEST_LOAD END =====

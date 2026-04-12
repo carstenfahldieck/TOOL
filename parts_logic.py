@@ -1,13 +1,23 @@
 # ===== PART: IMPORTS START =====
+
 import os
+
 import re
+
 from datetime import datetime
+
 import tkinter as tk
+
 from tkinter import filedialog, messagebox
+
 from helpers import find_part_index_by_name, find_part_index_by_name_fuzzy
+
 from dialogs_custom import ask_three_way
+
 from structure_dialogs import prompt_unique_structure_name, open_structure_placement_dialog_v1, open_structure_simple_dialog_v1
-from structure_core import create_new_part_text
+
+from structure_core import create_new_part_text, create_structure_from_range
+
 # ===== PART: IMPORTS END =====
 
 
@@ -281,105 +291,237 @@ class PartsLogicMixin:
         if self.part_listbox.curselection():
             try:
                 selected_index = self.part_listbox.curselection()[0]
-            except:
+            except Exception:
                 selected_index = None
 
         dialog_result = None
 
-        # ===== RENAME MIT AUSGEWÄHLTEM PART =====
-        if mode == "rename" and selected_name:
-            dialog_result = open_structure_simple_dialog_v1(
-                self.root,
-                suggested_name=selected_name
-            )
+        try:
+            # ===== RENAME: DIREKT MIT AUSGEWÄHLTEM PART =====
+            if mode == "rename" and selected_name:
+                dialog_result = open_structure_simple_dialog_v1(
+                    self.root,
+                    suggested_name=selected_name
+                )
 
-        # ===== RENAME OHNE AUSWAHL =====
-        elif mode == "rename" and not selected_name:
-            dialog_result = open_structure_placement_dialog_v1(
-                self,
-                parts_for_dialog,
-                selected_index=selected_index,
-                suggested_name="",
-                mode="rename"
-            )
+            # ===== RENAME: OHNE AUSWAHL -> GROSSES FENSTER ZUR PART-AUSWAHL =====
+            elif mode == "rename" and not selected_name:
+                dialog_result = open_structure_placement_dialog_v1(
+                    self,
+                    parts_for_dialog,
+                    selected_index=selected_index,
+                    suggested_name="",
+                    mode="rename"
+                )
 
-        # ===== CREATE =====
-        elif len(self.parts) == 0:
-            dialog_result = open_structure_simple_dialog_v1(
-                self.root,
-                suggested_name=""
-            )
-        else:
-            dialog_result = open_structure_placement_dialog_v1(
-                self,
-                parts_for_dialog,
-                selected_index=selected_index,
-                suggested_name="",
-                mode="create"
-            )
+            # ===== CREATE: KEINE PARTS -> KLEINES FENSTER =====
+            elif len(self.parts) == 0:
+                dialog_result = open_structure_simple_dialog_v1(
+                    self.root,
+                    suggested_name=""
+                )
 
-        if not dialog_result:
-            return
-
-        part_name = dialog_result.get("name")
-        position_index = dialog_result.get("position_index")
-
-        if not part_name:
-            return
-
-        effective_name = self._normalize_structure_name(part_name)
-        if not effective_name:
-            return
-
-        # ===== RENAME: MIT AUSWAHL =====
-        if mode == "rename" and selected_name:
-            if selected_name == effective_name:
-                self.status_var.set("Name unverändert")
-                return
-
-            self._rename_selected_part_boundaries(effective_name)
-            return
-
-        # ===== RENAME: OHNE AUSWAHL → PART AUS LISTE HOLEN =====
-        if mode == "rename" and not selected_name:
-            if position_index is None:
-                return
-
-            if position_index >= len(self.parts):
-                return
-
-            picked_part_name = self.parts[position_index].name
-
-            dialog_result = open_structure_simple_dialog_v1(
-                self.root,
-                suggested_name=picked_part_name
-            )
+            # ===== CREATE: PARTS VORHANDEN -> GROSSES FENSTER =====
+            else:
+                dialog_result = open_structure_placement_dialog_v1(
+                    self,
+                    parts_for_dialog,
+                    selected_index=selected_index,
+                    suggested_name="",
+                    mode="create"
+                )
 
             if not dialog_result:
+                if mode == "rename":
+                    self.status_var.set("Umbenennen abgebrochen")
+                else:
+                    self.status_var.set("Einfügen abgebrochen")
                 return
 
-            new_name = dialog_result.get("name")
-            if not new_name:
+            part_name = dialog_result.get("name")
+            position_index = dialog_result.get("position_index")
+
+            if not part_name:
+                if mode == "rename":
+                    self.status_var.set("Umbenennen abgebrochen")
+                else:
+                    self.status_var.set("Einfügen abgebrochen")
                 return
 
-            effective_name = self._normalize_structure_name(new_name)
-            if not effective_name:
+            effective_name = self._normalize_structure_name(part_name)
+            if effective_name == "":
+                if mode == "rename":
+                    self.status_var.set("Umbenennen abgebrochen")
+                else:
+                    self.status_var.set("Einfügen abgebrochen")
                 return
 
-            if picked_part_name == effective_name:
-                self.status_var.set("Name unverändert")
+            # ===== RENAME: FALL A - PART WAR VORHER AUSGEWÄHLT =====
+            if mode == "rename" and selected_name:
+                if selected_name == effective_name:
+                    self.status_var.set("Name unverändert")
+                    return
+
+                if hasattr(self, "_rename_selected_part_boundaries"):
+                    self._rename_selected_part_boundaries(effective_name)
+                else:
+                    messagebox.showwarning(
+                        "Hinweis",
+                        "Die Umbenennen-Logik wurde nicht gefunden."
+                    )
+                    self.status_var.set("Umbenennen abgebrochen")
                 return
 
-            self._structure_selected_part_name = picked_part_name
-            self._rename_selected_part_boundaries(effective_name)
-            return
+            # ===== RENAME: FALL B - KEIN PART AUSGEWÄHLT, AUSWAHL ÜBER GROSSES FENSTER =====
+            if mode == "rename" and not selected_name:
+                if position_index is None:
+                    self.status_var.set("Umbenennen abgebrochen")
+                    return
 
-        # ===== HIER BLEIBT DEIN NORMALER CREATE CODE UNVERÄNDERT =====
+                if position_index >= len(self.parts):
+                    self.status_var.set("Umbenennen abgebrochen")
+                    return
 
-        self.status_var.set("Noch nicht vollständig implementiert")
+                picked_part_name = self.parts[position_index].name
 
-        self._structure_action_mode = "create"
-        self._structure_selected_part_name = None
+                dialog_result = open_structure_simple_dialog_v1(
+                    self.root,
+                    suggested_name=picked_part_name
+                )
+
+                if not dialog_result:
+                    self.status_var.set("Umbenennen abgebrochen")
+                    return
+
+                part_name = dialog_result.get("name")
+                if not part_name:
+                    self.status_var.set("Umbenennen abgebrochen")
+                    return
+
+                effective_name = self._normalize_structure_name(part_name)
+                if effective_name == "":
+                    self.status_var.set("Umbenennen abgebrochen")
+                    return
+
+                if picked_part_name == effective_name:
+                    self.status_var.set("Name unverändert")
+                    return
+
+                if hasattr(self, "_rename_selected_part_boundaries"):
+                    self._structure_selected_part_name = picked_part_name
+                    self._rename_selected_part_boundaries(effective_name)
+                else:
+                    messagebox.showwarning(
+                        "Hinweis",
+                        "Die Umbenennen-Logik wurde nicht gefunden."
+                    )
+                    self.status_var.set("Umbenennen abgebrochen")
+                return
+
+            # ===== CREATE: AB HIER NORMALER NEUER-PART-WEG =====
+            current_text = self.text_editor.get("1.0", tk.END).rstrip("\n")
+            if current_text != "":
+                current_text += "\n"
+
+            # ===== FALL 1: DATEI HAT NOCH KEINEN PART =====
+            if len(self.parts) == 0:
+                try:
+                    new_text = create_new_part_text(
+                        text=current_text,
+                        part_name=effective_name,
+                        existing_parts=[],
+                        target_part=None,
+                        position=None,
+                        marker_prefix="#"
+                    )
+                except Exception as ex:
+                    messagebox.showerror("Fehler", str(ex))
+                    self.status_var.set("Neuen PART konnte nicht erstellt werden")
+                    return
+
+                self.text_editor.delete("1.0", tk.END)
+                self.text_editor.insert("1.0", new_text)
+
+                self.clear_replace_diff_marks()
+                self.detected_part_var.set("Kein Ziel erkannt")
+
+                self.rescan_all()
+                self.update_dirty_parts()
+
+                new_index = find_part_index_by_name(self, effective_name)
+                if new_index is not None:
+                    self.part_listbox.selection_clear(0, tk.END)
+                    self.part_listbox.selection_set(new_index)
+                    self.part_listbox.activate(new_index)
+                    self.on_part_select(None)
+
+                self.status_var.set("Neuer PART erstellt: " + effective_name)
+                return
+
+            # ===== FALL 2: ES GIBT BEREITS PARTS =====
+            if position_index is None:
+                self.status_var.set("Einfügen abgebrochen")
+                return
+
+            target_part = None
+            position = None
+
+            if position_index == 0:
+                target_part = self.parts[0]
+                position = "before"
+            else:
+                free_slot_number = position_index // 2
+
+                if free_slot_number <= 0:
+                    target_part = self.parts[0]
+                    position = "before"
+                else:
+                    target_index = free_slot_number - 1
+
+                    if target_index < 0:
+                        target_index = 0
+
+                    if target_index >= len(self.parts):
+                        target_index = len(self.parts) - 1
+
+                    target_part = self.parts[target_index]
+                    position = "after"
+
+            try:
+                new_text = create_new_part_text(
+                    text=current_text,
+                    part_name=effective_name,
+                    existing_parts=self.parts,
+                    target_part=target_part,
+                    position=position,
+                    marker_prefix="#"
+                )
+            except Exception as ex:
+                messagebox.showerror("Fehler", str(ex))
+                self.status_var.set("Neuen PART konnte nicht erstellt werden")
+                return
+
+            self.text_editor.delete("1.0", tk.END)
+            self.text_editor.insert("1.0", new_text)
+
+            self.clear_replace_diff_marks()
+            self.detected_part_var.set("Kein Ziel erkannt")
+
+            self.rescan_all()
+            self.update_dirty_parts()
+
+            new_index = find_part_index_by_name(self, effective_name)
+            if new_index is not None:
+                self.part_listbox.selection_clear(0, tk.END)
+                self.part_listbox.selection_set(new_index)
+                self.part_listbox.activate(new_index)
+                self.on_part_select(None)
+
+            self.status_var.set("Neuer PART erstellt: " + effective_name)
+
+        finally:
+            self._structure_action_mode = "create"
+            self._structure_selected_part_name = None
     # ===== PART: ADD_PART END =====
 
     # ===== PART: REMOVE_PART START =====
@@ -1845,3 +1987,93 @@ class PartsLogicMixin:
 
         self.status_var.set("PART umbenannt: " + old_name + " → " + new_name)
 # ===== PART: RENAME_BOUNDARIES_HELPER END =====
+
+# ===== PART: CREATE_PART_FROM_CODE_RANGE START =====
+    def create_part_from_code_range(self, start_line, end_line, part_name):
+        """
+        Grundgerüst:
+        Macht aus einem bestehenden Codebereich einen PART.
+
+        Noch ohne Maus-/Tastatur-Logik.
+        Die Eingaben kommen fertig rein.
+        """
+
+        if part_name is None:
+            self.status_var.set("PART-Name fehlt")
+            return False
+
+        effective_name = self._normalize_structure_name(part_name)
+        if effective_name == "":
+            self.status_var.set("PART-Name ist leer")
+            return False
+
+        if self.is_structure_name_in_use(effective_name):
+            self.status_var.set("PART-Name existiert bereits")
+            return False
+
+        current_text = self.text_editor.get("1.0", tk.END)
+        if current_text.endswith("\n"):
+            current_text = current_text[:-1]
+
+        try:
+            new_text = create_structure_from_range(
+                text=current_text,
+                structure_type="PART",
+                start_line=start_line,
+                end_line=end_line,
+                name=effective_name,
+                existing_parts=self.parts,
+                marker_prefix="#"
+            )
+        except Exception as ex:
+            messagebox.showerror("Fehler", str(ex))
+            self.status_var.set("PART aus Codebereich konnte nicht erstellt werden")
+            return False
+
+        self.text_editor.delete("1.0", tk.END)
+        self.text_editor.insert("1.0", new_text)
+
+        self.clear_replace_diff_marks()
+        self.detected_part_var.set("Kein Ziel erkannt")
+
+        self.rescan_all()
+        self.update_dirty_parts()
+
+        new_index = find_part_index_by_name(self, effective_name)
+        if new_index is not None:
+            self.part_listbox.selection_clear(0, tk.END)
+            self.part_listbox.selection_set(new_index)
+            self.part_listbox.activate(new_index)
+            self.on_part_select(None)
+
+        self.status_var.set("PART aus Codebereich erstellt: " + effective_name)
+        return True
+# ===== PART: CREATE_PART_FROM_CODE_RANGE END =====
+
+# ===== PART: TEST_CREATE_PART_FROM_CODE_RANGE START =====
+    def test_create_part_from_code_range(self):
+        """
+        Einfacher Test-Aufruf für den neuen Bereichs-Kern.
+        Noch ohne Maus- oder Tastaturbedienung.
+        """
+
+        try:
+            start_line = 0
+            end_line = 2
+            part_name = "TEST_CODE_PART"
+
+            ok = self.create_part_from_code_range(
+                start_line,
+                end_line,
+                part_name
+            )
+
+            if ok:
+                self.status_var.set("TEST: PART aus Codebereich erstellt")
+            else:
+                self.status_var.set("TEST: PART aus Codebereich nicht erstellt")
+
+        except Exception as ex:
+            messagebox.showerror("Fehler", str(ex))
+            self.status_var.set("TEST: PART aus Codebereich fehlgeschlagen")
+# ===== PART: TEST_CREATE_PART_FROM_CODE_RANGE END =====

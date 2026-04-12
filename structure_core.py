@@ -136,3 +136,144 @@ def create_new_part_text(text, part_name, existing_parts, target_part, position,
 
     return "\n".join(new_lines) + "\n"
 # ===== PART: CREATE_NEW_PART_TEXT END =====
+
+# ===== PART: RANGE_STRUCTURE_VALIDATION START =====
+def is_range_fully_inside_existing_part(existing_parts, start_line, end_line):
+    """
+    Prüft nur die einfache erste Sicherheitsregel:
+
+    True  = der gewählte Bereich liegt vollständig innerhalb eines bestehenden PARTS
+    False = der Bereich liegt nicht vollständig innerhalb eines bestehenden PARTS
+
+    Mehr prüfen wir hier bewusst noch nicht.
+    """
+    if existing_parts is None:
+        return False
+
+    try:
+        start_line = int(start_line)
+        end_line = int(end_line)
+    except Exception:
+        return False
+
+    if start_line > end_line:
+        temp = start_line
+        start_line = end_line
+        end_line = temp
+
+    index = 0
+    while index < len(existing_parts):
+        part = existing_parts[index]
+
+        try:
+            part_start = int(part.start)
+            part_end = int(part.end)
+        except Exception:
+            index += 1
+            continue
+
+        if start_line >= part_start and end_line <= part_end:
+            return True
+
+        index += 1
+
+    return False
+# ===== PART: RANGE_STRUCTURE_VALIDATION END =====
+
+# ===== PART: CREATE_STRUCTURE_FROM_RANGE START =====
+def create_structure_from_range(text, structure_type, start_line, end_line, name, existing_parts=None, marker_prefix="#"):
+    """
+    Allgemeiner Kern:
+    Macht aus einem bestehenden Codebereich ein Struktur-Element
+    (erstmal praktisch für PART, später auch für SUB / BAUSTEIN).
+
+    Parameter:
+        text:           kompletter Editor-Text
+        structure_type: z. B. "PART", "SUB", "BAUSTEIN"
+        start_line:     Startzeile (0-basiert)
+        end_line:       Endzeile (0-basiert)
+        name:           Struktur-Name
+        existing_parts: vorhandene PARTS für Minimalprüfung
+        marker_prefix:  Standard "#"
+
+    Rückgabe:
+        neuer kompletter Text
+    """
+
+    if text is None:
+        text = ""
+
+    if structure_type is None:
+        raise ValueError("structure_type fehlt")
+
+    if name is None:
+        raise ValueError("name fehlt")
+
+    structure_type_text = str(structure_type).strip().upper()
+    if structure_type_text == "":
+        raise ValueError("structure_type ist leer")
+
+    name_text = str(name).strip().upper()
+    if name_text == "":
+        raise ValueError("name ist leer")
+
+    try:
+        start_line = int(start_line)
+        end_line = int(end_line)
+    except Exception:
+        raise ValueError("start_line oder end_line ist ungültig")
+
+    if start_line > end_line:
+        temp = start_line
+        start_line = end_line
+        end_line = temp
+
+    # ===== MINIMALPRÜFUNG =====
+    if is_range_fully_inside_existing_part(existing_parts, start_line, end_line):
+        raise ValueError("Der gewählte Bereich liegt vollständig in einem bestehenden PART")
+
+    lines = text.splitlines()
+
+    if len(lines) == 0:
+        raise ValueError("Der Text enthält keine Zeilen")
+
+    if start_line < 0:
+        start_line = 0
+
+    if end_line >= len(lines):
+        end_line = len(lines) - 1
+
+    start_marker = (
+        str(marker_prefix)
+        + " ===== "
+        + structure_type_text
+        + ": "
+        + name_text
+        + " START ====="
+    )
+
+    end_marker = (
+        str(marker_prefix)
+        + " ===== "
+        + structure_type_text
+        + ": "
+        + name_text
+        + " END ====="
+    )
+
+    new_lines = []
+    line_index = 0
+
+    while line_index < len(lines):
+        if line_index == start_line:
+            new_lines.append(start_marker)
+
+        new_lines.append(lines[line_index])
+
+        if line_index == end_line:
+            new_lines.append(end_marker)
+
+        line_index += 1
+
+    return "\n".join(new_lines) + "\n"
+# ===== PART: CREATE_STRUCTURE_FROM_RANGE END =====

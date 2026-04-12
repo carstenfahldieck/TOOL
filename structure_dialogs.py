@@ -484,6 +484,7 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
  btn_cancel = tk.Button(frame_buttons, text="Abbrechen", width=12)
 
  btn_cancel.pack(side="left", padx=(cfg_ui_spacing_small, 0))
+
  selected_free_index = {"value": None}
 
  def normalize_name(value):
@@ -604,50 +605,63 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   listbox_positions.delete(0, tk.END)
 
   rows = build_rows()
+  preview_name = normalize_name(name_var.get())
 
   i = 0
   while i < len(rows):
-   listbox_positions.insert(tk.END, rows[i]["display"])
+   display_text = rows[i]["display"]
+
+   if mode != "rename":
+    if rows[i]["kind"] == "free" and selected_free_index["value"] == i:
+     if preview_name != "":
+      display_text = ">>> " + preview_name + " <<<"
+     else:
+      display_text = ">>> [frei] <<<"
+
+   listbox_positions.insert(tk.END, display_text)
 
    if rows[i]["kind"] == "free":
     try:
-     listbox_positions.itemconfig(i, fg=cfg_ui_color_free)
+     if selected_free_index["value"] == i and mode != "rename":
+      listbox_positions.itemconfig(i, fg=cfg_ui_color_preview)
+     else:
+      listbox_positions.itemconfig(i, fg=cfg_ui_color_free)
     except Exception:
      pass
 
    i += 1
 
-  if mode == "rename":
-   if selected_index is not None:
+  if selected_free_index["value"] is not None:
+   try:
+    if selected_free_index["value"] >= 0 and selected_free_index["value"] < len(rows):
+     listbox_positions.selection_clear(0, tk.END)
+     listbox_positions.selection_set(selected_free_index["value"])
+     listbox_positions.activate(selected_free_index["value"])
+     listbox_positions.see(selected_free_index["value"])
+   except Exception:
+    pass
+  else:
+   if mode == "rename" and selected_index is not None:
     try:
      if selected_index >= 0 and selected_index < len(rows):
       listbox_positions.selection_clear(0, tk.END)
       listbox_positions.selection_set(selected_index)
       listbox_positions.activate(selected_index)
       listbox_positions.see(selected_index)
-     selected_free_index["value"] = selected_index
+      selected_free_index["value"] = selected_index
     except Exception:
      selected_free_index["value"] = None
-   else:
-    selected_free_index["value"] = None
-  else:
-   preview_index = None
-
-   if selected_index is not None:
-    preview_index = (selected_index * 2) + 2
-
-   if preview_index is not None:
+   elif mode != "rename" and selected_index is not None:
     try:
+     preview_index = (selected_index * 2) + 2
      if preview_index >= 0 and preview_index < len(rows):
       listbox_positions.selection_clear(0, tk.END)
       listbox_positions.selection_set(preview_index)
       listbox_positions.activate(preview_index)
       listbox_positions.see(preview_index)
-     selected_free_index["value"] = preview_index
+      selected_free_index["value"] = preview_index
     except Exception:
      selected_free_index["value"] = None
-   else:
-    selected_free_index["value"] = None
 
   validate()
 
@@ -657,6 +671,8 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   if suggestion_mode["value"] and raw_name == cfg_ui_name_hint_text:
    btn_ok.config(state="disabled")
    entry_name.config(bg=cfg_ui_normal_bg, fg=cfg_ui_suggestion_fg)
+   if mode != "rename":
+    refresh_position_list()
    return
 
   normalized_name = normalize_name(raw_name)
@@ -664,6 +680,8 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   if normalized_name == "":
    btn_ok.config(state="disabled")
    entry_name.config(bg=cfg_ui_invalid_bg, fg=cfg_ui_normal_fg)
+   if mode != "rename":
+    refresh_position_list()
    return
 
   exclude_name = None
@@ -673,15 +691,22 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   if is_name_in_use(normalized_name, exclude_name=exclude_name):
    btn_ok.config(state="disabled")
    entry_name.config(bg=cfg_ui_invalid_bg, fg=cfg_ui_normal_fg)
+   if mode != "rename":
+    refresh_position_list()
    return
 
   if selected_free_index["value"] is None:
    btn_ok.config(state="disabled")
    entry_name.config(bg=cfg_ui_normal_bg, fg=cfg_ui_normal_fg)
+   if mode != "rename":
+    refresh_position_list()
    return
 
   btn_ok.config(state="normal")
   entry_name.config(bg=cfg_ui_normal_bg, fg=cfg_ui_normal_fg)
+
+  if mode != "rename":
+   refresh_position_list()
 
  def on_name_focus_in(event=None):
   if suggestion_mode["value"]:
