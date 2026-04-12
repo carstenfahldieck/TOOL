@@ -1,6 +1,3 @@
-# ===== PART: TEST_LOAD START =====
-print("TEST2: LOAD über TOOL")
-# ===== PART: TEST_LOAD END =====
 
 # ===== PART: DD START =====
 print("TEST_AUTOLOAD_ADD wurde per Update eingefügt")
@@ -12,18 +9,8 @@ print("TEST_AUTOLOAD_ADD wurde per Update eingefügt")
 
 # ===== PART: MEIN_TEST END =====
 
-# ===== PART: MAIN_TEST START =====
-
-# ===== PART: MAIN_TEST END =====
 
 
-# ===== PART: TEST_UPDATE_MARKER START =====
-print("UPDATE TEST AKTIV")
-
-# HIER TESTEN WIR DIE VORSCHAU / ERSETZEN
-print("ZEILE A")
-print("ZEILE B")
-# ===== PART: TEST_UPDATE_MARKER END =====
 
 # ===== PART: MEIN_TEST12 START =====
 
@@ -46,3 +33,9 @@ v ghnhcvnbvg
 # ===== PART: 111 START =====
 
 # ===== PART: 111 END =====
+# ===== PART: MAIN_TEST START =====
+
+# ===== PART: MAIN_TEST END =====
+# ===== PART: TEST_LOAD START =====
+print("TEST2: LOAD über TOOL")
+# ===== PART: TEST_LOAD END =====
