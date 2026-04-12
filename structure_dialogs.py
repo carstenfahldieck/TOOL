@@ -340,340 +340,453 @@ def open_structure_name_dialog_live(app, title="Name eingeben", initial_value=""
 # ===== PART: STRUCTURE_NAME_DIALOG_LIVE END =====
 
 # ===== PART: STRUCTURE_PLACEMENT_DIALOG_V1 START =====
+
 import tkinter as tk
 
-def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggested_name="NEUER_PART"):
-    result = {
-        "name": None,
-        "position_index": None,
-        "hashtags": [],
-        "note": ""
-    }
+def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggested_name="NEUER_PART", mode="create"):
 
-    # ===== UI SETTINGS START =====
-    cfg_ui_window_width = 800
-    cfg_ui_window_height = 520
+ result = {
 
-    cfg_ui_padding_outer = 10
-    cfg_ui_spacing_small = 4
-    cfg_ui_spacing_medium = 8
+  "name": None,
 
-    cfg_ui_list_height = 15
+  "position_index": None,
 
-    cfg_ui_color_free = "#888888"
-    cfg_ui_color_selected = "#3399ff"
-    cfg_ui_color_preview = "#008800"
-    cfg_ui_suggestion_fg = "#888888"
-    cfg_ui_normal_fg = "black"
-    cfg_ui_invalid_bg = "#f4b6b6"
-    cfg_ui_normal_bg = "white"
+  "hashtags": [],
 
-    cfg_ui_name_hint_text = "NAME_EINGEBEN (LEERZEICHEN=_)"
-    # ===== UI SETTINGS END =====
+  "note": ""
 
-    # ===== Fenster =====
-    win = tk.Toplevel(app.root)
-    win.title("PART einfügen / verschieben")
-    win.geometry(str(cfg_ui_window_width) + "x" + str(cfg_ui_window_height))
-    win.transient(app.root)
-    win.grab_set()
+ }
 
-    outer = tk.Frame(
-        win,
-        padx=cfg_ui_padding_outer,
-        pady=cfg_ui_padding_outer
-    )
-    outer.pack(fill="both", expand=True)
+ # ===== UI SETTINGS START =====
 
-    # ===== Name =====
-    tk.Label(outer, text="Name:", anchor="w").pack(fill="x")
+ cfg_ui_window_width = 800
 
-    initial_name = str(suggested_name).strip().upper()
-    if initial_name == "":
-        initial_name = cfg_ui_name_hint_text
+ cfg_ui_window_height = 520
 
-    name_var = tk.StringVar(value=initial_name)
-    entry_name = tk.Entry(outer, textvariable=name_var, fg=cfg_ui_suggestion_fg)
-    entry_name.pack(fill="x", pady=(0, cfg_ui_spacing_medium))
+ cfg_ui_padding_outer = 10
+
+ cfg_ui_spacing_small = 4
+
+ cfg_ui_spacing_medium = 8
+
+ cfg_ui_list_height = 15
+
+ cfg_ui_color_free = "#888888"
+ cfg_ui_color_selected = "#3399ff"
+
+ cfg_ui_color_preview = "#008800"
+
+ cfg_ui_suggestion_fg = "#888888"
+
+ cfg_ui_normal_fg = "black"
+
+ cfg_ui_invalid_bg = "#f4b6b6"
+
+ cfg_ui_normal_bg = "white"
+
+ cfg_ui_name_hint_text = "NAME_EINGEBEN (LEERZEICHEN=_)"
+
+ # ===== UI SETTINGS END =====
+
+ # ===== Fenster =====
+
+ win = tk.Toplevel(app.root)
+
+ win.title("PART einfügen / verschieben")
+
+ win.geometry(str(cfg_ui_window_width) + "x" + str(cfg_ui_window_height))
+
+ win.transient(app.root)
+
+ win.grab_set()
+
+ outer = tk.Frame(
+
+  win,
+
+  padx=cfg_ui_padding_outer,
+
+  pady=cfg_ui_padding_outer
+
+ )
+
+ outer.pack(fill="both", expand=True)
+
+ # ===== Name =====
+
+ tk.Label(outer, text="Name:", anchor="w").pack(fill="x")
+
+ initial_name = str(suggested_name).strip().upper()
+
+ if initial_name == "":
+
+  initial_name = cfg_ui_name_hint_text
+
+ name_var = tk.StringVar(value=initial_name)
+
+ entry_name = tk.Entry(outer, textvariable=name_var, fg=cfg_ui_suggestion_fg)
+
+ entry_name.pack(fill="x", pady=(0, cfg_ui_spacing_medium))
+ entry_name.icursor(0)
+
+ entry_name.selection_range(0, tk.END)
+
+ suggestion_mode = {"value": True}
+
+ # ===== Positionsliste =====
+
+ tk.Label(outer, text="Position wählen:", anchor="w").pack(fill="x")
+
+ frame_list = tk.Frame(outer)
+
+ frame_list.pack(fill="both", expand=True)
+
+ listbox_positions = tk.Listbox(frame_list, height=cfg_ui_list_height)
+
+ listbox_positions.pack(side="left", fill="both", expand=True)
+
+ scrollbar_positions = tk.Scrollbar(frame_list)
+
+ scrollbar_positions.pack(side="right", fill="y")
+ listbox_positions.config(yscrollcommand=scrollbar_positions.set)
+
+ scrollbar_positions.config(command=listbox_positions.yview)
+
+ # ===== Bemerkung =====
+
+ tk.Label(outer, text="Bemerkung:", anchor="w").pack(fill="x", pady=(cfg_ui_spacing_medium, 0))
+
+ note_var = tk.StringVar()
+
+ entry_note = tk.Entry(outer, textvariable=note_var)
+
+ entry_note.pack(fill="x", pady=(0, cfg_ui_spacing_small))
+
+ # ===== Hashtags =====
+
+ tk.Label(outer, text="Hashtags:", anchor="w").pack(fill="x")
+ hashtags_var = tk.StringVar()
+
+ entry_hashtags = tk.Entry(outer, textvariable=hashtags_var)
+
+ entry_hashtags.pack(fill="x", pady=(0, cfg_ui_spacing_medium))
+
+ # ===== Buttons =====
+
+ frame_buttons = tk.Frame(outer)
+
+ frame_buttons.pack(fill="x")
+
+ btn_ok = tk.Button(frame_buttons, text="OK", width=12, state="disabled")
+
+ btn_ok.pack(side="left")
+
+ btn_cancel = tk.Button(frame_buttons, text="Abbrechen", width=12)
+
+ btn_cancel.pack(side="left", padx=(cfg_ui_spacing_small, 0))
+ selected_free_index = {"value": None}
+
+ def normalize_name(value):
+
+  raw = str(value)
+
+  if raw == cfg_ui_name_hint_text:
+
+   return ""
+
+  raw = raw.replace(" ", "_")
+
+  try:
+
+   return app._normalize_structure_name(raw).upper()
+
+  except Exception:
+
+   return raw.strip().upper()
+
+ def is_name_in_use(value, exclude_name=None):
+
+  try:
+
+   return app.is_structure_name_in_use(value, exclude_name=exclude_name)
+
+  except TypeError:
+
+   normalized = normalize_name(value)
+   normalized_exclude = normalize_name(exclude_name) if exclude_name else None
+
+   i = 0
+
+   while i < len(parts):
+
+    candidate = normalize_name(parts[i])
+
+    if normalized_exclude is not None and candidate == normalized_exclude:
+
+     i += 1
+     continue
+
+    if candidate == normalized:
+
+     return True
+
+    i += 1
+
+   return False
+
+  except Exception:
+
+   normalized = normalize_name(value)
+   normalized_exclude = normalize_name(exclude_name) if exclude_name else None
+
+   i = 0
+
+   while i < len(parts):
+
+    candidate = normalize_name(parts[i])
+
+    if normalized_exclude is not None and candidate == normalized_exclude:
+
+     i += 1
+     continue
+
+    if candidate == normalized:
+
+     return True
+
+    i += 1
+
+   return False
+
+ def parse_hashtags(value):
+
+  raw = str(value).strip()
+
+  if raw == "":
+
+   return []
+
+  parts_raw = raw.split("#")
+  result_tags = []
+
+  i = 0
+  while i < len(parts_raw):
+   tag = parts_raw[i].strip()
+   if tag != "":
+    result_tags.append(tag)
+   i += 1
+
+  return result_tags
+
+ def build_rows():
+  rows = []
+
+  # ===== RENAME-MODUS: NUR BESTEHENDE PARTS =====
+  if mode == "rename":
+   i = 0
+   while i < len(parts):
+    rows.append({"kind": "part", "display": parts[i]})
+    i += 1
+   return rows
+
+  # ===== STANDARD: MIT FREIEN BEREICHEN =====
+  rows.append({"kind": "free", "display": "[frei]"})
+
+  index = 0
+  while index < len(parts):
+   rows.append({"kind": "part", "display": "PART: " + str(parts[index])})
+   rows.append({"kind": "free", "display": "[frei]"})
+   index += 1
+
+  return rows
+
+ def refresh_position_list():
+  listbox_positions.delete(0, tk.END)
+
+  rows = build_rows()
+
+  i = 0
+  while i < len(rows):
+   listbox_positions.insert(tk.END, rows[i]["display"])
+
+   if rows[i]["kind"] == "free":
+    try:
+     listbox_positions.itemconfig(i, fg=cfg_ui_color_free)
+    except Exception:
+     pass
+
+   i += 1
+
+  if mode == "rename":
+   if selected_index is not None:
+    try:
+     if selected_index >= 0 and selected_index < len(rows):
+      listbox_positions.selection_clear(0, tk.END)
+      listbox_positions.selection_set(selected_index)
+      listbox_positions.activate(selected_index)
+      listbox_positions.see(selected_index)
+     selected_free_index["value"] = selected_index
+    except Exception:
+     selected_free_index["value"] = None
+   else:
+    selected_free_index["value"] = None
+  else:
+   preview_index = None
+
+   if selected_index is not None:
+    preview_index = (selected_index * 2) + 2
+
+   if preview_index is not None:
+    try:
+     if preview_index >= 0 and preview_index < len(rows):
+      listbox_positions.selection_clear(0, tk.END)
+      listbox_positions.selection_set(preview_index)
+      listbox_positions.activate(preview_index)
+      listbox_positions.see(preview_index)
+     selected_free_index["value"] = preview_index
+    except Exception:
+     selected_free_index["value"] = None
+   else:
+    selected_free_index["value"] = None
+
+  validate()
+
+ def validate(*args):
+  raw_name = name_var.get()
+
+  if suggestion_mode["value"] and raw_name == cfg_ui_name_hint_text:
+   btn_ok.config(state="disabled")
+   entry_name.config(bg=cfg_ui_normal_bg, fg=cfg_ui_suggestion_fg)
+   return
+
+  normalized_name = normalize_name(raw_name)
+
+  if normalized_name == "":
+   btn_ok.config(state="disabled")
+   entry_name.config(bg=cfg_ui_invalid_bg, fg=cfg_ui_normal_fg)
+   return
+
+  exclude_name = None
+  if mode == "rename":
+   exclude_name = suggested_name
+
+  if is_name_in_use(normalized_name, exclude_name=exclude_name):
+   btn_ok.config(state="disabled")
+   entry_name.config(bg=cfg_ui_invalid_bg, fg=cfg_ui_normal_fg)
+   return
+
+  if selected_free_index["value"] is None:
+   btn_ok.config(state="disabled")
+   entry_name.config(bg=cfg_ui_normal_bg, fg=cfg_ui_normal_fg)
+   return
+
+  btn_ok.config(state="normal")
+  entry_name.config(bg=cfg_ui_normal_bg, fg=cfg_ui_normal_fg)
+
+ def on_name_focus_in(event=None):
+  if suggestion_mode["value"]:
+   name_var.set("")
+   entry_name.config(fg=cfg_ui_normal_fg)
+   try:
     entry_name.icursor(0)
-    entry_name.selection_range(0, tk.END)
+   except Exception:
+    pass
+   suggestion_mode["value"] = False
 
-    suggestion_mode = {"value": True}
+ def on_name_keyrelease(event=None):
+  current = name_var.get()
+  upper = current.replace(" ", "_").upper()
 
-    # ===== Positionsliste =====
-    tk.Label(outer, text="Position wählen:", anchor="w").pack(fill="x")
+  cursor = None
+  try:
+   cursor = entry_name.index(tk.INSERT)
+  except Exception:
+   cursor = None
 
-    frame_list = tk.Frame(outer)
-    frame_list.pack(fill="both", expand=True)
+  if current != upper:
+   name_var.set(upper)
+   try:
+    if cursor is not None:
+     entry_name.icursor(cursor)
+   except Exception:
+    pass
 
-    listbox_positions = tk.Listbox(frame_list, height=cfg_ui_list_height)
-    listbox_positions.pack(side="left", fill="both", expand=True)
+  validate()
 
-    scrollbar_positions = tk.Scrollbar(frame_list)
-    scrollbar_positions.pack(side="right", fill="y")
+ def on_position_select(event=None):
+  sel = listbox_positions.curselection()
+  if not sel:
+   selected_free_index["value"] = None
+   validate()
+   return
 
-    listbox_positions.config(yscrollcommand=scrollbar_positions.set)
-    scrollbar_positions.config(command=listbox_positions.yview)
+  row_index = sel[0]
+  rows = build_rows()
 
-    # ===== Bemerkung =====
-    tk.Label(outer, text="Bemerkung:", anchor="w").pack(fill="x", pady=(cfg_ui_spacing_medium, 0))
+  if row_index < 0 or row_index >= len(rows):
+   selected_free_index["value"] = None
+   validate()
+   return
 
-    note_var = tk.StringVar()
-    entry_note = tk.Entry(outer, textvariable=note_var)
-    entry_note.pack(fill="x", pady=(0, cfg_ui_spacing_small))
+  if mode == "rename":
+   if rows[row_index]["kind"] == "part":
+    selected_free_index["value"] = row_index
+   else:
+    selected_free_index["value"] = None
+  else:
+   if rows[row_index]["kind"] == "free":
+    selected_free_index["value"] = row_index
+   else:
+    selected_free_index["value"] = None
 
-    # ===== Hashtags =====
-    tk.Label(outer, text="Hashtags:", anchor="w").pack(fill="x")
+  validate()
 
-    hashtags_var = tk.StringVar()
-    entry_hashtags = tk.Entry(outer, textvariable=hashtags_var)
-    entry_hashtags.pack(fill="x", pady=(0, cfg_ui_spacing_medium))
+ def on_ok():
+  name_text = normalize_name(name_var.get())
 
-    # ===== Buttons =====
-    frame_buttons = tk.Frame(outer)
-    frame_buttons.pack(fill="x")
+  if name_text == "":
+   return
 
-    btn_ok = tk.Button(frame_buttons, text="OK", width=12, state="disabled")
-    btn_ok.pack(side="left")
+  exclude_name = None
+  if mode == "rename":
+   exclude_name = suggested_name
 
-    btn_cancel = tk.Button(frame_buttons, text="Abbrechen", width=12)
-    btn_cancel.pack(side="left", padx=(cfg_ui_spacing_small, 0))
+  if is_name_in_use(name_text, exclude_name=exclude_name):
+   return
 
-    selected_free_index = {"value": None}
+  row_index = selected_free_index["value"]
+  if row_index is None:
+   return
 
-    def normalize_name(value):
-        raw = str(value)
+  hashtags = parse_hashtags(hashtags_var.get())
 
-        if raw == cfg_ui_name_hint_text:
-            return ""
+  result["name"] = name_text
+  result["position_index"] = row_index
+  result["hashtags"] = hashtags
+  result["note"] = note_var.get().strip()
 
-        raw = raw.replace(" ", "_")
+  win.destroy()
 
-        try:
-            return app._normalize_structure_name(raw).upper()
-        except Exception:
-            return raw.strip().upper()
-
-    def is_name_in_use(value):
-        try:
-            return app.is_structure_name_in_use(value)
-        except Exception:
-            normalized = normalize_name(value)
-            i = 0
-            while i < len(parts):
-                if normalize_name(parts[i]) == normalized:
-                    return True
-                i += 1
-            return False
-
-    def on_name_keypress(event):
-        nav_keys = (
-            "Left", "Right", "Up", "Down",
-            "Home", "End", "Prior", "Next",
-            "Tab", "Shift_L", "Shift_R",
-            "Control_L", "Control_R", "Alt_L", "Alt_R"
-        )
-
-        if event.keysym in nav_keys:
-            return
-
-        if suggestion_mode["value"]:
-            try:
-                entry_name.selection_range(0, tk.END)
-            except Exception:
-                pass
-            suggestion_mode["value"] = False
-
-        entry_name.config(fg=cfg_ui_normal_fg)
-
-    def on_name_keyrelease(event=None):
-        current = name_var.get()
-
-        if suggestion_mode["value"] and current == cfg_ui_name_hint_text:
-            validate_dialog()
-            return
-
-        converted = current.replace(" ", "_").upper()
-
-        if current != converted:
-            cursor = entry_name.index(tk.INSERT)
-            name_var.set(converted)
-            try:
-                entry_name.icursor(cursor)
-            except Exception:
-                pass
-
-        validate_dialog()
-
-    def on_name_focus_in(event=None):
-        if suggestion_mode["value"]:
-            try:
-                entry_name.selection_range(0, tk.END)
-            except Exception:
-                pass
-
-    entry_name.bind("<KeyPress>", on_name_keypress)
-    entry_name.bind("<KeyRelease>", on_name_keyrelease)
-    entry_name.bind("<FocusIn>", on_name_focus_in)
-
-    def build_rows(preview_name=None, preview_free_index=None):
-        rows = []
-        rows.append({"kind": "free", "display": "[frei]"})
-
-        index = 0
-        while index < len(parts):
-            rows.append({"kind": "part", "display": "PART: " + str(parts[index])})
-            rows.append({"kind": "free", "display": "[frei]"})
-            index += 1
-
-        if preview_name is not None and preview_free_index is not None:
-            if 0 <= preview_free_index < len(rows):
-                if rows[preview_free_index]["kind"] == "free":
-                    rows[preview_free_index]["display"] = ">> " + preview_name
-
-        return rows
-
-    def refresh_position_list(preview_name=None, preview_free_index=None):
-        listbox_positions.delete(0, tk.END)
-
-        rows = build_rows(preview_name, preview_free_index)
-
-        row_index = 0
-        while row_index < len(rows):
-            listbox_positions.insert(tk.END, rows[row_index]["display"])
-            row_index += 1
-
-        try:
-            row_index = 0
-            while row_index < len(rows):
-                item = rows[row_index]
-                if item["kind"] == "free":
-                    if preview_free_index is not None and row_index == preview_free_index and preview_name is not None:
-                        listbox_positions.itemconfig(row_index, fg=cfg_ui_color_preview)
-                    else:
-                        listbox_positions.itemconfig(row_index, fg=cfg_ui_color_free)
-                row_index += 1
-        except Exception:
-            pass
-
-        if preview_free_index is not None:
-            try:
-                listbox_positions.selection_clear(0, tk.END)
-                listbox_positions.selection_set(preview_free_index)
-                listbox_positions.see(preview_free_index)
-            except Exception:
-                pass
-            return
-
-        if selected_index is not None:
-            target_row = selected_index * 2 + 1
-            try:
-                listbox_positions.selection_clear(0, tk.END)
-                listbox_positions.selection_set(target_row)
-                listbox_positions.see(target_row)
-            except Exception:
-                pass
-
-    def parse_hashtags(raw_text):
-        text = str(raw_text).strip()
-        if text == "":
-            return []
-
-        parts_raw = text.split("#")
-        result_tags = []
-
-        i = 0
-        while i < len(parts_raw):
-            piece = parts_raw[i].strip()
-            if piece != "":
-                result_tags.append(piece)
-            i += 1
-
-        return result_tags
-
-    def validate_dialog():
-        current_name = normalize_name(name_var.get())
-
-        is_valid = True
-
-        if current_name == "":
-            is_valid = False
-            entry_name.config(bg=cfg_ui_invalid_bg)
-        elif is_name_in_use(current_name):
-            is_valid = False
-            entry_name.config(bg=cfg_ui_invalid_bg)
-        else:
-            entry_name.config(bg=cfg_ui_normal_bg)
-
-        preview_index = selected_free_index["value"]
-        if preview_index is not None and current_name != "":
-            refresh_position_list(preview_name=current_name, preview_free_index=preview_index)
-        else:
-            refresh_position_list()
-
-        if is_valid and preview_index is not None:
-            btn_ok.config(state="normal")
-        else:
-            btn_ok.config(state="disabled")
-
-    def on_position_select(event=None):
-        selection = listbox_positions.curselection()
-        if not selection:
-            selected_free_index["value"] = None
-            validate_dialog()
-            return
-
-        row_index = selection[0]
-        row_text = listbox_positions.get(row_index)
-
-        if row_text.startswith("PART: "):
-            selected_free_index["value"] = None
-            validate_dialog()
-            return
-
-        selected_free_index["value"] = row_index
-        validate_dialog()
-
-    def on_ok():
-        selected_rows = listbox_positions.curselection()
-        if not selected_rows:
-            return
-
-        row_index = selected_rows[0]
-        row_text = listbox_positions.get(row_index)
-
-        if row_text.startswith("PART: "):
-            return
-
-        name_text = normalize_name(name_var.get())
-        if name_text == "":
-            return
-
-        if is_name_in_use(name_text):
-            return
-
-        hashtags = parse_hashtags(hashtags_var.get())
-
-        result["name"] = name_text
-        result["position_index"] = row_index
-        result["hashtags"] = hashtags
-        result["note"] = note_var.get().strip()
-
-        win.destroy()
-
-    def on_cancel():
-        win.destroy()
-
-    listbox_positions.bind("<<ListboxSelect>>", on_position_select)
-
-    btn_ok.config(command=on_ok)
-    btn_cancel.config(command=on_cancel)
-
-    refresh_position_list()
-    entry_name.focus_set()
-
-    win.wait_window()
-    return result
+ def on_cancel():
+
+  win.destroy()
+
+ listbox_positions.bind("<<ListboxSelect>>", on_position_select)
+
+ entry_name.bind("<FocusIn>", on_name_focus_in)
+ entry_name.bind("<KeyRelease>", on_name_keyrelease)
+
+ btn_ok.config(command=on_ok)
+
+ btn_cancel.config(command=on_cancel)
+
+ refresh_position_list()
+
+ entry_name.focus_set()
+
+ win.wait_window()
+
+ return result
 # ===== PART: STRUCTURE_PLACEMENT_DIALOG_V1 END =====
 # ===== PART: STRUCTURE_SIMPLE_DIALOG_V1 START =====
 def open_structure_simple_dialog_v1(parent, suggested_name=""):

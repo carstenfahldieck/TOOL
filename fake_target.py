@@ -2,12 +2,12 @@
 # ===== PART: DD START =====
 print("TEST_AUTOLOAD_ADD wurde per Update eingefügt")
 # ===== PART: DD END =====
-
-
-
 # ===== PART: MEIN_TEST START =====
 
 # ===== PART: MEIN_TEST END =====
+
+
+
 
 
 
@@ -27,9 +27,6 @@ cfg_haus = 4
 gvhdhghnhgcvh
 v ghnhcvnbvg
 
-# ===== PART: MEIN_TEST11 START =====
-
-# ===== PART: MEIN_TEST11 END =====
 # ===== PART: 111 START =====
 
 # ===== PART: 111 END =====
