@@ -778,44 +778,101 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
  return result
 # ===== PART: STRUCTURE_PLACEMENT_DIALOG_V1 END =====
 # ===== PART: STRUCTURE_SIMPLE_DIALOG_V1 START =====
-def open_structure_simple_dialog_v1(parent, suggested_name=""):
+def open_structure_simple_dialog_v1(
+    parent,
+    suggested_name="",
+    window_title="Neuer PART",
+    hint_line_1="",
+    hint_line_2="",
+    show_hint_lines=False,
+    enable_name_validation=True,
+    use_grab=True,
+    wait_for_close=True
+):
     result = {
         "name": None,
         "position_index": None,
         "note": "",
-        "hashtags": ""
+        "hashtags": "",
+        "window": None,
+        "name_var": None,
+        "note_var": None,
+        "tag_var": None,
+        "hint1_var": None,
+        "hint2_var": None,
+        "btn_ok": None,
+        "btn_cancel": None,
+        "validate_func": None
     }
 
     win = tk.Toplevel(parent)
-    win.title("Neuer PART")
-    win.geometry("400x250")
+    win.title(window_title)
+    win.geometry("400x300")
     win.transient(parent)
-    win.grab_set()
+
+    if use_grab:
+        win.grab_set()
 
     main_frame = tk.Frame(win, padx=10, pady=10)
     main_frame.pack(fill="both", expand=True)
 
-    # NAME
+    hint1_var = None
+    hint2_var = None
+
+    # ===== HINWEISE =====
+    if show_hint_lines:
+        hint1_var = tk.StringVar(value=hint_line_1)
+        hint2_var = tk.StringVar(value=hint_line_2)
+
+        hint1_label = tk.Label(main_frame, textvariable=hint1_var, anchor="w", justify="left")
+        hint1_label.pack(fill="x", pady=(0, 2))
+
+        hint2_label = tk.Label(main_frame, textvariable=hint2_var, anchor="w", justify="left")
+        hint2_label.pack(fill="x", pady=(0, 10))
+
+    # ===== NAME =====
     tk.Label(main_frame, text="Name").pack(anchor="w")
+
     name_var = tk.StringVar(value=suggested_name)
     name_entry = tk.Entry(main_frame, textvariable=name_var)
     name_entry.pack(fill="x", pady=(0, 10))
 
-    # NOTE
+    # ===== NOTE =====
     tk.Label(main_frame, text="Bemerkung").pack(anchor="w")
     note_var = tk.StringVar()
     note_entry = tk.Entry(main_frame, textvariable=note_var)
     note_entry.pack(fill="x", pady=(0, 10))
 
-    # HASHTAGS
+    # ===== HASHTAGS =====
     tk.Label(main_frame, text="Hashtags").pack(anchor="w")
     tag_var = tk.StringVar()
     tag_entry = tk.Entry(main_frame, textvariable=tag_var)
     tag_entry.pack(fill="x", pady=(0, 10))
 
-    # BUTTONS
+    # ===== BUTTONS =====
     button_frame = tk.Frame(main_frame)
     button_frame.pack(fill="x", pady=(10, 0))
+
+    btn_ok = tk.Button(button_frame, text="OK")
+    btn_ok.pack(side="left", expand=True, fill="x", padx=(0, 5))
+
+    btn_cancel = tk.Button(button_frame, text="Abbrechen")
+    btn_cancel.pack(side="left", expand=True, fill="x", padx=(5, 0))
+
+    def validate_name():
+        if not enable_name_validation:
+            btn_ok.config(state="normal")
+            return
+
+        value = name_var.get().strip()
+        if value == "":
+            btn_ok.config(state="disabled")
+            return
+
+        btn_ok.config(state="normal")
+
+    def on_name_change(*args):
+        validate_name()
 
     def on_ok():
         result["name"] = name_var.get().strip()
@@ -826,14 +883,30 @@ def open_structure_simple_dialog_v1(parent, suggested_name=""):
     def on_cancel():
         win.destroy()
 
-    tk.Button(button_frame, text="OK", command=on_ok).pack(side="left", expand=True, fill="x", padx=(0, 5))
-    tk.Button(button_frame, text="Abbrechen", command=on_cancel).pack(side="left", expand=True, fill="x", padx=(5, 0))
+    name_var.trace_add("write", on_name_change)
+
+    btn_ok.config(command=on_ok)
+    btn_cancel.config(command=on_cancel)
+
+    validate_name()
 
     name_entry.focus_set()
-    parent.wait_window(win)
 
-    if not result["name"]:
-        return None
+    result["window"] = win
+    result["name_var"] = name_var
+    result["note_var"] = note_var
+    result["tag_var"] = tag_var
+    result["hint1_var"] = hint1_var
+    result["hint2_var"] = hint2_var
+    result["btn_ok"] = btn_ok
+    result["btn_cancel"] = btn_cancel
+    result["validate_func"] = validate_name
+
+    if wait_for_close:
+        parent.wait_window(win)
+
+        if not result["name"] and enable_name_validation:
+            return None
 
     return result
 # ===== PART: STRUCTURE_SIMPLE_DIALOG_V1 END =====

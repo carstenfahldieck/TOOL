@@ -149,44 +149,64 @@ def build_left_panel(app):
 
 
 # ===== PART: CENTER_PANEL START =====
+
 def build_center_panel(app):
-    editor_frame = tk.Frame(app.main_paned)
-    editor_frame.grid_rowconfigure(0, weight=1)
-    editor_frame.grid_columnconfigure(0, weight=1)
 
-    app.text_editor = tk.Text(editor_frame, wrap=tk.NONE, undo=True)
-    app.text_editor.grid(row=0, column=0, sticky="nsew")
+ editor_frame = tk.Frame(app.main_paned)
 
-    def on_editor_click(event):
-        try:
-            app.part_listbox.selection_clear(0, tk.END)
-        except Exception:
-            pass
+ editor_frame.grid_rowconfigure(0, weight=1)
 
-        try:
-            app.clear_editor_preview_marks()
-        except Exception:
-            pass
+ editor_frame.grid_columnconfigure(0, weight=1)
 
-    app.text_editor.bind("<Button-1>", on_editor_click, add="+")
-    app.text_editor.bind("<Key>", app.clear_editor_preview_marks, add="+")
-    app.text_editor.bind("<Control-v>", app.on_shortcut_paste_editor)
+ app.text_editor = tk.Text(editor_frame, wrap=tk.NONE, undo=True)
 
-    editor_scroll_y = tk.Scrollbar(
-        editor_frame, orient=tk.VERTICAL, command=app.text_editor.yview
-    )
-    editor_scroll_y.grid(row=0, column=1, sticky="ns")
-    app.text_editor.config(yscrollcommand=editor_scroll_y.set)
+ app.text_editor.grid(row=0, column=0, sticky="nsew")
 
-    editor_scroll_x = tk.Scrollbar(
-        editor_frame, orient=tk.HORIZONTAL, command=app.text_editor.xview
-    )
-    editor_scroll_x.grid(row=1, column=0, sticky="ew")
-    app.text_editor.config(xscrollcommand=editor_scroll_x.set)
+ def on_editor_click(event):
 
-    app.main_paned.add(editor_frame, minsize=320)
+  try:
+   if hasattr(app, "_range_mode_active") and app._range_mode_active:
+    handled = app.handle_range_build_editor_click(event)
+    if handled:
+     return "break"
+  except Exception:
+   pass
 
-    app.center_panel = editor_frame
+  try:
+   app.part_listbox.selection_clear(0, tk.END)
+  except Exception:
+   pass
+
+  try:
+   app.clear_editor_preview_marks()
+  except Exception:
+   pass
+
+ app.text_editor.bind("<Button-1>", on_editor_click, add="+")
+
+ app.text_editor.bind("<Key>", app.clear_editor_preview_marks, add="+")
+
+ app.text_editor.bind("<Control-v>", app.on_shortcut_paste_editor)
+
+ editor_scroll_y = tk.Scrollbar(
+  editor_frame, orient=tk.VERTICAL, command=app.text_editor.yview
+ )
+
+ editor_scroll_y.grid(row=0, column=1, sticky="ns")
+
+ app.text_editor.config(yscrollcommand=editor_scroll_y.set)
+
+ editor_scroll_x = tk.Scrollbar(
+  editor_frame, orient=tk.HORIZONTAL, command=app.text_editor.xview
+ )
+
+ editor_scroll_x.grid(row=1, column=0, sticky="ew")
+
+ app.text_editor.config(xscrollcommand=editor_scroll_x.set)
+
+ app.main_paned.add(editor_frame, minsize=320)
+
+ app.center_panel = editor_frame
 # ===== PART: CENTER_PANEL END =====
 
 

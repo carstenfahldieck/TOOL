@@ -2077,3 +2077,454 @@ class PartsLogicMixin:
             messagebox.showerror("Fehler", str(ex))
             self.status_var.set("TEST: PART aus Codebereich fehlgeschlagen")
 # ===== PART: TEST_CREATE_PART_FROM_CODE_RANGE END =====
+# ===== PART: RANGE_BUILD_MODE_START START =====
+    def start_part_range_build_mode(self):
+        """
+        Startet den Modus: PART im Code setzen (Start/Ende)
+        Oldschool-Variante mit echtem Einfügen.
+        """
+
+        try:
+            # ===== Backup speichern =====
+            current_text = self.text_editor.get("1.0", tk.END)
+            self._range_backup_text = current_text
+
+            # ===== Zustand zurücksetzen =====
+            self._range_start_line = None
+            self._range_end_line = None
+            self._range_start_marker_line = None
+            self._range_end_marker_line = None
+            self._range_mode_active = True
+
+            # ===== Fenster nicht blockierend öffnen =====
+            dialog = open_structure_simple_dialog_v1(
+                self.root,
+                suggested_name="NEUER_PART",
+                window_title="PART im Code setzen",
+                hint_line_1="Bitte Startzeile wählen",
+                hint_line_2="Abbruch stellt Original wieder her",
+                show_hint_lines=True,
+                enable_name_validation=True,
+                use_grab=False,
+                wait_for_close=False
+            )
+
+            self._range_dialog = dialog
+
+            # ===== OK / Abbrechen umbiegen =====
+            if dialog and dialog.get("btn_ok"):
+                dialog["btn_ok"].config(command=self.confirm_part_range_build_mode, state="disabled")
+
+            if dialog and dialog.get("btn_cancel"):
+                dialog["btn_cancel"].config(command=self.cancel_part_range_build_mode)
+
+            if dialog and dialog.get("window"):
+                dialog["window"].protocol("WM_DELETE_WINDOW", self.cancel_part_range_build_mode)
+
+            # ===== Live-Umbenennung START/END =====
+            if dialog and dialog.get("name_var"):
+                dialog["name_var"].trace_add("write", lambda *args: self.sync_part_range_build_marker_names())
+
+        except Exception as ex:
+            messagebox.showerror("Fehler", str(ex))
+# ===== PART: RANGE_BUILD_MODE_START END =====
+# ===== PART: RANGE_BUILD_EDITOR_CLICK START =====
+    def handle_range_build_editor_click(self, event):
+        """
+        Bereichsmodus für PART im Code setzen:
+
+        - erster Klick:
+          START vor der geklickten Zeile einfügen
+
+        - zweiter Klick:
+          END unter der geklickten Zeile einfügen
+
+        Wenn END oberhalb von START liegt:
+        - die beiden Marker-Zeilen werden im Text getauscht
+        - frühere Zeile wird START
+        - spätere Zeile wird END
+        """
+
+        if not hasattr(self, "_range_mode_active"):
+            return False
+
+        if not self._range_mode_active:
+            return False
+
+        if not hasattr(self, "_range_dialog"):
+            return False
+
+        dialog = self._range_dialog
+        if dialog is None:
+            return False
+
+        try:
+            click_index = self.text_editor.index("@{0},{1}".format(event.x, event.y))
+            clicked_line = int(str(click_index).split(".")[0])
+        except Exception:
+            return False
+
+        try:
+            preview_name = "NEUER_PART"
+
+            if dialog.get("name_var") is not None:
+                raw_name = dialog["name_var"].get().strip()
+                if raw_name != "":
+                    preview_name = self._normalize_structure_name(raw_name)
+
+            start_line_text = "# ===== PART: " + preview_name + " START ====="
+            end_line_text = "# ===== PART: " + preview_name + " END ====="
+
+            # ===== FALL 1: START setzen =====
+            if getattr(self, "_range_start_marker_line", None) is None:
+                insert_index = str(clicked_line) + ".0"
+                self.text_editor.insert(insert_index, start_line_text + "\n")
+
+                self._range_start_marker_line = clicked_line
+                self._range_end_marker_line = None
+
+                if dialog.get("hint1_var") is not None:
+                    dialog["hint1_var"].set("Bitte Endzeile wählen")
+
+                if dialog.get("hint2_var") is not None:
+                    dialog["hint2_var"].set("Abbruch stellt Original wieder her")
+
+                self.apply_range_build_visual_markers()
+                self.status_var.set("START gesetzt. Bitte Endzeile wählen")
+                return True
+
+            # ===== FALL 2: END setzen =====
+            if getattr(self, "_range_end_marker_line", None) is None:
+                insert_index = str(clicked_line) + ".end"
+                self.text_editor.insert(insert_index, "\n" + end_line_text)
+
+                # ===== AKTUELLEN TEXT HOLEN =====
+                content = self.text_editor.get("1.0", tk.END).split("\n")
+
+                found_start_line = None
+                found_end_line = None
+
+                i = 0
+                while i < len(content):
+                    line = content[i].strip()
+
+                    if line == start_line_text:
+                        found_start_line = i + 1
+
+                    if line == end_line_text:
+                        found_end_line = i + 1
+
+                    i += 1
+
+                # ===== WENN BEIDE GEFUNDEN: POSITION PRÜFEN =====
+                if found_start_line is not None and found_end_line is not None:
+                    if found_end_line < found_start_line:
+                        start_index0 = found_start_line - 1
+                        end_index0 = found_end_line - 1
+
+                        # Frühere Zeile wird START
+                        content[end_index0] = start_line_text
+
+                        # Spätere Zeile wird END
+                        content[start_index0] = end_line_text
+
+                        new_text = "\n".join(content)
+
+                        self.text_editor.delete("1.0", tk.END)
+                        self.text_editor.insert("1.0", new_text)
+
+                        self._range_start_marker_line = found_end_line
+                        self._range_end_marker_line = found_start_line
+                    else:
+                        self._range_start_marker_line = found_start_line
+                        self._range_end_marker_line = found_end_line
+                else:
+                    # Fallback: wenn etwas schiefgeht, wenigstens END merken
+                    self._range_end_marker_line = clicked_line + 1
+
+                if dialog.get("hint1_var") is not None:
+                    dialog["hint1_var"].set("START und ENDE gesetzt")
+
+                if dialog.get("hint2_var") is not None:
+                    dialog["hint2_var"].set("OK übernimmt, Abbruch stellt Original wieder her")
+
+                if dialog.get("btn_ok") is not None:
+                    dialog["btn_ok"].config(state="normal")
+
+                self.apply_range_build_visual_markers()
+                self.status_var.set("END gesetzt. OK kann jetzt bestätigt werden")
+                return True
+
+            return False
+
+        except Exception as ex:
+            messagebox.showerror("Fehler", str(ex))
+            return False
+# ===== PART: RANGE_BUILD_EDITOR_CLICK END =====
+# ===== PART: RANGE_BUILD_MODE_CANCEL START =====
+    def cancel_part_range_build_mode(self):
+        """
+        Abbruch → Original wiederherstellen + Marker entfernen
+        """
+
+        try:
+            if hasattr(self, "_range_backup_text") and self._range_backup_text:
+                self.text_editor.delete("1.0", tk.END)
+                self.text_editor.insert("1.0", self._range_backup_text)
+        except Exception:
+            pass
+
+        self.clear_range_build_visual_markers()
+
+        try:
+            if self._range_dialog:
+                self._range_dialog["window"].destroy()
+        except Exception:
+            pass
+
+        self._range_mode_active = False
+# ===== PART: RANGE_BUILD_MODE_CANCEL END =====
+# ===== PART: RANGE_BUILD_MODE_CONFIRM START =====
+    def confirm_part_range_build_mode(self):
+        """
+        OK:
+        - prüft den aktuellen Namen
+        - wandelt die Vorschau-Zeilen in echte PART-Zeilen um
+        - behält den aktuellen Text
+        """
+
+        try:
+            if not hasattr(self, "_range_dialog") or not self._range_dialog:
+                return
+
+            dialog = self._range_dialog
+
+            final_name = "NEUER_PART"
+            if dialog.get("name_var") is not None:
+                raw_name = dialog["name_var"].get().strip()
+                if raw_name != "":
+                    final_name = self._normalize_structure_name(raw_name)
+
+            if final_name == "":
+                messagebox.showwarning("Hinweis", "Bitte einen gültigen PART-Namen eingeben.")
+                return
+
+            if self.is_structure_name_in_use(final_name):
+                messagebox.showwarning("Hinweis", "Der PART-Name existiert bereits.")
+                return
+
+            preview_start_text = ">>> # ===== PART: " + final_name + " START ====="
+            preview_end_text = ">>> # ===== PART: " + final_name + " END ====="
+
+            real_start_text = "# ===== PART: " + final_name + " START ====="
+            real_end_text = "# ===== PART: " + final_name + " END ====="
+
+            content = self.text_editor.get("1.0", tk.END).split("\n")
+
+            i = 0
+            while i < len(content):
+                line = content[i].strip()
+
+                if line == preview_start_text:
+                    content[i] = real_start_text
+
+                if line == preview_end_text:
+                    content[i] = real_end_text
+
+                i += 1
+
+            self.text_editor.delete("1.0", tk.END)
+            self.text_editor.insert("1.0", "\n".join(content))
+
+            self.clear_range_build_visual_markers()
+
+            try:
+                if dialog.get("window") is not None:
+                    dialog["window"].destroy()
+            except Exception:
+                pass
+
+            self.rescan_all()
+            self.update_dirty_parts()
+
+            new_index = find_part_index_by_name(self, final_name)
+            if new_index is not None:
+                self.part_listbox.selection_clear(0, tk.END)
+                self.part_listbox.selection_set(new_index)
+                self.part_listbox.activate(new_index)
+                self.on_part_select(None)
+
+            self._range_mode_active = False
+            self._range_backup_text = None
+            self._range_dialog = None
+            self._range_start_marker_line = None
+            self._range_end_marker_line = None
+
+            self.status_var.set("PART im Code gesetzt: " + final_name)
+
+        except Exception as ex:
+            messagebox.showerror("Fehler", str(ex))
+# ===== PART: RANGE_BUILD_MODE_CONFIRM END =====
+# ===== PART: RANGE_BUILD_MODE_SYNC_NAMES START =====
+    def sync_part_range_build_marker_names(self):
+        """
+        Wenn der Name im kleinen Fenster geändert wird,
+        werden die Vorschau-START/END-Zeilen live umbenannt.
+        """
+
+        if not hasattr(self, "_range_mode_active") or not self._range_mode_active:
+            return
+
+        if not hasattr(self, "_range_dialog") or not self._range_dialog:
+            return
+
+        dialog = self._range_dialog
+
+        preview_name = "NEUER_PART"
+        if dialog.get("name_var") is not None:
+            raw_name = dialog["name_var"].get().strip()
+            if raw_name != "":
+                preview_name = self._normalize_structure_name(raw_name)
+
+        try:
+            content = self.text_editor.get("1.0", tk.END).split("\n")
+
+            old_start_index = None
+            old_end_index = None
+
+            i = 0
+            while i < len(content):
+                line = content[i].strip()
+
+                if line.startswith(">>> # ===== PART: ") and line.endswith(" START ====="):
+                    old_start_index = i
+
+                if line.startswith(">>> # ===== PART: ") and line.endswith(" END ====="):
+                    old_end_index = i
+
+                i += 1
+
+            new_start_text = ">>> # ===== PART: " + preview_name + " START ====="
+            new_end_text = ">>> # ===== PART: " + preview_name + " END ====="
+
+            if old_start_index is not None:
+                content[old_start_index] = new_start_text
+
+            if old_end_index is not None:
+                content[old_end_index] = new_end_text
+
+            self.text_editor.delete("1.0", tk.END)
+            self.text_editor.insert("1.0", "\n".join(content))
+
+            if old_start_index is not None:
+                self._range_start_marker_line = old_start_index + 1
+
+            if old_end_index is not None:
+                self._range_end_marker_line = old_end_index + 1
+
+            self.apply_range_build_visual_markers()
+
+        except Exception:
+            pass
+# ===== PART: RANGE_BUILD_MODE_SYNC_NAMES END =====
+# ===== PART: RANGE_BUILD_VISUAL_MARKERS START =====
+    def apply_range_build_visual_markers(self):
+        """
+        Markiert nur die aktuellen Vorschau-Zeilen.
+        START = hellgrün
+        END   = hellgelb
+        """
+
+        if not hasattr(self, "text_editor"):
+            return
+
+        if hasattr(self, "cfg_show_range_markers") and not self.cfg_show_range_markers:
+            return
+
+        editor = self.text_editor
+
+        self.clear_range_build_visual_markers()
+
+        preview_name = "NEUER_PART"
+
+        try:
+            if hasattr(self, "_range_dialog") and self._range_dialog:
+                dialog = self._range_dialog
+                if dialog.get("name_var") is not None:
+                    raw_name = dialog["name_var"].get().strip()
+                    if raw_name != "":
+                        preview_name = self._normalize_structure_name(raw_name)
+        except Exception:
+            pass
+
+        preview_start_text = ">>> # ===== PART: " + preview_name + " START ====="
+        preview_end_text = ">>> # ===== PART: " + preview_name + " END ====="
+
+        try:
+            content = editor.get("1.0", tk.END).split("\n")
+
+            start_line = None
+            end_line = None
+
+            i = 0
+            while i < len(content):
+                line = content[i].strip()
+
+                if line == preview_start_text:
+                    start_line = i + 1
+
+                if line == preview_end_text:
+                    end_line = i + 1
+
+                i += 1
+
+            if start_line is not None:
+                editor.tag_add(
+                    "range_start_line",
+                    str(start_line) + ".0",
+                    str(start_line + 1) + ".0"
+                )
+                editor.tag_config("range_start_line", background="#ccffcc")
+
+            if end_line is not None:
+                editor.tag_add(
+                    "range_end_line",
+                    str(end_line) + ".0",
+                    str(end_line + 1) + ".0"
+                )
+                editor.tag_config("range_end_line", background="#fff2cc")
+
+        except Exception:
+            pass
+
+
+    def clear_range_build_visual_markers(self):
+        """
+        Entfernt alle visuellen Markierungen.
+        """
+
+        if not hasattr(self, "text_editor"):
+            return
+
+        editor = self.text_editor
+
+        try:
+            editor.tag_remove("range_start_line", "1.0", tk.END)
+        except Exception:
+            pass
+
+        try:
+            editor.tag_remove("range_end_line", "1.0", tk.END)
+        except Exception:
+            pass
+
+        try:
+            editor.tag_delete("range_start_line")
+        except Exception:
+            pass
+
+        try:
+            editor.tag_delete("range_end_line")
+        except Exception:
+            pass
+# ===== PART: RANGE_BUILD_VISUAL_MARKERS END =====

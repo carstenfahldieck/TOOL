@@ -94,6 +94,11 @@ def create_menu_bar(app):
 
  app.menu_extras.add_command(label="Update starten", command=app.start_loaded_update_plugin_run)
 
+ app.menu_part.add_command(
+    label="PART im Code setzen",
+    command=app.start_part_range_build_mode
+)
+
  menubar.add_cascade(label="Extras", menu=app.menu_extras)
 
  app.root.config(menu=menubar)
