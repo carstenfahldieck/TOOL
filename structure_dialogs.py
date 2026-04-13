@@ -388,8 +388,6 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
 
  # ===== UI SETTINGS END =====
 
- # ===== Fenster =====
-
  win = tk.Toplevel(app.root)
 
  win.title("PART einfügen / verschieben")
@@ -401,13 +399,9 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
  win.grab_set()
 
  outer = tk.Frame(
-
   win,
-
   padx=cfg_ui_padding_outer,
-
   pady=cfg_ui_padding_outer
-
  )
 
  outer.pack(fill="both", expand=True)
@@ -419,7 +413,6 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
  initial_name = str(suggested_name).strip().upper()
 
  if initial_name == "":
-
   initial_name = cfg_ui_name_hint_text
 
  name_var = tk.StringVar(value=initial_name)
@@ -428,7 +421,6 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
 
  entry_name.pack(fill="x", pady=(0, cfg_ui_spacing_medium))
  entry_name.icursor(0)
-
  entry_name.selection_range(0, tk.END)
 
  suggestion_mode = {"value": True}
@@ -438,18 +430,15 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
  tk.Label(outer, text="Position wählen:", anchor="w").pack(fill="x")
 
  frame_list = tk.Frame(outer)
-
  frame_list.pack(fill="both", expand=True)
 
  listbox_positions = tk.Listbox(frame_list, height=cfg_ui_list_height)
-
  listbox_positions.pack(side="left", fill="both", expand=True)
 
  scrollbar_positions = tk.Scrollbar(frame_list)
-
  scrollbar_positions.pack(side="right", fill="y")
- listbox_positions.config(yscrollcommand=scrollbar_positions.set)
 
+ listbox_positions.config(yscrollcommand=scrollbar_positions.set)
  scrollbar_positions.config(command=listbox_positions.yview)
 
  # ===== Bemerkung =====
@@ -457,32 +446,26 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
  tk.Label(outer, text="Bemerkung:", anchor="w").pack(fill="x", pady=(cfg_ui_spacing_medium, 0))
 
  note_var = tk.StringVar()
-
  entry_note = tk.Entry(outer, textvariable=note_var)
-
  entry_note.pack(fill="x", pady=(0, cfg_ui_spacing_small))
 
  # ===== Hashtags =====
 
  tk.Label(outer, text="Hashtags:", anchor="w").pack(fill="x")
+
  hashtags_var = tk.StringVar()
-
  entry_hashtags = tk.Entry(outer, textvariable=hashtags_var)
-
  entry_hashtags.pack(fill="x", pady=(0, cfg_ui_spacing_medium))
 
  # ===== Buttons =====
 
  frame_buttons = tk.Frame(outer)
-
  frame_buttons.pack(fill="x")
 
  btn_ok = tk.Button(frame_buttons, text="OK", width=12, state="disabled")
-
  btn_ok.pack(side="left")
 
  btn_cancel = tk.Button(frame_buttons, text="Abbrechen", width=12)
-
  btn_cancel.pack(side="left", padx=(cfg_ui_spacing_small, 0))
 
  selected_free_index = {"value": None}
@@ -492,43 +475,33 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   raw = str(value)
 
   if raw == cfg_ui_name_hint_text:
-
    return ""
 
   raw = raw.replace(" ", "_")
 
   try:
-
    return app._normalize_structure_name(raw).upper()
-
   except Exception:
-
    return raw.strip().upper()
 
  def is_name_in_use(value, exclude_name=None):
 
   try:
-
    return app.is_structure_name_in_use(value, exclude_name=exclude_name)
-
   except TypeError:
 
    normalized = normalize_name(value)
    normalized_exclude = normalize_name(exclude_name) if exclude_name else None
 
    i = 0
-
    while i < len(parts):
-
     candidate = normalize_name(parts[i])
 
     if normalized_exclude is not None and candidate == normalized_exclude:
-
      i += 1
      continue
 
     if candidate == normalized:
-
      return True
 
     i += 1
@@ -541,18 +514,14 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
    normalized_exclude = normalize_name(exclude_name) if exclude_name else None
 
    i = 0
-
    while i < len(parts):
-
     candidate = normalize_name(parts[i])
 
     if normalized_exclude is not None and candidate == normalized_exclude:
-
      i += 1
      continue
 
     if candidate == normalized:
-
      return True
 
     i += 1
@@ -564,7 +533,6 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   raw = str(value).strip()
 
   if raw == "":
-
    return []
 
   parts_raw = raw.split("#")
@@ -580,9 +548,9 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   return result_tags
 
  def build_rows():
+
   rows = []
 
-  # ===== RENAME-MODUS: NUR BESTEHENDE PARTS =====
   if mode == "rename":
    i = 0
    while i < len(parts):
@@ -590,7 +558,6 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
     i += 1
    return rows
 
-  # ===== STANDARD: MIT FREIEN BEREICHEN =====
   rows.append({"kind": "free", "display": "[frei]"})
 
   index = 0
@@ -602,6 +569,7 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   return rows
 
  def refresh_position_list():
+
   listbox_positions.delete(0, tk.END)
 
   rows = build_rows()
@@ -609,6 +577,7 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
 
   i = 0
   while i < len(rows):
+
    display_text = rows[i]["display"]
 
    if mode != "rename":
@@ -650,7 +619,7 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
       listbox_positions.see(selected_index)
       selected_free_index["value"] = selected_index
     except Exception:
-     selected_free_index["value"] = None
+      selected_free_index["value"] = None
    elif mode != "rename" and selected_index is not None:
     try:
      preview_index = (selected_index * 2) + 2
@@ -661,18 +630,15 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
       listbox_positions.see(preview_index)
       selected_free_index["value"] = preview_index
     except Exception:
-     selected_free_index["value"] = None
+      selected_free_index["value"] = None
 
-  validate()
+ def validate():
 
- def validate(*args):
   raw_name = name_var.get()
 
   if suggestion_mode["value"] and raw_name == cfg_ui_name_hint_text:
    btn_ok.config(state="disabled")
    entry_name.config(bg=cfg_ui_normal_bg, fg=cfg_ui_suggestion_fg)
-   if mode != "rename":
-    refresh_position_list()
    return
 
   normalized_name = normalize_name(raw_name)
@@ -680,8 +646,6 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   if normalized_name == "":
    btn_ok.config(state="disabled")
    entry_name.config(bg=cfg_ui_invalid_bg, fg=cfg_ui_normal_fg)
-   if mode != "rename":
-    refresh_position_list()
    return
 
   exclude_name = None
@@ -691,22 +655,15 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   if is_name_in_use(normalized_name, exclude_name=exclude_name):
    btn_ok.config(state="disabled")
    entry_name.config(bg=cfg_ui_invalid_bg, fg=cfg_ui_normal_fg)
-   if mode != "rename":
-    refresh_position_list()
    return
 
   if selected_free_index["value"] is None:
    btn_ok.config(state="disabled")
    entry_name.config(bg=cfg_ui_normal_bg, fg=cfg_ui_normal_fg)
-   if mode != "rename":
-    refresh_position_list()
    return
 
   btn_ok.config(state="normal")
   entry_name.config(bg=cfg_ui_normal_bg, fg=cfg_ui_normal_fg)
-
-  if mode != "rename":
-   refresh_position_list()
 
  def on_name_focus_in(event=None):
   if suggestion_mode["value"]:
@@ -717,8 +674,11 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
    except Exception:
     pass
    suggestion_mode["value"] = False
+   validate()
+   refresh_position_list()
 
  def on_name_keyrelease(event=None):
+
   current = name_var.get()
   upper = current.replace(" ", "_").upper()
 
@@ -737,12 +697,15 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
     pass
 
   validate()
+  refresh_position_list()
 
  def on_position_select(event=None):
+
   sel = listbox_positions.curselection()
   if not sel:
    selected_free_index["value"] = None
    validate()
+   refresh_position_list()
    return
 
   row_index = sel[0]
@@ -751,6 +714,7 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   if row_index < 0 or row_index >= len(rows):
    selected_free_index["value"] = None
    validate()
+   refresh_position_list()
    return
 
   if mode == "rename":
@@ -765,8 +729,10 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
     selected_free_index["value"] = None
 
   validate()
+  refresh_position_list()
 
  def on_ok():
+
   name_text = normalize_name(name_var.get())
 
   if name_text == "":
@@ -793,19 +759,17 @@ def open_structure_placement_dialog_v1(app, parts, selected_index=None, suggeste
   win.destroy()
 
  def on_cancel():
-
   win.destroy()
 
  listbox_positions.bind("<<ListboxSelect>>", on_position_select)
-
  entry_name.bind("<FocusIn>", on_name_focus_in)
  entry_name.bind("<KeyRelease>", on_name_keyrelease)
 
  btn_ok.config(command=on_ok)
-
  btn_cancel.config(command=on_cancel)
 
  refresh_position_list()
+ validate()
 
  entry_name.focus_set()
 
