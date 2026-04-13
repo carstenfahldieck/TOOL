@@ -2411,6 +2411,7 @@ class PartsLogicMixin:
         Markiert nur die aktuellen Vorschau-Zeilen.
         START = hellgrün
         END   = hellgelb
+        Bereich dazwischen = hellblau
         """
 
         if not hasattr(self, "text_editor"):
@@ -2456,21 +2457,36 @@ class PartsLogicMixin:
 
                 i += 1
 
+            # START markieren
             if start_line is not None:
                 editor.tag_add(
                     "range_start_line",
                     str(start_line) + ".0",
                     str(start_line + 1) + ".0"
                 )
-                editor.tag_config("range_start_line", background="#ccffcc")
+                editor.tag_config("range_start_line", background="#ccffcc")  # hellgrün
 
+            # END markieren
             if end_line is not None:
                 editor.tag_add(
                     "range_end_line",
                     str(end_line) + ".0",
                     str(end_line + 1) + ".0"
                 )
-                editor.tag_config("range_end_line", background="#fff2cc")
+                editor.tag_config("range_end_line", background="#fff2cc")  # hellgelb
+
+            # Bereich dazwischen markieren
+            if start_line is not None and end_line is not None:
+                area_start = start_line + 1
+                area_end = end_line
+
+                if area_start < area_end:
+                    editor.tag_add(
+                        "range_area_line",
+                        str(area_start) + ".0",
+                        str(area_end) + ".0"
+                    )
+                    editor.tag_config("range_area_line", background="#dbeeff")  # hellblau
 
         except Exception:
             pass
@@ -2497,12 +2513,22 @@ class PartsLogicMixin:
             pass
 
         try:
+            editor.tag_remove("range_area_line", "1.0", tk.END)
+        except Exception:
+            pass
+
+        try:
             editor.tag_delete("range_start_line")
         except Exception:
             pass
 
         try:
             editor.tag_delete("range_end_line")
+        except Exception:
+            pass
+
+        try:
+            editor.tag_delete("range_area_line")
         except Exception:
             pass
 # ===== PART: RANGE_BUILD_VISUAL_MARKERS END =====

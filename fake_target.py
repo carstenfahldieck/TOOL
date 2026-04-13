@@ -15,12 +15,14 @@ print("TEST_AUTOLOAD_ADD wurde per Update eingefügt")
 
 
 xgsgrg
+# ===== PART: NEUER_PART START =====
 xrgrcggcd
 
        ccccccghv hsv
      ch ghv ghg
 cfg_haus = 4
 
+# ===== PART: NEUER_PART END =====
 gvhdhghnhgcvh
 v ghnhcvnbvg
 
