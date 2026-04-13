@@ -2106,12 +2106,13 @@ class PartsLogicMixin:
                 show_hint_lines=True,
                 enable_name_validation=True,
                 use_grab=False,
-                wait_for_close=False
+                wait_for_close=False,
+                external_name_validator=self.validate_part_range_build_name,
+                external_ok_validator=self.validate_part_range_build_ok
             )
 
             self._range_dialog = dialog
 
-            # ===== OK / Abbrechen umbiegen =====
             if dialog and dialog.get("btn_ok"):
                 dialog["btn_ok"].config(command=self.confirm_part_range_build_mode, state="disabled")
 
@@ -2121,7 +2122,6 @@ class PartsLogicMixin:
             if dialog and dialog.get("window"):
                 dialog["window"].protocol("WM_DELETE_WINDOW", self.cancel_part_range_build_mode)
 
-            # ===== Live-Umbenennung START/END =====
             if dialog and dialog.get("name_var"):
                 dialog["name_var"].trace_add("write", lambda *args: self.sync_part_range_build_marker_names())
 
@@ -2131,32 +2131,33 @@ class PartsLogicMixin:
 # ===== PART: RANGE_BUILD_EDITOR_CLICK START =====
     def handle_range_build_editor_click(self, event):
         """
-        Bereichsmodus für PART im Code setzen:
+        Bereichsmodus für PART im Code setzen (VORSCHAU MIT >>>)
 
-        - erster Klick:
-          START vor der geklickten Zeile einfügen
+        - START wird mit >>> eingefügt
+        - END wird mit >>> eingefügt
 
-        - zweiter Klick:
-          END unter der geklickten Zeile einfügen
-
-        Wenn END oberhalb von START liegt:
-        - die beiden Marker-Zeilen werden im Text getauscht
-        - frühere Zeile wird START
-        - spätere Zeile wird END
+        Klicks im Code sind nur erlaubt, wenn der Name aktuell gültig ist.
+        OK bleibt erst aktiv, wenn START und END gesetzt sind.
         """
 
-        if not hasattr(self, "_range_mode_active"):
+        if not hasattr(self, "_range_mode_active") or not self._range_mode_active:
             return False
 
-        if not self._range_mode_active:
-            return False
-
-        if not hasattr(self, "_range_dialog"):
+        if not hasattr(self, "_range_dialog") or not self._range_dialog:
             return False
 
         dialog = self._range_dialog
-        if dialog is None:
-            return False
+
+        try:
+            raw_name = ""
+            if dialog.get("name_var"):
+                raw_name = dialog["name_var"].get().strip()
+
+            if not self.validate_part_range_build_name(raw_name):
+                self.status_var.set("Ungültiger oder bereits vorhandener PART-Name")
+                return True
+        except Exception:
+            return True
 
         try:
             click_index = self.text_editor.index("@{0},{1}".format(event.x, event.y))
@@ -2164,95 +2165,72 @@ class PartsLogicMixin:
         except Exception:
             return False
 
+        preview_name = "NEUER_PART"
         try:
-            preview_name = "NEUER_PART"
+            if dialog.get("name_var"):
+                raw = dialog["name_var"].get().strip()
+                if raw != "":
+                    preview_name = self._normalize_structure_name(raw)
+        except Exception:
+            pass
 
-            if dialog.get("name_var") is not None:
-                raw_name = dialog["name_var"].get().strip()
-                if raw_name != "":
-                    preview_name = self._normalize_structure_name(raw_name)
+        start_text = ">>> # ===== PART: " + preview_name + " START ====="
+        end_text = ">>> # ===== PART: " + preview_name + " END ====="
 
-            start_line_text = "# ===== PART: " + preview_name + " START ====="
-            end_line_text = "# ===== PART: " + preview_name + " END ====="
-
-            # ===== FALL 1: START setzen =====
-            if getattr(self, "_range_start_marker_line", None) is None:
-                insert_index = str(clicked_line) + ".0"
-                self.text_editor.insert(insert_index, start_line_text + "\n")
-
+        try:
+            # ===== START =====
+            if self._range_start_marker_line is None:
+                self.text_editor.insert(str(clicked_line) + ".0", start_text + "\n")
                 self._range_start_marker_line = clicked_line
-                self._range_end_marker_line = None
 
-                if dialog.get("hint1_var") is not None:
+                if dialog.get("hint1_var"):
                     dialog["hint1_var"].set("Bitte Endzeile wählen")
 
-                if dialog.get("hint2_var") is not None:
-                    dialog["hint2_var"].set("Abbruch stellt Original wieder her")
+                if dialog.get("validate_func"):
+                    dialog["validate_func"]()
 
                 self.apply_range_build_visual_markers()
-                self.status_var.set("START gesetzt. Bitte Endzeile wählen")
                 return True
 
-            # ===== FALL 2: END setzen =====
-            if getattr(self, "_range_end_marker_line", None) is None:
-                insert_index = str(clicked_line) + ".end"
-                self.text_editor.insert(insert_index, "\n" + end_line_text)
+            # ===== END =====
+            if self._range_end_marker_line is None:
+                self.text_editor.insert(str(clicked_line) + ".end", "\n" + end_text)
 
-                # ===== AKTUELLEN TEXT HOLEN =====
                 content = self.text_editor.get("1.0", tk.END).split("\n")
 
-                found_start_line = None
-                found_end_line = None
+                start_idx = None
+                end_idx = None
 
                 i = 0
                 while i < len(content):
-                    line = content[i].strip()
+                    line_s = content[i].strip()
 
-                    if line == start_line_text:
-                        found_start_line = i + 1
+                    if line_s.startswith(">>>") and "START" in line_s:
+                        start_idx = i
 
-                    if line == end_line_text:
-                        found_end_line = i + 1
+                    if line_s.startswith(">>>") and "END" in line_s:
+                        end_idx = i
 
                     i += 1
 
-                # ===== WENN BEIDE GEFUNDEN: POSITION PRÜFEN =====
-                if found_start_line is not None and found_end_line is not None:
-                    if found_end_line < found_start_line:
-                        start_index0 = found_start_line - 1
-                        end_index0 = found_end_line - 1
-
-                        # Frühere Zeile wird START
-                        content[end_index0] = start_line_text
-
-                        # Spätere Zeile wird END
-                        content[start_index0] = end_line_text
-
-                        new_text = "\n".join(content)
+                if start_idx is not None and end_idx is not None:
+                    if end_idx < start_idx:
+                        content[end_idx] = start_text
+                        content[start_idx] = end_text
 
                         self.text_editor.delete("1.0", tk.END)
-                        self.text_editor.insert("1.0", new_text)
+                        self.text_editor.insert("1.0", "\n".join(content))
 
-                        self._range_start_marker_line = found_end_line
-                        self._range_end_marker_line = found_start_line
+                        self._range_start_marker_line = end_idx + 1
+                        self._range_end_marker_line = start_idx + 1
                     else:
-                        self._range_start_marker_line = found_start_line
-                        self._range_end_marker_line = found_end_line
-                else:
-                    # Fallback: wenn etwas schiefgeht, wenigstens END merken
-                    self._range_end_marker_line = clicked_line + 1
+                        self._range_start_marker_line = start_idx + 1
+                        self._range_end_marker_line = end_idx + 1
 
-                if dialog.get("hint1_var") is not None:
-                    dialog["hint1_var"].set("START und ENDE gesetzt")
-
-                if dialog.get("hint2_var") is not None:
-                    dialog["hint2_var"].set("OK übernimmt, Abbruch stellt Original wieder her")
-
-                if dialog.get("btn_ok") is not None:
-                    dialog["btn_ok"].config(state="normal")
+                if dialog.get("validate_func"):
+                    dialog["validate_func"]()
 
                 self.apply_range_build_visual_markers()
-                self.status_var.set("END gesetzt. OK kann jetzt bestätigt werden")
                 return True
 
             return False
@@ -2528,3 +2506,53 @@ class PartsLogicMixin:
         except Exception:
             pass
 # ===== PART: RANGE_BUILD_VISUAL_MARKERS END =====
+# ===== PART: RANGE_BUILD_NAME_VALIDATION START =====
+    def validate_part_range_build_name(self, raw_name):
+        """
+        Live-Namensprüfung für PART-im-Code-setzen.
+        True = gültig
+        False = ungültig
+        """
+
+        try:
+            if raw_name is None:
+                return False
+
+            effective_name = self._normalize_structure_name(raw_name)
+
+            if effective_name == "":
+                return False
+
+            # Gleiche Namen wie echte bestehende PARTS verbieten
+            if self.is_structure_name_in_use(effective_name):
+                return False
+
+            return True
+
+        except Exception:
+            return False
+# ===== PART: RANGE_BUILD_NAME_VALIDATION END =====
+# ===== PART: RANGE_BUILD_OK_VALIDATION START =====
+    def validate_part_range_build_ok(self):
+        """
+        OK ist nur erlaubt, wenn:
+        - Modus aktiv
+        - START gesetzt
+        - END gesetzt
+        """
+
+        try:
+            if not hasattr(self, "_range_mode_active") or not self._range_mode_active:
+                return False
+
+            if getattr(self, "_range_start_marker_line", None) is None:
+                return False
+
+            if getattr(self, "_range_end_marker_line", None) is None:
+                return False
+
+            return True
+
+        except Exception:
+            return False
+# ===== PART: RANGE_BUILD_OK_VALIDATION END =====

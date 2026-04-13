@@ -787,7 +787,9 @@ def open_structure_simple_dialog_v1(
     show_hint_lines=False,
     enable_name_validation=True,
     use_grab=True,
-    wait_for_close=True
+    wait_for_close=True,
+    external_name_validator=None,
+    external_ok_validator=None
 ):
     result = {
         "name": None,
@@ -802,6 +804,7 @@ def open_structure_simple_dialog_v1(
         "hint2_var": None,
         "btn_ok": None,
         "btn_cancel": None,
+        "name_entry": None,
         "validate_func": None
     }
 
@@ -860,21 +863,52 @@ def open_structure_simple_dialog_v1(
     btn_cancel.pack(side="left", expand=True, fill="x", padx=(5, 0))
 
     def validate_name():
+        value = name_var.get().strip()
+
         if not enable_name_validation:
             btn_ok.config(state="normal")
-            return
+            name_entry.config(bg="white")
+            return True
 
-        value = name_var.get().strip()
         if value == "":
             btn_ok.config(state="disabled")
-            return
+            name_entry.config(bg="#f4b6b6")
+            return False
+
+        if external_name_validator is not None:
+            try:
+                is_ok = external_name_validator(value)
+            except Exception:
+                is_ok = False
+
+            if not is_ok:
+                btn_ok.config(state="disabled")
+                name_entry.config(bg="#f4b6b6")
+                return False
+
+        # ===== ZUSATZPRÜFUNG FÜR OK =====
+        if external_ok_validator is not None:
+            try:
+                is_ok = external_ok_validator()
+            except Exception:
+                is_ok = False
+
+            if not is_ok:
+                btn_ok.config(state="disabled")
+                name_entry.config(bg="white")
+                return False
 
         btn_ok.config(state="normal")
+        name_entry.config(bg="white")
+        return True
 
     def on_name_change(*args):
         validate_name()
 
     def on_ok():
+        if not validate_name():
+            return
+
         result["name"] = name_var.get().strip()
         result["note"] = note_var.get().strip()
         result["hashtags"] = tag_var.get().strip()
@@ -900,6 +934,7 @@ def open_structure_simple_dialog_v1(
     result["hint2_var"] = hint2_var
     result["btn_ok"] = btn_ok
     result["btn_cancel"] = btn_cancel
+    result["name_entry"] = name_entry
     result["validate_func"] = validate_name
 
     if wait_for_close:
