@@ -2409,9 +2409,10 @@ class PartsLogicMixin:
     def apply_range_build_visual_markers(self):
         """
         Markiert nur die aktuellen Vorschau-Zeilen.
+
         START = hellgrün
         END   = hellgelb
-        Bereich dazwischen = hellblau
+        Bereich dazwischen = hellblau (ohne START/END)
         """
 
         if not hasattr(self, "text_editor"):
@@ -2457,7 +2458,7 @@ class PartsLogicMixin:
 
                 i += 1
 
-            # START markieren
+            # ===== START markieren =====
             if start_line is not None:
                 editor.tag_add(
                     "range_start_line",
@@ -2466,7 +2467,7 @@ class PartsLogicMixin:
                 )
                 editor.tag_config("range_start_line", background="#ccffcc")  # hellgrün
 
-            # END markieren
+            # ===== END markieren =====
             if end_line is not None:
                 editor.tag_add(
                     "range_end_line",
@@ -2475,16 +2476,16 @@ class PartsLogicMixin:
                 )
                 editor.tag_config("range_end_line", background="#fff2cc")  # hellgelb
 
-            # Bereich dazwischen markieren
+            # ===== Bereich dazwischen markieren (OHNE START/END) =====
             if start_line is not None and end_line is not None:
                 area_start = start_line + 1
-                area_end = end_line
+                area_end = end_line - 1
 
-                if area_start < area_end:
+                if area_start <= area_end:
                     editor.tag_add(
                         "range_area_line",
                         str(area_start) + ".0",
-                        str(area_end) + ".0"
+                        str(area_end + 1) + ".0"
                     )
                     editor.tag_config("range_area_line", background="#dbeeff")  # hellblau
 
